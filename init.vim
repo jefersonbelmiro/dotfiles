@@ -14,9 +14,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" adds font icons
-Plug 'ryanoasis/vim-devicons'
-
 " fancy statusline
 Plug 'vim-airline/vim-airline' 
 " themes for vim-airlin
@@ -67,6 +64,9 @@ Plug 'ywjno/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
 Plug 'jtai/vim-womprat'
 
+" adds font icons
+Plug 'ryanoasis/vim-devicons'
+
 " Add plugins to &runtimepath
 call plug#end()
 
@@ -105,4 +105,3 @@ set autoread
 set laststatus=2
 
 set encoding=utf8
-

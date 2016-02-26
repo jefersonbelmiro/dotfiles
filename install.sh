@@ -109,7 +109,8 @@ if command_exists nvim && $CONFIGURE_NVIM; then
     fi
 
     mkdir ~/.config/nvim
-    cp init.vim ~/.config/nvim/init.vim
+    # cp init.vim ~/.config/nvim/init.vim
+    ln -s $(realpath init.vim) ~/.config/nvim/init.vim
 
     # vim-plug for neovim
     curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
@@ -120,7 +121,7 @@ fi
 
 # nerd-fonts - https://github.com/ryanoasis/nerd-fonts
 mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
+# cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
 
 cd ~/.local/share
 git clone https://github.com/ryanoasis/nerd-fonts.git
