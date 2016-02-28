@@ -18,6 +18,11 @@ Plug 'garbas/vim-snipmate'
 " Optional:
 Plug 'honza/vim-snippets'
 
+"Plug 'easymotion/vim-easymotion'
+
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+
 " Plin outside ~/.vim/plugged with post-update hook
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
@@ -273,7 +278,7 @@ set whichwrap+=<,>,h,l
 set ignorecase                    " Ignora maiusculas/minusculas quando fizer pesquisa
 set smartcase                     " When searching try to be smart about cases ??? @todo descobrir o que eh mesmo
 set hlsearch                      " Destaca resultados da busca
-set nowrapscan                    " desabilita ao final da pesquisa ('/')voltar para primeira ocorrencia"
+"set nowrapscan                    " desabilita ao final da pesquisa ('/')voltar para primeira ocorrencia"
 set incsearch                     " Vai buscando enquando digita
 set magic                         " For regular expressions turn magic on
 set showmatch                     " Show matching brackets when text indicator is over them
@@ -399,11 +404,51 @@ autocmd filetype php set iskeyword+=$
 
 " }
 
+" easymotion {
+
+  map <space>h <Plug>(easymotion-linebackward)
+  map <space>j <Plug>(easymotion-j)
+  map <space>k <Plug>(easymotion-k)
+  map <space>l <Plug>(easymotion-lineforward)
+
+  let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+  let g:EasyMotion_smartcase = 1 " search case-insensitive
+
+" }
+
+" incsearch-fuzzyspell {
+"
+    "let g:incsearch#auto_nohlsearch = 1
+    nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
+
+    map /  <Plug>(incsearch-forward)
+" }
+"
+" incsearch-fuzzyspell {
+    map z/ <Plug>(incsearch-fuzzyspell-/)
+" }
+
 " }}}-------------------------- plugin's config --------------------------------
 
 
 
 
+function! Bulk_input_char_on_char_pre() abort
+  let stack = []
+  let c = 1
+  while c
+    let c = getchar(0)
+      echo "[1] ' " . c . "'"
+      if c != 0
+      echo "[2]"
+      let stack += [nr2char(c)]
+    elseif !empty(stack)
+      echo "[3]"
+      echon "stack: " . stack
+    endif
+  endwhile
+      echo "[4]"
+endfunction
 
 
 let s:keyLoop = 1
@@ -420,6 +465,11 @@ let [s:lcmap, s:prtmaps] = ['nn <buffer> <silent>', {
 " call matchaddpos('WildMenu', [[20, 9, 1]])
 " help matchaddpos
 " criar grupo com underline vermelho, parecido com plugin easy-motion
+
+" @todo - plugin visual-star-search.vim 
+" usar: 
+" let current_win_state = winsaveview()
+" call winrestview(current_win_state)
 
 function! KeyLoop()
 
@@ -443,6 +493,8 @@ function! KeyLoop()
             echon 'find: ' . s:prompt . '_' . getcharmod() . ' | ' . getcmdpos()
             "echon "[1]find: "  . s:prompt  . '_'
         else
+
+            "let code = char2nr(nr)
 
             "let s:prompt .= '['.char.']'
             "if char != ''
