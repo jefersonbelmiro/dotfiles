@@ -38,7 +38,7 @@ if command_exists git && $CONFIGURE_GIT ; then
     git config --global pager.diff false
     git config --global difftool.prompt false
     git config --global diff.external git_diff_wrapper
-    sudo ln -s ~/dotfiles/bin/git_diff_wrapper /usr/local/bin/
+    sudo ln -s $(realpath bin/git_diff_wrapper) /usr/local/bin/
 
 fi
 

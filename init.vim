@@ -11,7 +11,14 @@ call plug#begin('~/.config/nvim/plugged')
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+
+" Optional:
+Plug 'honza/vim-snippets'
+
+" Plin outside ~/.vim/plugged with post-update hook
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " fancy statusline
@@ -57,7 +64,6 @@ Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'gregsexton/MatchTag', { 'for': 'html' }
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'moll/vim-node', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -257,7 +263,7 @@ inoremap <C-l> <c-o>l
 
 
 
-
+set title
 set nocompatible                  " desabilita compatiblidade com vi
 set history=2000                  " Quantas linhas de histórico o vim deve lembra0
 set ruler                         " Sempre mostra posicao atual
