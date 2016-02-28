@@ -117,6 +117,12 @@ if command_exists nvim && $CONFIGURE_NVIM; then
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     nvim +PlugInstall +qall
+
+    # install comand-t ruby
+    cd ~/.config/nvim/plugged/command-t/ruby/command-t
+    ruby extconf.rb
+    make
+
 fi 
 
 # nerd-fonts - https://github.com/ryanoasis/nerd-fonts
