@@ -108,7 +108,7 @@ set encoding=utf8
 set t_Co=256
 
 " 24 bit color
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 set background=dark
 colorscheme womprat
@@ -142,14 +142,17 @@ set background=dark
 " let g:airline_theme = 'ubaryd'
 colorscheme womprat
 
-hi StatusLine ctermbg=NONE cterm=NONE guibg=#222222
-hi StatusLineNC ctermbg=NONE cterm=NONE guibg=#222222
+hi StatusLine ctermbg=234 cterm=NONE guibg=#222222
+hi StatusLineNC ctermbg=234 cterm=NONE guibg=#222222
 hi ColorColumn ctermbg=234 guibg=#222222
 hi vertsplit ctermbg=none guibg=none
 
 hi TabLine cterm=none ctermbg=none guibg=#222222 guifg=none gui=none
 hi TabLineFill cterm=none ctermbg=none guibg=none guifg=none gui=none
 hi TabLineSel cterm=bold,underline ctermbg=none guibg=#333333 gui=none
+
+hi Search ctermbg=239 ctermfg=none
+hi Visual ctermbg=237 ctermfg=none
 
 set nonu
 "set fillchars+=vert:│
@@ -204,8 +207,8 @@ map K k
 "map # #N
 
 " Salvar 
-map <F2> <ESC>:call Save()<CR>
-imap <F2> <ESC>:call Save()<CR>
+map <silent> <F2> <ESC>:call Save()<CR>
+imap <silent> <F2> <ESC>:call Save()<CR>
 
 " CTRL-V and SHIFT-Insert are Paste
 "map <C-V>		"+gP
@@ -269,6 +272,7 @@ inoremap <C-l> <c-o>l
 
 
 set title
+"set titlestring=%f
 set nocompatible                  " desabilita compatiblidade com vi
 set history=2000                  " Quantas linhas de histórico o vim deve lembra0
 set ruler                         " Sempre mostra posicao atual
@@ -432,6 +436,60 @@ autocmd filetype php set iskeyword+=$
 
 
 
+function! Save() 
+
+  try 
+
+    let output = 'Arquivo salvo'
+    let fileName = expand('%')
+    silent execute ':w'
+    "silent execute ':set scr=4'
+    silent execute ':set ft=' . &filetype
+
+    " php lint
+    " if &filetype == 'php'
+      " call s:Executar('php -l ' . expand('%') . ' 2> /tmp/vim_save')
+    " endif
+
+    "let bid = '/var/www/DBPlugins/Financeiro/BID/fontes/' . fileName
+    "if filewritable(bid)
+
+    "  silent execute ':w! ' . bid
+    "  let output = output . ' | copia salva em /var/www/DBPlugins/Financeiro/BID/fontes/'
+    "endif
+
+    echo output
+
+  catch
+
+    let s:erro = Executar('cat /tmp/vim_save')
+
+    if !empty(s:erro) 
+      let s:erro = split(s:erro, "\n")[0] 
+    else 
+      let s:erro = v:exception
+    endif
+
+    echohl WarningMsg | echo s:erro 
+  endtry
+
+endfunction
+
+"
+" Executa um comando e retorna resposta do comando ou erro
+"
+function! s:Executar(comando) 
+
+  let l:retornoComando = system(a:comando)
+
+  if v:shell_error 
+    throw l:retornoComando
+  endif
+
+  return l:retornoComando
+
+endfunction
+
 
 function! Bulk_input_char_on_char_pre() abort
   let stack = []
@@ -517,3 +575,27 @@ endfunction
 function! s:PrtPrompt()
 
 endfunction
+
+" ao abrir aquivo ja formata: set fileencodings=UTF-8
+" latin1 = ISO-8859-1
+function! SetEncoding(encoding)
+
+  execute 'set encoding=' . a:encoding
+  execute 'set fileencoding=' . a:encoding
+
+endfunction
+
+function! SetTabWidth(tabWidth)
+
+  execute 'set ts=' . a:tabWidth
+  execute 'set softtabstop=' . a:tabWidth
+  execute 'set shiftwidth=' . a:tabWidth
+
+endfunction
+
+
+
+" dbseller settings
+call SetEncoding('ISO-8859-1')
+call SetTabWidth('2') 
+set wildignore+='modification/data/cache/*'
