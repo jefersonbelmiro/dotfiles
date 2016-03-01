@@ -470,27 +470,53 @@ let [s:lcmap, s:prtmaps] = ['nn <buffer> <silent>', {
 " let current_win_state = winsaveview()
 " call winrestview(current_win_state)
 
+
+function! s:hl_cursor_on()
+    set guicursor&
+    let &guicursor = s:old_guicursor
+    let &t_ve = s:old_t_ve
+    unlet s:old_t_ve
+endfunction
+
+
+function! s:hl_cursor_off()
+	let s:old_guicursor = &guicursor
+	set guicursor=n:block-NONE
+	let s:old_t_ve = &t_ve
+	set t_ve=
+endfunction
+
+" @testar - https://github.com/gelguy/Cmd2.vim
 function! KeyLoop()
+
+    call s:hl_cursor_off()
+
+    try
+        call s:Prompt()
+    catch
+        redraw
+        echo "abort"
+    endtry
+
+    call s:hl_cursor_on()
+
+endfunction
+
+function! s:Prompt()
 
     let s:prompt = ''
 
     while s:keyLoop
 
         redraw
-        echon '/' . s:prompt . '_' . join(getpos('.'), ',') . ' | ' . getcmdpos()
+        echon '/' . s:prompt | echohl Cursor | echon ' ' | echohl NONE
 
         let nr = getchar()
         let char = !type(nr) ? nr2char(nr) : nr
 
-        if nr  ==# "\<c-l>"
-            let s:prompt .= '<s-tab>'
-        endif
-
         if nr >=# 0x20
             " char
             let s:prompt .= char
-            echon 'find: ' . s:prompt . '_' . getcharmod() . ' | ' . getcmdpos()
-            "echon "[1]find: "  . s:prompt  . '_'
         else
 
             "let code = char2nr(nr)
@@ -503,7 +529,7 @@ function! KeyLoop()
 
             "let cmd = matchstr(maparg(char), ':<C-U>\zs.\+\ze<CR>$')
 			"exe( cmd != '' ? cmd : 'norm '.char )
-            call feedkeys(nr);
+            " call feedkeys(nr);
 
             " command
             "echon "[2]find: "  . char
@@ -513,6 +539,96 @@ function! KeyLoop()
 
 endfunction
 
-function! s:PrtPrompt()
+" let s:counter=0
+" function! Teste()
+"     let s:counter += 1
+"     execute ':input()'
+" endfunction
+"
+" " set updatetime=500
+" " autocmd CursorHoldI * call Teste()
+"
+" nmap \x :call GetFoo()<CR>:exe "/" . Foo<CR>
+" function GetFoo()
+"   call inputsave()
+"   let g:Foo = input("enter search pattern: ")
+"   call inputrestore()
+" endfunction
+
+
+function! s:getchar(...)
+	let mode = get(a:, 1, 0)
+	while 1
+		" Workaround for https://github.com/osyo-manga/vital-over/issues/53
+		try
+			let char = call("getchar", a:000)
+		catch /^Vim:Interrupt$/
+			let char = 3 " <C-c>
+		endtry
+		" Workaround for the <expr> mappings
+		if string(char) !=# "\x80\xfd`"
+			return mode == 1 ? !!char
+\				 : type(char) == type(0) ? nr2char(char) : char
+		endif
+	endwhile
+endfunction
+
+function! Wait(mil)
+    let timetowait = a:mil . "m"
+    exe 'sleep '.timetowait
+endfunction 
+
+function! Teste()
+
+    let line = ''
+    let g:iterations = 0
+
+    while 1
+        let g:iterations = g:iterations+1
+        if g:iterations > 60
+            echo "60 it"
+            break
+        endif
+        " redraw
+        "sleep 100m
+        let char = s:getchar()
+
+        if empty(char)
+            return
+        endif
+
+        redraw
+        let line .= char
+        let char = ''
+        echon '> ' . g:iterations . ' ' . line | echohl Cursor | echon ' ' | echohl NONE
+
+    endwhile
+    return
+
+    while 1
+        "call Wait(1000)
+        call inputsave()
+		try
+            let g:iterations += g:iterations+1
+            let g:teste = s:getchar(0)
+			"let char = call("getchar", a:000)
+            if g:teste == '\<C-c>'
+                input('funcionou')
+            endif
+            if g:teste == '\<Esc>'
+                input('funcionou')
+            endif
+            if g:teste != ''
+                "echo ">" . g:teste
+                redraw
+                echohl Cursor | echo '>' .  g:teste . '-' . g:iterations | echohl none
+            endif
+		catch /^Vim:Interrupt$/
+            echo "cancelado"
+            return
+		endtry
+        call inputrestore()
+    endwhile
 
 endfunction
+
