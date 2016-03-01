@@ -23,6 +23,9 @@ Plug 'honza/vim-snippets'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 
+" simple asynchronous fuzzy file finder for vim
+Plug 'troydm/asyncfinder.vim'
+
 " Plin outside ~/.vim/plugged with post-update hook
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
@@ -418,14 +421,10 @@ autocmd filetype php set iskeyword+=$
 
 " incsearch-fuzzyspell {
 "
-    "let g:incsearch#auto_nohlsearch = 1
+    " let g:incsearch#auto_nohlsearch = 1
     nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 
-    map /  <Plug>(incsearch-forward)
-" }
-"
-" incsearch-fuzzyspell {
-    map z/ <Plug>(incsearch-fuzzyspell-/)
+    map / <Plug>(incsearch-fuzzy-/)
 " }
 
 " }}}-------------------------- plugin's config --------------------------------
