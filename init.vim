@@ -18,7 +18,7 @@ Plug 'garbas/vim-snipmate'
 " Optional:
 Plug 'honza/vim-snippets'
 
-"Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -709,9 +709,6 @@ function! SetTabWidth(tabWidth)
 
 endfunction
 
-
-
-" dbseller settings
-call SetEncoding('ISO-8859-1')
-call SetTabWidth('2') 
-set wildignore+='modification/data/cache/*'
+if filereadable(glob("~/.vimrc.local")) 
+  source ~/.vimrc.local
+endif
