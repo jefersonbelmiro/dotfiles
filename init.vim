@@ -20,8 +20,8 @@ Plug 'honza/vim-snippets'
 
 Plug 'easymotion/vim-easymotion'
 
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
+" Plug 'haya14busa/incsearch.vim'
+" Plug 'haya14busa/incsearch-fuzzy.vim'
 
 " simple asynchronous fuzzy file finder for vim
 Plug 'troydm/asyncfinder.vim'
@@ -60,26 +60,18 @@ Plug 'ervandew/supertab'
 " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'Raimondi/delimitMate'
 
-" endings for html, xml, etc. - ehances surround
-Plug 'tpope/vim-ragtag' 
+" Interactive command execution in Vim.
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Plug 'crusoexia/vim-javascript-lib'
-
-" language-specific plugins
 Plug 'mattn/emmet-vim', { 'for': 'html' }
-Plug 'gregsexton/MatchTag', { 'for': 'html' }
 Plug 'othree/html5.vim', { 'for': 'html' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' }
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
-
+" colors
 Plug 'mhartington/oceanic-next'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ywjno/vim-tomorrow-theme'
