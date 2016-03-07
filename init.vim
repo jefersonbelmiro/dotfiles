@@ -146,7 +146,7 @@ hi TabLine cterm=none ctermbg=none guibg=#222222 guifg=none gui=none
 hi TabLineFill cterm=none ctermbg=none guibg=none guifg=none gui=none
 hi TabLineSel cterm=bold,underline ctermbg=none guibg=#333333 gui=none
 
-hi Search ctermbg=239 ctermfg=none
+hi Search ctermbg=237 ctermfg=none
 hi Visual ctermbg=239 ctermfg=none
 
 set nonu
