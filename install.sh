@@ -73,7 +73,7 @@ if command_exists ag; then
 elif $INSTALL_AG; then
     echo "install ag"
     sudo apt-get install python-software-properties
-    sudo apt-add-repository ppa:mizuno-as/silversearcher-ag
+    sudo apt-add-repository -y ppa:mizuno-as/silversearcher-ag
     sudo apt-get update
     sudo apt-get install silversearcher-ag
 else 
@@ -87,7 +87,7 @@ if command_exists nvim; then
 elif $INSTALL_NVIM; then
     echo "install nvim"
 
-    sudo add-apt-repository ppa:neovim-ppa/unstable
+    sudo add-apt-repository -y ppa:neovim-ppa/unstable
     sudo apt-get update
     sudo apt-get install neovim
     sudo apt-get install python-dev python-pip python3-dev python3-pip
@@ -133,5 +133,12 @@ cd ~/.local/share
 git clone https://github.com/ryanoasis/nerd-fonts.git
 cd nerd-fonts
 ./install.sh
+
+
+# Mutate is a simple launcher inspired by Alfred (OS X app) for Linux. 
+# https://github.com/qdore/Mutate
+sudo add-apt-repository -y ppa:mutate/ppa
+sudo apt-get update
+sudo apt-get install mutate
 
 echo "installation complete."

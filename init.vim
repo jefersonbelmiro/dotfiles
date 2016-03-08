@@ -11,9 +11,9 @@ call plug#begin('~/.config/nvim/plugged')
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'
 
 " Optional:
 Plug 'honza/vim-snippets'
@@ -65,11 +65,9 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
-Plug 'elzr/vim-json', { 'for': 'json' }
 
 " colors
 Plug 'mhartington/oceanic-next'
