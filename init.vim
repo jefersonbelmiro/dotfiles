@@ -14,9 +14,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'tomtom/tlib_vim'
 " Plug 'garbas/vim-snipmate'
-
-" Optional:
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 
 Plug 'easymotion/vim-easymotion'
 
