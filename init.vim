@@ -158,6 +158,9 @@ set nonu
 " <leader>
 let mapleader = ","
 
+" alt+backspace delete word backward
+imap <esc><bs> <C-W>
+
 " abre arquivo
 map <F9> <ESC> :call OpenFile() <CR>
 
