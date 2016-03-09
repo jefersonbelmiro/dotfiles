@@ -8,6 +8,10 @@ call plug#begin('~/.config/nvim/plugged')
 " Group dependencies, vim-snippets depends on ultisnips
 "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim'
+endif
+
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
@@ -356,6 +360,12 @@ autocmd filetype php set iskeyword+=$
 
 
 " --------------------------- plugin's config -------------------------------{{{
+
+if has('nvim')
+" deoplete.nvim {
+    let g:deoplete#enable_at_startup = 1
+" }
+endif
 
 " NERDTree {
     let g:NERDTreeDirArrows=0
