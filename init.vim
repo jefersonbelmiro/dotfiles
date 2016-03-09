@@ -92,11 +92,7 @@ set nocompatible
 " detect when a file is changed
 set autoread 
 
-" Always show statusline
-set laststatus=2
-
 set encoding=utf8
-
 
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
@@ -128,8 +124,8 @@ set statusline+=%r\                                     "file type
 set statusline+=%{strlen(&ft)?&ft:'none'}               "file type
 set statusline+=%0*\ %{''.(&fenc!=''?&fenc:&enc).''}    "Encoding
 set statusline+=%0*\ %{&ff}\                            "FileFormat (dos/unix..) 
-set statusline+=%3(%c%)\                                " line and column"
-set statusline+=%0*%L                                   "position
+set statusline+=%0(%v%)\                                " column
+set statusline+=%l\ %L                                   "position
 
 
 set background=dark
