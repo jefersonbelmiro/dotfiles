@@ -1,24 +1,11 @@
 call plug#begin('~/.config/nvim/plugged')
 
-" Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-" Plug 'junegunn/vim-easy-align'
-
-" Group dependencies, vim-snippets depends on ultisnips
-"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
 if has('nvim')
     Plug 'Shougo/deoplete.nvim'
 endif
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
-" Plug 'garbas/vim-snipmate'
-" Plug 'honza/vim-snippets'
 
 Plug 'easymotion/vim-easymotion'
 
@@ -28,17 +15,6 @@ Plug 'easymotion/vim-easymotion'
 " simple asynchronous fuzzy file finder for vim
 Plug 'troydm/asyncfinder.vim'
 
-" Plin outside ~/.vim/plugged with post-update hook
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-" fancy statusline
-"Plug 'vim-airline/vim-airline' 
-" themes for vim-airlin
-"Plug 'vim-airline/vim-airline-themes' 
-
-" neovim replacement for syntastic using neovim's job control functonality
-"Plug 'benekastah/neomake' 
-
 " enables repeating other supported plugins with the . command
 Plug 'tpope/vim-repeat' 
 
@@ -47,14 +23,6 @@ Plug 'tomtom/tcomment_vim', { 'on' : 'TComment' }
 
 " Command-t {
 Plug 'wincent/command-t'
-
-"Plug 'Shougo/unite.vim'
-
-" interpret a file by function and cache file automatically
-"Plug 'MarcWeber/vim-addon-mw-utils'
-
-" snippet manager
-"Plug 'garbas/vim-snipmate' 
 
 " Perform all your vim insert mode completions with Tab
 Plug 'ervandew/supertab'
@@ -77,9 +45,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'ywjno/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
 Plug 'jtai/vim-womprat'
-
-" adds font icons
-"Plug 'ryanoasis/vim-devicons'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -146,9 +111,6 @@ hi Search ctermbg=237 ctermfg=none
 hi Visual ctermbg=239 ctermfg=none
 
 set nonu
-"set fillchars+=vert:│
-
-
 
 
 " -------------------------- MAPKEYS ------------------------------------------{
@@ -161,6 +123,10 @@ imap <esc><bs> <C-W>
 
 " abre arquivo
 map <F9> <ESC> :call OpenFile() <CR>
+
+" esconde hlsearch 
+nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
+
 
 " troca de abas
 nnoremap <silent> tk :tabnext<CR>
@@ -418,15 +384,6 @@ endif
   let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
   let g:EasyMotion_smartcase = 1 " search case-insensitive
 
-" }
-
-" incsearch-fuzzy {
-"
-    " let g:incsearch#auto_nohlsearch = 1
-    nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
-
-    " fuzy search
-    map z/ <Plug>(incsearch-fuzzy-/)
 " }
 
 " }}}-------------------------- plugin's config --------------------------------
@@ -711,7 +668,13 @@ if filereadable(glob("~/.vimrc.local"))
 endif
 
 
-" testar------------------------------
+
+
+
+
+
+" ----------------------- TESTES ------------------------------
+
 
 " Visual mode pressing * or # searches for the current selection
 "  * Buscar para frente
