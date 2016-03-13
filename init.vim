@@ -83,14 +83,14 @@ set showtabline=1
 set laststatus=2
 
 set statusline=
-set statusline+=%f%m\                                   "file name/modified flag
+set statusline+=%0f%m\                                   "file name/modified flag
 set statusline+=%=                                      "indent right
 set statusline+=%r\                                     "file type
-set statusline+=%{strlen(&ft)?&ft:'none'}               "file type
+set statusline+=%0{strlen(&ft)?&ft:'none'}               "file type
 set statusline+=%0*\ %{''.(&fenc!=''?&fenc:&enc).''}    "Encoding
 set statusline+=%0*\ %{&ff}\                            "FileFormat (dos/unix..) 
 set statusline+=%0(%v%)\                                " column
-set statusline+=%l\ %L                                   "position
+set statusline+=%0*\ %L                                   "position
 
 
 set background=dark
@@ -383,6 +383,8 @@ endif
 
   let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
   let g:EasyMotion_smartcase = 1 " search case-insensitive
+  let g:EasyMotion_use_upper = 1
+  let g:EasyMotion_use_smartsign_us = 1
 
 " }
 
