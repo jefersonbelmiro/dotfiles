@@ -7,6 +7,8 @@ endif
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
+Plug 'mhinz/vim-startify'
+
 Plug 'easymotion/vim-easymotion'
 
 " Plug 'haya14busa/incsearch.vim'
