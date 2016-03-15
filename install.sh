@@ -108,7 +108,7 @@ if command_exists nvim && $CONFIGURE_NVIM; then
         exit 1;
     fi
 
-    mkdir ~/.config/nvim
+    mkdir ~/.config/nvim/undodir -p
     # cp init.vim ~/.config/nvim/init.vim
     ln -s $(realpath init.vim) ~/.config/nvim/init.vim
 

@@ -7,6 +7,8 @@ endif
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
+Plug 'mhinz/vim-startify'
+
 Plug 'easymotion/vim-easymotion'
 
 " Plug 'haya14busa/incsearch.vim'
@@ -317,6 +319,10 @@ set shortmess+=filmnrxoOtT                      " abbrev. of messages (avoids 'h
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 set virtualedit=all                             " permite o cursor mover onde nao tem caracter 
 
+"undo 
+set undofile
+set undodir=~/.config/nvim/undodir
+
 " au filetype php set keywordprg=pman
 autocmd filetype php set iskeyword+=$
 
@@ -447,6 +453,76 @@ function! s:Executar(comando)
 endfunction
 
 
+" ao abrir aquivo ja formata: set fileencodings=UTF-8
+" latin1 = ISO-8859-1
+function! SetEncoding(encoding)
+
+  execute 'set encoding=' . a:encoding
+  execute 'set fileencoding=' . a:encoding
+
+endfunction
+
+function! SetTabWidth(tabWidth)
+
+  execute 'set ts=' . a:tabWidth
+  execute 'set softtabstop=' . a:tabWidth
+  execute 'set shiftwidth=' . a:tabWidth
+
+endfunction
+
+if filereadable(glob("~/.vimrc.local")) 
+  source ~/.vimrc.local
+endif
+
+
+
+" Visual mode pressing * or # searches for the current selection
+"  * Buscar para frente
+"  # Buscar para tras
+vnoremap <silent> * :call VisualSelection('f')<CR> 
+vnoremap <silent> # :call VisualSelection('b')<CR>
+
+function! VisualSelection(direction) range
+  let l:saved_reg = @"
+  execute "normal! vgvy"
+
+  let l:pattern = escape(@", '\\/.*$^~[]')
+  let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+  if a:direction == 'b'
+    execute  "normal ?" . l:pattern . "^M"
+  elseif a:direction == 'gv'
+    execute("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+  elseif a:direction == 'replace'
+    execute("%s" . '/'. l:pattern . '/')
+  elseif a:direction == 'f'
+    execute "normal /" . l:pattern . "^M"
+  endif
+
+  let @/ = l:pattern
+  let @" = l:saved_reg
+endfunction
+
+
+
+" ----------------------- TESTES ------------------------------
+
+" @todo - https://github.com/hkupty/dotfiles
+
+" @todo - color pequisa  
+" call matchaddpos('WildMenu', [[20, 9, 1]])
+" help matchaddpos
+" criar grupo com underline vermelho, parecido com plugin easy-motion
+
+" @todo - plugin visual-star-search.vim 
+" usar: 
+" let current_win_state = winsaveview()
+" call winrestview(current_win_state)
+
+" @todo - colorir jumps, marks, undolist
+" user: matchaddpos
+
+
 function! Bulk_input_char_on_char_pre() abort
   let stack = []
   let c = 1
@@ -474,16 +550,6 @@ let [s:lcmap, s:prtmaps] = ['nn <buffer> <silent>', {
 	\ 'PrtDelete()':          ['<del>'],
 	\ 'PrtClear()':           ['<c-u>'],
 	\ }]
-
-" @todo - color pequisa  
-" call matchaddpos('WildMenu', [[20, 9, 1]])
-" help matchaddpos
-" criar grupo com underline vermelho, parecido com plugin easy-motion
-
-" @todo - plugin visual-star-search.vim 
-" usar: 
-" let current_win_state = winsaveview()
-" call winrestview(current_win_state)
 
 
 function! s:hl_cursor_on()
@@ -645,62 +711,4 @@ function! Teste()
         call inputrestore()
     endwhile
 
-endfunction
-
-
-" ao abrir aquivo ja formata: set fileencodings=UTF-8
-" latin1 = ISO-8859-1
-function! SetEncoding(encoding)
-
-  execute 'set encoding=' . a:encoding
-  execute 'set fileencoding=' . a:encoding
-
-endfunction
-
-function! SetTabWidth(tabWidth)
-
-  execute 'set ts=' . a:tabWidth
-  execute 'set softtabstop=' . a:tabWidth
-  execute 'set shiftwidth=' . a:tabWidth
-
-endfunction
-
-if filereadable(glob("~/.vimrc.local")) 
-  source ~/.vimrc.local
-endif
-
-
-
-
-
-
-
-" ----------------------- TESTES ------------------------------
-
-
-" Visual mode pressing * or # searches for the current selection
-"  * Buscar para frente
-"  # Buscar para tras
-vnoremap <silent> * :call VisualSelection('f')<CR> 
-vnoremap <silent> # :call VisualSelection('b')<CR>
-
-function! VisualSelection(direction) range
-  let l:saved_reg = @"
-  execute "normal! vgvy"
-
-  let l:pattern = escape(@", '\\/.*$^~[]')
-  let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-  if a:direction == 'b'
-    execute  "normal ?" . l:pattern . "^M"
-  elseif a:direction == 'gv'
-    execute("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-  elseif a:direction == 'replace'
-    execute("%s" . '/'. l:pattern . '/')
-  elseif a:direction == 'f'
-    execute "normal /" . l:pattern . "^M"
-  endif
-
-  let @/ = l:pattern
-  let @" = l:saved_reg
 endfunction
