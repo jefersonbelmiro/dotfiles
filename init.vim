@@ -85,15 +85,14 @@ set showtabline=1
 set laststatus=2
 
 set statusline=
-set statusline+=%0f%m\                                   "file name/modified flag
+set statusline+=%f%m\                                   "file name/modified flag
 set statusline+=%=                                      "indent right
 set statusline+=%r\                                     "file type
-set statusline+=%0{strlen(&ft)?&ft:'none'}               "file type
+set statusline+=%{strlen(&ft)?&ft:'none'}               "file type
 set statusline+=%0*\ %{''.(&fenc!=''?&fenc:&enc).''}    "Encoding
 set statusline+=%0*\ %{&ff}\                            "FileFormat (dos/unix..) 
 set statusline+=%0(%v%)\                                " column
-set statusline+=%0*\ %L                                   "position
-
+set statusline+=%l\ %L                                   "position
 
 set background=dark
 
