@@ -12,7 +12,13 @@ CONFIGURE_GIT=true
 path_nvim="$HOME/.config/nvim"
 
 command_exists () {
-    type "$1" > /dev/null ;
+    if type "$1" > /dev/null; then
+ 	# 0 = true
+	return 0
+    else
+ 	# 1 = true
+	return 1
+    fi
 }
 
 # git 
@@ -108,9 +114,17 @@ if command_exists nvim && $CONFIGURE_NVIM; then
         exit 1;
     fi
 
+
+    if command_exists realpath; then
+    else
+    	sudo apt-get install realpath
+    fi
+
     mkdir ~/.config/nvim/undodir -p
-    # cp init.vim ~/.config/nvim/init.vim
-    ln -s $(realpath init.vim) ~/.config/nvim/init.vim
+
+    ln -s $(realpath nvim/config) ~/.config/nvim/config
+    ln -s $(realpath nvim/init.vim) ~/.config/nvim/init.vim
+    ln -s $(realpath nvim/init.vim) ~/.vimrc
 
     # vim-plug for neovim
     curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
@@ -124,16 +138,6 @@ if command_exists nvim && $CONFIGURE_NVIM; then
     make
 
 fi 
-
-# nerd-fonts - https://github.com/ryanoasis/nerd-fonts
-mkdir -p ~/.local/share/fonts
-# cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
-
-cd ~/.local/share
-git clone https://github.com/ryanoasis/nerd-fonts.git
-cd nerd-fonts
-./install.sh
-
 
 # Mutate is a simple launcher inspired by Alfred (OS X app) for Linux. 
 # https://github.com/qdore/Mutate
