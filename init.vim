@@ -122,6 +122,9 @@ let mapleader = ","
 
 " alt+backspace delete word backward
 imap <esc><bs> <C-W>
+cmap <esc><bs> <C-W>
+" alt+delete delete word forward
+imap [3;3~ <c-o>dw
 
 " abre arquivo
 map <F9> <ESC> :call OpenFile() <CR>
