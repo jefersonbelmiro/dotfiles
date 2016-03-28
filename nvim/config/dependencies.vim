@@ -25,7 +25,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plug 'honza/vim-snippets' 
+Plug 'jefersonbelmiro/vim-snippets' 
 
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
