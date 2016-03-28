@@ -2,11 +2,11 @@
 " Plugin management
 source ~/.config/nvim/config/dependencies.vim
 
-" Plugin configuration
-source ~/.config/nvim/config/plugins.vim
-
 " Mapkeys
 source ~/.config/nvim/config/keybindings.vim
+
+" Plugin configuration
+source ~/.config/nvim/config/plugins.vim
 
 " config
 source ~/.config/nvim/config/default.vim

@@ -136,13 +136,22 @@ if command_exists nvim && $CONFIGURE_NVIM; then
     cd ~/.config/nvim/plugged/command-t/ruby/command-t
     ruby extconf.rb
     make
+    cd -
+
+    # install termjs
+    cd ~/.config/nvim/plugged/tern_for_vim
+    npm install
+    cd -
 
 fi 
 
 # Mutate is a simple launcher inspired by Alfred (OS X app) for Linux. 
 # https://github.com/qdore/Mutate
-sudo add-apt-repository -y ppa:mutate/ppa
-sudo apt-get update
-sudo apt-get install mutate
+# sudo add-apt-repository -y ppa:mutate/ppa
+# sudo apt-get update
+# sudo apt-get install mutate
+
+# background tabs in gnome-terminal
+ln -s $(realpath gtk-3.0/gtk.css) ~/.config/gtk-3.0/gtk.css
 
 echo "installation complete."
