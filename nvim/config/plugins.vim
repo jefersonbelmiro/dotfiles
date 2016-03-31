@@ -45,10 +45,15 @@ endif
 
 " }
 
+" AsyncFinder {
+  map <F7> :AsyncFinderBottom<CR>
+" }
+
 " ctrlp {
 
     map <leader>m :CtrlPBufTag<CR>
     map <leader>b :CtrlPBuffer<CR>
+
     let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cmd = 'CtrlPCurWD' 
     let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
