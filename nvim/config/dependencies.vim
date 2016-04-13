@@ -57,9 +57,14 @@ Plug 'Raimondi/delimitMate'
 " Interactive command execution in Vim.
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
+" allows you to configure % to match more than just single characters
+Plug 'edsono/vim-matchit'
+
+" html
+Plug 'othree/html5.vim', { 'for': 'html' }
+
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'othree/html5.vim', { 'for': 'html' }
 " Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
