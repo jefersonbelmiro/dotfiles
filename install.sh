@@ -44,6 +44,12 @@ if command_exists git && $CONFIGURE_GIT ; then
     git config --global pager.diff false
     git config --global difftool.prompt false
     git config --global diff.external git_diff_wrapper
+
+    # mergetool
+    git config --global mergetool.vimdiff3.cmd 'cp "$LOCAL" "$MERGED" && vim -f -d "$LOCAL" "$MERGED" "$REMOTE"'
+    git config --global merge.tool vimdiff3
+    git config --global mergetool.prompt false
+
     sudo ln -s $(realpath bin/git_diff_wrapper) /usr/local/bin/
 
 fi

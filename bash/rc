@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+alias www='cd /var/www/'
+
+export EDITOR=vim
