@@ -126,9 +126,10 @@ set diffexpr=""
 
 " Navegacao
 set wildmenu
-set wildignore=*.o,*~,*.pyc,CVS,*~            " Ignora certos tipos de arquivo
 set wildmode=list:longest                     " Command <tab> completion, list matches, then longest common, then all.
-" set wildignore+=node_modules/**
+set wildignore=*.o,*~,*.pyc,CVS,*~,.git       " Ignora certos tipos de arquivo
+set wildignore+=*/node_modules/*
+set wildignore+=*/bower_components/*
 " set wildignore+=**/node_modules/* 
 
 set termencoding=utf-8                       " Codificação do terminal

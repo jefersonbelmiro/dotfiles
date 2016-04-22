@@ -56,7 +56,7 @@ endif
 
     let g:ctrlp_map = '<c-p>'
     let g:ctrlp_cmd = 'CtrlPCurWD' 
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+    " let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
     let g:ctrlp_custom_ignore = {
                 \ 'dir':  '\v[\/]\.(CVS|git|hg|svn)$',
                 \ 'file': '\v\.(jpg|png|gif)$'
