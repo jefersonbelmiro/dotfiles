@@ -3,3 +3,7 @@
 alias www='cd /var/www/'
 
 export EDITOR=vim
+export PAGER=less
+export LESS="-iMSx4 -FX"
+
+

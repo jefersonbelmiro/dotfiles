@@ -11,8 +11,6 @@ endif
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" The fancy start screen for Vim.
-Plug 'mhinz/vim-startify'
 
 Plug 'easymotion/vim-easymotion'
 
@@ -31,7 +29,9 @@ Plug 'jefersonbelmiro/vim-snippets'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 
 " simple asynchronous fuzzy file finder for vim
-Plug 'troydm/asyncfinder.vim'
+if has("python")
+    Plug 'troydm/asyncfinder.vim'
+endif
 
 " enables repeating other supported plugins with the . command
 Plug 'tpope/vim-repeat' 

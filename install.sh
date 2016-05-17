@@ -37,6 +37,9 @@ fi
 
 if command_exists git && $CONFIGURE_GIT ; then
 
+    # colors
+    git config --global core.pager "less -r"
+
     # git auth cache
     git config --global credential.helper "cache --timeout=10800"
 
