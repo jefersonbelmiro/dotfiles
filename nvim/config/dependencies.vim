@@ -71,7 +71,7 @@ Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 
-" cpp
+" c++
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 
 " c
@@ -84,6 +84,7 @@ Plug 'ywjno/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
 Plug 'jtai/vim-womprat'
 Plug 'romainl/Apprentice'
+Plug 'altercation/vim-colors-solarized'
 
 " Add plugins to &runtimepath
 call plug#end()
