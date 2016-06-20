@@ -53,6 +53,7 @@ Plug 'ervandew/supertab'
 
 " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'Raimondi/delimitMate'
+" Plug 'jiangmiao/auto-pairs'
 
 " Interactive command execution in Vim.
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -73,12 +74,16 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 " c++
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 
+" c
+Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
+
 " colors
 Plug 'mhartington/oceanic-next'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ywjno/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
 Plug 'jtai/vim-womprat'
+Plug 'romainl/Apprentice'
 Plug 'altercation/vim-colors-solarized'
 
 " Add plugins to &runtimepath
