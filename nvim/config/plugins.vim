@@ -33,7 +33,8 @@ endif
 
 " NERDTree {
     let g:NERDTreeWinSize = 25
-    let g:NERDTreeDirArrows=0
+    let g:NERDTreeDirArrows = 0
+    let NERDTreeIgnore = ['\.o$']
     map <leader>e :NERDTreeToggle<cr>
 " }
 
