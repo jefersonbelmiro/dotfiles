@@ -53,6 +53,9 @@ if command_exists git && $CONFIGURE_GIT ; then
     git config --global merge.tool vimdiff3
     git config --global mergetool.prompt false
 
+    # alias
+    git config --global alias.lg "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
     sudo ln -s $(realpath bin/git_diff_wrapper) /usr/local/bin/
 
 fi
