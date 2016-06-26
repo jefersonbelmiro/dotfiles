@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
 alias www='cd /var/www/'
+alias git_clear_credential_cache='git credential-cache exit'
 
 export EDITOR=vim
 export PAGER=less
 export LESS="-iMSx4 -FX"
+
 
 
