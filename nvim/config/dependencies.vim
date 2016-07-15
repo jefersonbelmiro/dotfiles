@@ -25,6 +25,9 @@ Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'jefersonbelmiro/vim-snippets' 
 
+" clear tabline
+Plug 'jefersonbelmiro/tabline.vim'
+
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 
