@@ -11,7 +11,6 @@ endif
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-
 Plug 'easymotion/vim-easymotion'
 
 " Plug 'MarcWeber/vim-addon-mw-utils'
@@ -41,6 +40,9 @@ Plug 'tpope/vim-repeat'
 
 " TComment 
 Plug 'tomtom/tcomment_vim', { 'on' : 'TComment' }
+
+" plugin for the_silver_searcher, 'ag'
+Plug 'rking/ag.vim'
 
 " Command-t 
 " Plug 'wincent/command-t'
