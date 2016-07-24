@@ -17,4 +17,3 @@ source ~/.config/nvim/config/functions.vim
 if filereadable(glob("~/.vimrc.local")) 
   source ~/.vimrc.local
 endif
-

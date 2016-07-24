@@ -16,7 +16,6 @@ map <F9> <ESC> :call OpenFile() <CR>
 " esconde hlsearch 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 
-
 " troca de abas
 nnoremap <silent> tk :tabnext<CR>
 nnoremap <silent> tj :tabprev<CR>
