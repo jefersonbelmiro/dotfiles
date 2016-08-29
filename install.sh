@@ -29,8 +29,6 @@ elif $INSTALL_GIT; then
     echo "install git"
 
     sudo apt-get install git
-    git config --global user.name 'Jeferson Belmiro'
-    git config --global user.email 'jeferson.belmiro@gmail.com'
 else
     echo "skiping install git"
 fi
@@ -39,6 +37,10 @@ if command_exists git && $CONFIGURE_GIT ; then
 
     # colors
     git config --global core.pager "less -r"
+
+    # user
+    git config --global user.name 'Jeferson Belmiro'
+    git config --global user.email 'jeferson.belmiro@gmail.com'
 
     # git auth cache
     git config --global credential.helper "cache --timeout=10800"
@@ -79,20 +81,15 @@ else
     echo "skiping install exuberant-ctags"
 fi
 
-# ag - the silver search
-#
+# ag - the silver search https://github.com/ggreer/the_silver_searcher
+
 # plugin vim
 # - https://github.com/rking/ag.vim
-# programa
-# - https://github.com/ggreer/the_silver_searcher
 #
 if command_exists ag; then
     echo "ag already installed"
 elif $INSTALL_AG; then
     echo "install ag"
-    sudo apt-get install python-software-properties
-    sudo apt-add-repository -y ppa:mizuno-as/silversearcher-ag
-    sudo apt-get update
     sudo apt-get install silversearcher-ag
 else 
     echo "skiping install ag"
@@ -126,7 +123,6 @@ if command_exists nvim && $CONFIGURE_NVIM; then
         exit 1;
     fi
 
-
     if command_exists realpath; then
     else
     	sudo apt-get install realpath
@@ -156,12 +152,6 @@ if command_exists nvim && $CONFIGURE_NVIM; then
     cd -
 
 fi 
-
-# Mutate is a simple launcher inspired by Alfred (OS X app) for Linux. 
-# https://github.com/qdore/Mutate
-# sudo add-apt-repository -y ppa:mutate/ppa
-# sudo apt-get update
-# sudo apt-get install mutate
 
 # background tabs in gnome-terminal
 ln -s $(realpath gtk-3.0/gtk.css) ~/.config/gtk-3.0/gtk.css
