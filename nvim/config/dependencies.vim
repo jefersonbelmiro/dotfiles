@@ -90,6 +90,7 @@ Plug 'morhetz/gruvbox'
 Plug 'jtai/vim-womprat'
 Plug 'romainl/Apprentice'
 Plug 'altercation/vim-colors-solarized'
+Plug 'rakr/vim-one'
 
 " Add plugins to &runtimepath
 call plug#end()
