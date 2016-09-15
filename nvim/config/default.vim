@@ -27,11 +27,6 @@ if (empty($TMUX))
   endif
 endif
 
-set background=dark " for the dark version
-
-colorscheme womprat
-" let g:airline_theme = 'ubaryd'
-
 "Habilita coloração por syntax 
 syntax enable 
 
@@ -55,17 +50,21 @@ set statusline+=%0*\ %{&ff}\                            "FileFormat (dos/unix..)
 set statusline+=%0(%v%)\                                " column
 set statusline+=%l\ %L                                   "position
 
-hi StatusLine ctermbg=234 cterm=NONE guibg=#222222
-hi StatusLineNC ctermbg=234 cterm=NONE guibg=#222222
-hi ColorColumn ctermbg=234 guibg=#222222
-hi vertsplit ctermbg=none guibg=none
+set background=dark " for the dark version
+colorscheme one "womprat
+" let g:airline_theme = 'ubaryd'
 
-hi TabLine cterm=none ctermbg=none guibg=#222222 guifg=none gui=none
-hi TabLineFill cterm=none ctermbg=none guibg=none guifg=none gui=none
-hi TabLineSel cterm=bold,underline ctermbg=none guibg=#333333 gui=none
+hi StatusLine ctermbg=234 cterm=NONE guibg=#2c323c
+hi StatusLineNC ctermbg=234 cterm=NONE guibg=#2c323c
+hi ColorColumn ctermbg=234 guibg=NONE
+hi vertsplit ctermbg=NONE guibg=NONE
 
-hi Search ctermbg=237 ctermfg=none
-hi Visual ctermbg=239 ctermfg=none
+hi TabLine cterm=NONE ctermbg=NONE guibg=#222222 guifg=NONE gui=NONE
+hi TabLineFill cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE gui=NONE
+hi TabLineSel cterm=bold,underline ctermbg=NONE guibg=#333333 gui=NONE
+
+hi Search ctermbg=237 ctermfg=NONE
+hi Visual ctermbg=239 ctermfg=NONE
 
 set nonu
 
@@ -124,7 +123,7 @@ set ttyfast
 
 "set list
 "set listchars=tab:\|\ 
-"hi SpecialKey ctermbg=none
+"hi SpecialKey ctermbg=NONE
 
 " diff
 set diffopt+=iwhite

@@ -153,6 +153,13 @@ if command_exists nvim && $CONFIGURE_NVIM; then
 
 fi 
 
+# install vim 8, ubuntu 16.04
+sudo add-apt-repository ppa:jonathonf/vim -y
+sudo apt update
+sudo apt install vim -y
+# uninstal
+sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/vim
+
 # background tabs in gnome-terminal
 ln -s $(realpath gtk-3.0/gtk.css) ~/.config/gtk-3.0/gtk.css
 
