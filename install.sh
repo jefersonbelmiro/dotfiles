@@ -51,7 +51,8 @@ if command_exists git && $CONFIGURE_GIT ; then
     git config --global diff.external git_diff_wrapper
 
     # mergetool
-    git config --global mergetool.vimdiff3.cmd 'cp "$LOCAL" "$MERGED" && vim -f -d "$MERGED" "$REMOTE"'
+    git config --global mergetool.keepBackup false
+    git config --global mergetool.vimdiff3.cmd 'cp "$LOCAL" "$MERGED" && vim -f -d "$MERGED" "$REMOTE" -c "color jellybeans | map <F4> :qa<CR>"'
     git config --global merge.tool vimdiff3
     git config --global mergetool.prompt false
 
