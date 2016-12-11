@@ -27,6 +27,10 @@ endif
 
 " }
 
+" vim-javascript {
+    let g:javascript_opfirst = 1
+" }
+
 " javascript-libraries-syntax.vim {
     let g:used_javascript_libs = 'jquery,angularjs'
 " }
