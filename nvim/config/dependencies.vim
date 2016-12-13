@@ -64,7 +64,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " allows you to configure % to match more than just single characters
-Plug 'edsono/vim-matchit'
+Plug 'vim-scripts/matchit.zip'
 
 " html
 Plug 'othree/html5.vim', { 'for': 'html' }
