@@ -44,6 +44,9 @@ Plug 'tomtom/tcomment_vim', { 'on' : 'TComment' }
 " plugin for the_silver_searcher, 'ag'
 Plug 'rking/ag.vim'
 
+" Perform search in files easily
+Plug 'eugen0329/vim-esearch'
+
 " Command-t 
 " Plug 'wincent/command-t'
 
