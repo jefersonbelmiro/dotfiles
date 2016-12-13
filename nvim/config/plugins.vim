@@ -56,6 +56,7 @@ endif
     map <leader>b :CtrlPBuffer<CR>
 
     let g:ctrlp_map = '<c-p>'
+    let g:ctrlp_max_files = 0
     let g:ctrlp_cmd = 'CtrlPCurWD' 
     " let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
     let g:ctrlp_custom_ignore = {
