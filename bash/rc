@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 alias git_clear_credential_cache='git credential-cache exit'
+alias vi='vim'
 
 # vim without syntax, settings and plugins 
 alias vim_naked='vim -n -u NONE -i NONE -N'

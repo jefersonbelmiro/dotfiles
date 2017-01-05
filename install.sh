@@ -134,7 +134,7 @@ cd -
 
 # install bashrc config
 bash_rc_path=$(realpath bash/rc);
-grep -q -F 'include "'$bash_rc_path'"' ~/.bashrc || echo 'include "'$bash_rc_path'"' >> ~/.bashrc
+grep -q -F '. "'$bash_rc_path'"' ~/.bashrc || echo '. "'$bash_rc_path'"' >> ~/.bashrc
 echo "setting bashrc"
 
 echo "installation complete."
