@@ -164,3 +164,4 @@ set undodir=~/.config/nvim/undodir
 
 " au filetype php set keywordprg=pman
 autocmd filetype php set iskeyword+=$
+autocmd filetype css,scss set iskeyword+=-
