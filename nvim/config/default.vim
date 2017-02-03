@@ -98,7 +98,6 @@ set scroll=4        " linhas do ctrl+u e ctrl+d
 
 autocmd VimEnter * set scroll=4
 autocmd WinEnter * set scroll=4
-"autocmd BufAdd * call input("damat")
 autocmd VimResized * set scroll=4
 
 set expandtab " Use spaces instead of tabs
