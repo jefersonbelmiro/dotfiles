@@ -39,7 +39,8 @@ endif
     let g:NERDTreeWinSize = 25
     let g:NERDTreeDirArrows = 0
     let NERDTreeIgnore = ['\.o$']
-    map <leader>e :NERDTreeToggle<cr>
+    " map <leader>e :NERDTreeToggle<cr>
+    map <Leader>e <plug>NERDTreeTabsToggle<CR>
 " }
 
 " TComment { 
