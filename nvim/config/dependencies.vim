@@ -9,11 +9,7 @@ if has('nvim')
 endif
 
 " On-demand loading
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'scrooloose/nerdtree'
-
-" Just one NERDTree, always and ever. It will always look the same in all tabs
-Plug 'jistr/vim-nerdtree-tabs'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 Plug 'easymotion/vim-easymotion'
 
