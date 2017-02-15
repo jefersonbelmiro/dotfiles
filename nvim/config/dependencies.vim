@@ -79,6 +79,8 @@ Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 
+Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' } 
+
 " c++
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 
