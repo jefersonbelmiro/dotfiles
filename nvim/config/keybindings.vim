@@ -88,6 +88,11 @@ noremap <C-k> <C-W>k
 noremap <C-l> <C-W>l
 noremap <C-h> <C-W>h
 
+" terminal mode, sai do insert mode
+if has('nvim')
+    tnoremap <ESC> <C-\><C-n>
+endif
+
 " Move linhas ou blocos { 
 "  usando ALT+SETA nnoremap <A-DOWN> mz:m+<CR>`z==
     " normal
