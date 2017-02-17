@@ -4,14 +4,20 @@
 " <leader>
 let mapleader = ","
 
-" alt+backspace delete word backward
-imap <esc><bs> <C-W>
-cmap <esc><bs> <C-W>
-" alt+delete delete word forward
-imap [3;3~ <c-o>dw
+if has('nvim')
+    " alt+backspace delete word backward
+    imap <A-BS> <C-W>
+    cmap <A-BS> <C-W>
+else
+    " alt+backspace delete word backward
+    imap <esc><bs> <C-W>
+    cmap <esc><bs> <C-W>
+    " alt+delete delete word forward
+    imap [3;3~ <c-o>dw
+endif
 
 " abre arquivo
-map <F9> <ESC> :call OpenFile() <CR>
+map <F9> <ESC> :call OenFile() <CR>
 
 " esconde hlsearch 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
@@ -87,6 +93,13 @@ noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-l> <C-W>l
 noremap <C-h> <C-W>h
+
+if has('nvim')
+    tmap <C-j> <ESC><C-j>
+    tmap <C-k> <ESC><C-k>
+    tmap <C-l> <ESC><C-l>
+    tmap <C-h> <ESC><C-h>
+endif
 
 " terminal mode, sai do insert mode
 if has('nvim')

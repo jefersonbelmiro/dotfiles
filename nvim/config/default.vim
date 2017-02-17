@@ -7,7 +7,6 @@ set autoread
 
 set encoding=utf8
 
-
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
@@ -97,8 +96,13 @@ set nostartofline   " disabel move cursor first non-blank of the line
 set scroll=4        " linhas do ctrl+u e ctrl+d
 
 autocmd VimEnter * set scroll=4
-autocmd WinEnter * set scroll=4
-autocmd VimResized * set scroll=4
+autocmd BufEnter * set scroll=4
+" autocmd VimResized * set scroll=4
+
+" on enter terminal buf, go insert mode
+if has('nvim')
+    autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+endif
 
 set expandtab " Use spaces instead of tabs
 set smarttab  " Be smart when using tabs ;)
@@ -131,24 +135,19 @@ set ttyfast
 set diffopt+=iwhite
 set diffexpr=""
 
-"au FilterWritePre * call DiffToggle(0)
-"au QuitPre * call DiffToggle(1)
-"call DiffToggle(0)
-
 " Navegacao
 set wildmenu
 set wildmode=list:longest                     " Command <tab> completion, list matches, then longest common, then all.
 set wildignore=*.o,*~,*.pyc,CVS,*~,.git       " Ignora certos tipos de arquivo
 set wildignore+=*/node_modules/*
 set wildignore+=*/bower_components/*
-" set wildignore+=**/node_modules/* 
 
 set termencoding=utf-8                       " Codificação do terminal
 set fileformats=unix,dos,mac                 " Use unix as the standard file type
 set switchbuf=useopen,usetab,newtab          " Specify the behavior when switching between buffers 
 
 " abriu arquivo somente leitura, editou e agora nao consegue salvar?
-"cmap w!! w !sudo tee % >/dev/null
+cmap w!! w !sudo tee % >/dev/null
 
 " Folding
 set foldmethod=manual
