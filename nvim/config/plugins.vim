@@ -38,6 +38,8 @@ endif
 " NERDTree {
     let g:NERDTreeWinSize = 25
     let g:NERDTreeDirArrows = 0
+    let g:NERDTreeDirArrowExpandable = '+'
+    let g:NERDTreeDirArrowCollapsible = '-'
     let NERDTreeIgnore = ['\.o$', 'node_modules']
     map <leader>e :NERDTreeToggle<cr>
 " }
