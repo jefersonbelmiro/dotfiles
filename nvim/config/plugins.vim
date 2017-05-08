@@ -117,3 +117,7 @@ endif
   let g:EasyMotion_use_smartsign_us = 1
 
 " }
+
+" cvsdiff {
+  map <F8> :CvsDiffToggle<cr>
+" }

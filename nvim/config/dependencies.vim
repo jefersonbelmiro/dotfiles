@@ -27,6 +27,9 @@ Plug 'jefersonbelmiro/vim-snippets'
 " clear tabline
 Plug 'jefersonbelmiro/tabline.vim'
 
+" cvs diff
+Plug 'jefersonbelmiro/cvsdiff.vim'
+
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 
