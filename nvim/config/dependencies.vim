@@ -90,6 +90,10 @@ Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 " c
 Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
 
+" typescript
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+
 " colors
 Plug 'mhartington/oceanic-next'
 Plug 'nanotech/jellybeans.vim'
