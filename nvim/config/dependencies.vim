@@ -81,18 +81,18 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-
 Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' } 
+Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
+
+" typescript
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
 
 " c++
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 
 " c
 Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
-
-" typescript
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
 
 " colors
 Plug 'mhartington/oceanic-next'
