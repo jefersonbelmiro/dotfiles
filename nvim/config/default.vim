@@ -131,6 +131,8 @@ set ttyfast
 "set listchars=tab:\|\ 
 "hi SpecialKey ctermbg=NONE
 
+set listchars=eol:¬,tab:→→,extends:>,precedes:<,space:·
+
 " diff
 set diffopt+=iwhite
 set diffexpr=""
