@@ -11,6 +11,9 @@ endif
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
+" read .editorconfig
+Plug 'editorconfig/editorconfig-vim'
+
 Plug 'easymotion/vim-easymotion'
 
 " Plug 'MarcWeber/vim-addon-mw-utils'
