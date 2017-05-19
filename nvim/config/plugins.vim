@@ -40,7 +40,7 @@ endif
     let g:NERDTreeDirArrows = 0
     let g:NERDTreeDirArrowExpandable = '+'
     let g:NERDTreeDirArrowCollapsible = '-'
-    let NERDTreeIgnore = ['\.o$', 'node_modules', 'CVS']
+    let NERDTreeIgnore = ['\.o$', 'node_modules', '^CVS$']
     map <leader>e :NERDTreeToggle<cr>
 " }
 
