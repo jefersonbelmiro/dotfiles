@@ -78,6 +78,9 @@ Plug 'vim-scripts/matchit.zip'
 " html
 Plug 'othree/html5.vim', { 'for': 'html' }
 
+" jenkinsfile
+Plug 'martinda/Jenkinsfile-vim-syntax'
+
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 " Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
