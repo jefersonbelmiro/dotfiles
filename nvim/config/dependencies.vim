@@ -94,6 +94,9 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
 
+" vue.js
+Plug 'posva/vim-vue'
+
 " c++
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 
