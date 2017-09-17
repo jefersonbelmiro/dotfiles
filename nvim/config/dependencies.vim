@@ -103,6 +103,9 @@ Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 " c
 Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
 
+" yaml
+Plug 'stephpy/vim-yaml'
+
 " colors
 Plug 'mhartington/oceanic-next'
 Plug 'nanotech/jellybeans.vim'
