@@ -8,3 +8,4 @@
  - feh: wallpaper setter
  - xrandr: configure monitors
  - compton: transitions effects
+ - pactl: control a running pulseaudio sound serve
