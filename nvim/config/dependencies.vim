@@ -8,6 +8,8 @@ if has('nvim')
     Plug 'Shougo/deoplete.nvim'
 endif
 
+Plug 'mhinz/vim-startify'
+
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
