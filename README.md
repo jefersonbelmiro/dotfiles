@@ -13,3 +13,4 @@
  - [Arc FireFox theme](https://github.com/horst3180/arc-firefox-theme)
  - [Arc GTK theme](https://github.com/horst3180/Arc-theme)
  - [i3lock](https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/)
+ - [lxappearance](https://wiki.lxde.org/pt/LXAppearance) gkt3
