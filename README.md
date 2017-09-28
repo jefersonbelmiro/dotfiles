@@ -9,7 +9,7 @@
  - xrandr: configure monitors
  - compton: transitions effects
  - pactl: control a running pulseaudio sound serve
- - [fontconfig-infinality](http://www.webupd8.org/2013/06/better-font-rendering-in-linux-with.html)
+ - [fontconfig-infinality](http://www.webupd8.org/2013/06/better-font-rendering-in-linux-with.html) !!BUGADO
  - [Arc FireFox theme](https://github.com/horst3180/arc-firefox-theme)
  - [Arc GTK theme](https://github.com/horst3180/Arc-theme)
  - [i3lock](https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/)
