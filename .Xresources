@@ -1,5 +1,32 @@
 ! vim: set ft=xdefaults:
 
+
+! Urxvt: transparency
+!
+! Urxvt offers two types of transparency for its background:
+!
+! - A "fake" transparency, that copies the wallpaper to the background of the terminal. (more exactly, the contents of Xorg's root window)
+! - A "real" transparency, using the composite manager currently running (xcompmgr, dcompmgr, compiz...)
+!
+! If no composite manager is running, there is no transparency at all if you choose the real (composite) transparency.
+!
+! Edit your ~/.Xdefaults file and add:
+!
+! - For real transparency (composite):
+!   urxvt*depth: 32
+!   urxvt*background: rgba:0000/0000/0200/c800
+
+! - For fake transparency:
+!
+!   urxvt*transparent: true
+!   urxvt*shading: 30
+!
+! Note: if you enable the two, the fake transparency takes the precedence over the real transparency (composite).
+
+
+
+
+
 ! URxvt.font: xft:Hack:size=12
 ! URxvt.scrollBar: false
 ! URxvt.internalBorder: 0
