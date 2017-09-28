@@ -16,3 +16,4 @@
  - [lxappearance](https://wiki.lxde.org/pt/LXAppearance) gkt setup
  - [rxvt-unicode](https://wiki.archlinux.org/index.php/rxvt-unicode#Clickable_URLs) terminal
  - [termite](https://github.com/thestinger/termite) terminal
+ - [range](https://github.com/ranger/ranger) filemanager
