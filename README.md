@@ -13,4 +13,6 @@
  - [Arc FireFox theme](https://github.com/horst3180/arc-firefox-theme)
  - [Arc GTK theme](https://github.com/horst3180/Arc-theme)
  - [i3lock](https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/)
- - [lxappearance](https://wiki.lxde.org/pt/LXAppearance) gkt3
+ - [lxappearance](https://wiki.lxde.org/pt/LXAppearance) gkt setup
+ - [rxvt-unicode](https://wiki.archlinux.org/index.php/rxvt-unicode#Clickable_URLs) terminal
+ - [termite](https://github.com/thestinger/termite) terminal
