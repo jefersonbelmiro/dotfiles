@@ -4,7 +4,7 @@
  - [i3](https://i3wm.org/) a tiling window manager 
  - [i3lock](https://github.com/i3/i3lock) improved screen locker
  - [i3blocks](https://github.com/vivien/i3blocks) a flexible scheduler for your i3bar blocks
- - [i3lock](https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/)
+ - [unixporn lock screen](https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/)
 
 ### terminal
  - [rxvt-unicode](https://wiki.archlinux.org/index.php/rxvt-unicode#Clickable_URLs) 
