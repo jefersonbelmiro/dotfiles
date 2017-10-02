@@ -4,7 +4,7 @@ set $mod Mod4
 set $term termite
 
 # font
-font pango: System San Francisco Display 10
+font pango: Hack 10, FontAwesome 10
 
 # thin borders
 hide_edge_borders both
@@ -101,7 +101,6 @@ bindsym $mod+Shift+r restart
 # exit i3
 bindsym $mod+Shift+e exec ~/.i3/scripts/exit_menu
 
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
     bindsym h resize shrink width 10 px or 10 ppt
@@ -121,8 +120,9 @@ mode "resize" {
 # resize mode
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
+# set $bg-color 	         #2f343f
+set $bg-color 	         #2f313f
+set $inactive-bg-color   #2f313f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
@@ -130,16 +130,18 @@ set $urgent-bg-color     #E53935
 # window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 # bar
 bar {
   	status_command i3blocks -c ~/.i3/i3blocks.conf
+    tray_output primary
+    position top 
 	colors {
 		background $bg-color
-	    	separator #757575
+	    separator #757575
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -173,22 +175,38 @@ assign [class="Spotify"] $workspace10
 # workspace $workspace10 output DVI-I-2
 
 # key-bindings
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+q kill
+bindsym Print exec scrot  -e 'mv $f ~/Pictures/'
+# bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -opacity "85" -bg "$bg-color" -fg "$text-color" 
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec ~/dotfiles/scripts/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-# bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+q kill
-bindsym Print exec screenshot
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 # startup
 exec_always --no-startup-id feh --bg-scale ~/dotfiles/.wallpaper.jpg
-exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
+# exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
+# exec_always --no-startup-id xrandr --primary --output HDMI-1-1 --auto --left-of LVDS-1-1
+exec_always --no-startup-id xrandr --output LVDS-1-1 --off --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+
+
 # exec --no-startup-id spotify
 
 # Keys

@@ -19,6 +19,8 @@
 
 ### monitors
  - [xrandr](https://wiki.archlinux.org/index.php/xrandr) configuring multiple monitors
+ - [arandr](https://christian.amsuess.com/tools/arandr/) xrandr gui
+ - [i3 display management with xrandr](http://christopherdecoster.com/posts/i3-wm/)
 
 ### application launcher
  - [rofi](https://github.com/DaveDavenport/rofi/)
@@ -36,4 +38,15 @@
 
 ### sound
  - [pactl](https://wiki.archlinux.org/index.php/PulseAudio/Examples) control a running pulseaudio sound
+ - [playerctl](https://github.com/acrisci/playerctl) is a command-line utility for controlling media players over DBus that works with most players.
+    If the XF86* keysyms do not work , you can see the available keysyms for your computer by executing this command:
+    ```sh
+    xmodmap -pke
+    ```
+    Or xev, an interactive tool for finding key symbols:
+    ```sh
+    xev
+    ```
 
+### screenshot
+ - [scrot](https://github.com/dreamer/scrot) - scrot (SCReen shOT) is a simple commandline screen capture utility
