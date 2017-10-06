@@ -4,7 +4,7 @@
 # - https://github.com/kenyonj/i3-create-config
 
 i3_config_file="$HOME/.i3/config"
-i3_includes_file="$HOME/.i3/config.d/i3_configs.conf"
+i3_includes_file="$HOME/.i3/imports.conf"
 
 if [[ -f "$i3_includes_file" ]]; then
   [[ -f "$i3_config_file" ]] && rm "$i3_config_file"
@@ -48,5 +48,5 @@ if [[ -f "$i3_includes_file" ]]; then
 else
   echo "ERROR:"
   echo "Please create the configs import file:"
-  echo " ~/.i3/config.d/i3_configs.conf"
+  echo " ~/.i3/config.d/imports.conf"
 fi

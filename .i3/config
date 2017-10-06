@@ -60,11 +60,11 @@ bindsym $mod+a focus parent
 set $workspace1 "1 "
 set $workspace2 "2 "
 set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 "
-set $workspace8 "8 "
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
 set $workspace9 "9 "
 set $workspace10 "10 "
 
@@ -141,7 +141,8 @@ bar {
     position top 
 	colors {
 		background $bg-color
-	    separator #757575
+	    separator $bg-color
+	    # separator #757575
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
 		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
@@ -202,9 +203,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # startup
 exec_always --no-startup-id feh --bg-scale ~/dotfiles/.wallpaper.jpg
-# exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
+exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
 # exec_always --no-startup-id xrandr --primary --output HDMI-1-1 --auto --left-of LVDS-1-1
-exec_always --no-startup-id xrandr --output LVDS-1-1 --off --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+# exec_always --no-startup-id xrandr --output LVDS-1-1 --off --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
 
 # exec --no-startup-id spotify
