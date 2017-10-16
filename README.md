@@ -2,6 +2,7 @@
 
 ### i3
  - [i3](https://i3wm.org/) a tiling window manager 
+ - [i3-gap](https://github.com/Airblader/i3) fork from i3 with more features
  - [i3lock](https://github.com/i3/i3lock) improved screen locker
  - [i3blocks](https://github.com/vivien/i3blocks) a flexible scheduler for your i3bar blocks
  - [unixporn lock screen](https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/)

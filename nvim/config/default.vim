@@ -29,7 +29,8 @@ set t_Co=256
 "Habilita coloração por syntax 
 syntax enable 
 
-set textwidth=110
+"set linebreak          
+"set textwidth=110 " Linebreak on 110 characters 
 set colorcolumn=120
 
 " 1 - mostra abas somente se tiver 2 arquivos 
@@ -110,8 +111,6 @@ set smarttab  " Be smart when using tabs ;)
 set shiftwidth=4 
 set tabstop=4   
 set softtabstop=4
-"set linebreak          
-"set textwidth  =150 " Linebreak on 150 characters
 
 set autoindent  "Auto indent
 set smartindent "Smart indent

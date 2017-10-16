@@ -120,6 +120,9 @@ mode "resize" {
 # resize mode
 bindsym $mod+r mode "resize"
 
+# background transparence
+set $bgt 55
+
 # set $bg-color 	         #2f343f
 set $bg-color 	         #2f313f
 set $inactive-bg-color   #2f313f
@@ -128,25 +131,27 @@ set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+#                       border                  background             text                 indicator
+client.focused          $bg-color$bgt           $bg-color$bgt          $text-color          #00ff00
+client.unfocused        $inactive-bg-color$bgt  $inactive-bg-color$bgt $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color$bgt  $inactive-bg-color$bgt $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color$bgt    $urgent-bg-color$bgt   $text-color          #00ff00
 
 # bar
 bar {
+	i3bar_command i3blocks -c  ~/.i3/i3blocks.conf | i3bar -t 
   	status_command i3blocks -c ~/.i3/i3blocks.conf
     tray_output primary
     position top 
 	colors {
-		background $bg-color
-	    separator $bg-color
-	    # separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+		background $bg-color$bgt
+	    # separator $bg-color$bgt
+	    separator #757575
+		#                  border                 background             text
+		focused_workspace  $bg-color$bgt          $bg-color$bgt          $text-color
+		inactive_workspace $inactive-bg-color$bgt $inactive-bg-color$bgt $inactive-text-color
+		urgent_workspace   $urgent-bg-color$bgt   $urgent-bg-color$bgt   $text-color
+		active_workspace   $bg-color$bgt          $bg-color$bgt          $text-color
 	}
 }
 
@@ -202,7 +207,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # startup
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/.wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper/1.jpg
 exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
 # exec_always --no-startup-id xrandr --output LVDS-1-1 --off --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
@@ -215,4 +220,7 @@ exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
 
 exec --no-startup-id compton -f
 
-
+gaps inner 5
+gaps outer 2
+smart_gaps on
+smart_borders on
