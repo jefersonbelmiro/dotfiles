@@ -141,12 +141,12 @@ client.urgent           $urgent-bg-color$bgt    $urgent-bg-color$bgt   $text-col
 bar {
 	i3bar_command i3blocks -c  ~/.i3/i3blocks.conf | i3bar -t 
   	status_command i3blocks -c ~/.i3/i3blocks.conf
-    tray_output primary
+    # tray_output primary
     position top 
 	colors {
 		background $bg-color$bgt
-	    # separator $bg-color$bgt
-	    separator #757575
+	    separator $bg-color$bgt
+	    # separator #757575
 		#                  border                 background             text
 		focused_workspace  $bg-color$bgt          $bg-color$bgt          $text-color
 		inactive_workspace $inactive-bg-color$bgt $inactive-bg-color$bgt $inactive-text-color
