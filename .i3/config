@@ -209,7 +209,6 @@ bindsym XF86AudioPrev exec playerctl previous
 # startup
 exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper/1.jpg
 exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
-# exec_always --no-startup-id xrandr --primary --output HDMI-1-1 --auto --left-of LVDS-1-1
 # exec_always --no-startup-id xrandr --output LVDS-1-1 --off --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
 
