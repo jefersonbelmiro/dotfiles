@@ -35,8 +35,8 @@ Plug 'jefersonbelmiro/tabline.vim'
 " cvs diff
 Plug 'jefersonbelmiro/cvsdiff.vim'
 
-" Plug 'haya14busa/incsearch.vim'
-" Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 
 " simple asynchronous fuzzy file finder for vim
 if has("python")

@@ -123,3 +123,8 @@ endif
 " cvsdiff {
   map <F8> :CvsDiffToggle<cr>
 " }
+"
+" incsearch {
+  map <leader>z <Plug>(incsearch-fuzzy-/)
+  " map <leader>z <Plug>(incsearch-fuzzy-stay)
+" }
