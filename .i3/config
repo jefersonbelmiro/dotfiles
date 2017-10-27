@@ -218,9 +218,9 @@ exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
 # exec_always xmodmap -e "clear lock" #disable caps lock switch
 # exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
-exec --no-startup-id compton -f
+# exec --no-startup-id compton -f
 
-gaps inner 5
-gaps outer 2
-smart_gaps on
-smart_borders on
+# gaps inner 5
+# gaps outer 2
+# smart_gaps on
+# smart_borders on
