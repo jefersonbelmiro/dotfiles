@@ -9,7 +9,7 @@ if has('nvim')
     Plug 'floobits/floobits-neovim'
 endif
 
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -36,8 +36,8 @@ Plug 'jefersonbelmiro/tabline.vim'
 " cvs diff
 Plug 'jefersonbelmiro/cvsdiff.vim'
 
-" Plug 'haya14busa/incsearch.vim'
-" Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 
 " simple asynchronous fuzzy file finder for vim
 if has("python")
