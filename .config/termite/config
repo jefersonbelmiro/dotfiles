@@ -3,7 +3,7 @@
 #audible_bell = false
 #clickable_url = true
 #dynamic_title = true
-font = Hack 10
+font = Hack 11
 # font = Droid Sans Mono 10
 #fullscreen = true
 #geometry = 640x480

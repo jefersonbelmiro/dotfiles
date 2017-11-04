@@ -6,6 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 if has('nvim')
     Plug 'Shougo/deoplete.nvim'
+    Plug 'floobits/floobits-neovim'
 endif
 
 Plug 'mhinz/vim-startify'
