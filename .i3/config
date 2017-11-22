@@ -17,7 +17,9 @@ floating_modifier $mod
 # if they are in a split container. 
 # In stacked or tabbed containers the title bar(s) will still be shown 
 # if there is more than one window in the container.
-new_window 1pixel
+# new_window 1pixel
+
+new_window pixel 3
 
 # change focus
 bindsym $mod+h focus left
