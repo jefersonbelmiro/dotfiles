@@ -5,6 +5,9 @@ set nocompatible
 " detect when a file is changed
 set autoread 
 
+" check one time after 4s of inactivity in normal mode
+au CursorHold * checktime       
+
 set encoding=utf8
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
