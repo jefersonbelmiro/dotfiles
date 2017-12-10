@@ -176,7 +176,7 @@ assign [class="Spotify"] $workspace10
 
 # https://github.com/ValveSoftware/steam-for-linux/issues/1040
 assign [class="Steam"] $workspace9
-for_window [class="Steam" title=".*Dota.*"] fullscreen, move container to workspace 8
+assign [class="dota2"] $workspace8
 
 # workspace default monitors
 # workspace $workspace1 output DVI-I-2
