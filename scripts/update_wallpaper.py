@@ -12,15 +12,16 @@ def parse_args() :
     parser = argparse.ArgumentParser(description='Random update wallpaper')
     parser.add_argument('path', help='path with wallpaper files')
     parser.add_argument('--delay', default=900, type=int, help='delay for update')
+    parser.add_argument('--screens', default=1, type=int, help='screens to set wallpaper')
     return parser.parse_args()
 
 def die_mother_fucker_die(proc) :
     if proc.poll() == None:
-        os.killpg(os.getpgid(proc.pid), signal.SIGTERM)  # Send the signal to all the process groups
+        os.killpg(os.getpgid(proc.pid), signal.SIGTERM) 
 
-def create_cmd(files) :
+def create_cmd(files, screens) :
     cmd = ['/usr/bin/env', 'feh']
-    for index in random.sample(range(0, len(files)), 2) :
+    for index in random.sample(range(0, len(files)), screens) :
         cmd.append('--bg-fill')
         cmd.append(files[index])
     return cmd
@@ -40,7 +41,7 @@ def main() :
     args = parse_args()
     files = get_files(args.path)
     while True: 
-        cmd = create_cmd(files)
+        cmd = create_cmd(files, args.screens)
         proc = create_process(cmd)
         time.sleep(args.delay)
         die_mother_fucker_die(proc)
