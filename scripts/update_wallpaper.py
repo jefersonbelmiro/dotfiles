@@ -6,24 +6,44 @@ import subprocess
 import random
 import glob
 import time 
+import argparse
 
-cmd = ['/tmp/t.php']
-path = os.path.expanduser('~/dotfiles/wallpaper/*')
-files = glob.glob(path)
-for index in random.sample(range(0, len(files)), 2) :
-    cmd.append('--bg-fill')
-    cmd.append(files[index])
+def parse_args() : 
+    parser = argparse.ArgumentParser(description='Random update wallpaper')
+    parser.add_argument('path', help='path with wallpaper files')
+    parser.add_argument('--delay', default=900, type=int, help='delay for update')
+    return parser.parse_args()
 
-# The os.setsid() is passed in the argument preexec_fn so
-# it's run after the fork() and before  exec() to run the shell.
-proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True, preexec_fn=os.setsid) 
-
-while True:
-    print("runing", proc.poll())
-    time.sleep(3)  
+def die_mother_fucker_die(proc) :
     if proc.poll() == None:
         os.killpg(os.getpgid(proc.pid), signal.SIGTERM)  # Send the signal to all the process groups
-        # proc.terminate()
-        # proc.wait()
 
+def create_cmd(files) :
+    cmd = ['/usr/bin/env', 'feh']
+    for index in random.sample(range(0, len(files)), 2) :
+        cmd.append('--bg-fill')
+        cmd.append(files[index])
+    return cmd
 
+def create_process(cmd) :
+    return subprocess.Popen(
+        cmd, 
+        stdout=subprocess.PIPE, 
+        shell=True, 
+        preexec_fn=os.setsid
+    ) 
+
+def get_files(path) :
+    return glob.glob(path + '/*')
+
+def main() :
+    args = parse_args()
+    files = get_files(args.path)
+    while True: 
+        cmd = create_cmd(files)
+        proc = create_process(cmd)
+        time.sleep(args.delay)
+        die_mother_fucker_die(proc)
+
+if __name__ == "__main__":
+    main()
