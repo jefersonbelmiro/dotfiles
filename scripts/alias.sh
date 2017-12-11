@@ -6,4 +6,4 @@ alias tree_ignore='tree --prune -I $(cat .gitignore | egrep -v "^#.*$|^[[:space:
 
 # vim without syntax, settings and plugins 
 alias vim_naked='vim -n -u NONE -i NONE -N'
-alias lr='tree -I CVS'
+alias lr='tree -I "CVS|vendor|node_modules"'

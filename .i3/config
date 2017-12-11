@@ -27,6 +27,9 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
+# disable focus on mouse over
+focus_follows_mouse no
+
 # lock
 bindsym $mod+Shift+x exec i3lock --color 475263
 
@@ -59,16 +62,27 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-set $workspace1 "1 "
+# set $workspace1 "1 "
+# set $workspace2 "2"
+# set $workspace3 "3"
+# set $workspace4 "4"
+# set $workspace5 "5"
+# set $workspace6 "6"
+# set $workspace7 "7 "
+# set $workspace8 "8 "
+# set $workspace9 "9 "
+# set $workspace10 "10 "
+
+set $workspace1 "1"
 set $workspace2 "2"
 set $workspace3 "3"
 set $workspace4 "4"
 set $workspace5 "5"
 set $workspace6 "6"
-set $workspace7 "7 "
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10 "10 "
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -93,6 +107,10 @@ bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
+
+# switch workspace between monitors
+bindsym $mod+ctrl+Shift+Left move workspace to output left
+bindsym $mod+ctrl+Shift+Right move workspace to output right
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -136,28 +154,28 @@ set $urgent-bg-color     #E53935
 # window colors
 #                       border                  background             text                 indicator
 # client.focused        $bg-color$bgt           $bg-color$bgt          $text-color          #00ff00
-client.focused          $bg-color               $bg-color              $text-color          #00ff00
+client.focused          $bg-color               #ffffff              $text-color          #00ff00
 client.unfocused        $inactive-bg-color      $inactive-bg-color     $inactive-text-color #00ff00
 client.focused_inactive $inactive-bg-color      $inactive-bg-color     $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color        $urgent-bg-color       $text-color          #00ff00
 
-# bar
-bar {
-	i3bar_command i3blocks -c  ~/.i3/i3blocks.conf | i3bar -t 
-  	status_command i3blocks -c ~/.i3/i3blocks.conf
-    # tray_output primary
-    position top 
-	colors {
-		background $bg-color
-	    separator $bg-color
-	    # separator #757575
-		#                  border                 background             text
-		focused_workspace  $bg-color              $bg-color              $text-color
-		inactive_workspace $inactive-bg-color     $inactive-bg-color     $inactive-text-color
-		urgent_workspace   $urgent-bg-color       $urgent-bg-color       $text-color
-		active_workspace   $bg-color              $bg-color              $text-color
-	}
-}
+# # bar
+# bar {
+# 	i3bar_command i3blocks -c  ~/.i3/i3blocks.conf | i3bar -t 
+#   	status_command i3blocks -c ~/.i3/i3blocks.conf
+#     # tray_output primary
+#     position top 
+# 	colors {
+# 		background $bg-color
+# 	    separator $bg-color
+# 	    # separator #757575
+# 		#                  border                 background             text
+# 		focused_workspace  $bg-color              #666666                #ffffff
+# 		inactive_workspace $inactive-bg-color     $inactive-bg-color     $inactive-text-color
+# 		urgent_workspace   $urgent-bg-color       $urgent-bg-color       $text-color
+# 		active_workspace   $bg-color              $bg-color              $text-color
+# 	}
+# }
 
 
 # sticky window
@@ -215,7 +233,6 @@ exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper/1.jpg
 exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
 # exec_always --no-startup-id xrandr --output LVDS-1-1 --off --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
-
 # exec --no-startup-id spotify
 
 # Keys
@@ -223,8 +240,10 @@ exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
 # exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
 # exec --no-startup-id compton -f
+exec --no-startup-id compton --backend glx --paint-on-overlay --vsync opengl-swc -o 0
+exec_always --no-startup-id ~/dotfiles/scripts/run_polybar.sh 
 
-# gaps inner 5
-# gaps outer 2
-# smart_gaps on
-# smart_borders on
+gaps inner 5
+gaps outer 2
+smart_gaps on
+smart_borders on
