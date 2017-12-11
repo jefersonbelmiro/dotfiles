@@ -77,7 +77,7 @@ font-2 = MaterialIcons:size=10;3
 
 modules-left = i3
 modules-center = date 
-modules-right = uptime mpd volume wlan memory cpu powermenu
+modules-right = volume network memory cpu powermenu
 
 tray-position = right
 tray-padding = 2
@@ -159,13 +159,13 @@ format-prefix = "RAM "
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 
-[module/wlan]
+[module/network]
 type = internal/network
-interface = wlx0015af43eb86
+interface = enp5s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
+label-connected = %upspeed% | %downspeed%
 label-connected-foreground = ${colors.foreground}
 label-disconnected =    not connected
 label-disconnected-foreground = ${colors.foreground}
