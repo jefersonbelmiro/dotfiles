@@ -29,12 +29,12 @@ def create_process(cmd) :
     return subprocess.Popen(
         cmd, 
         stdout=subprocess.PIPE, 
-        shell=True, 
+        shell=False,
         preexec_fn=os.setsid
     ) 
 
 def get_files(path) :
-    return glob.glob(path + '/*')
+    return glob.glob(os.path.realpath(path) + '/*')
 
 def main() :
     args = parse_args()
