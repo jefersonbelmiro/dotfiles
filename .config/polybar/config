@@ -11,6 +11,17 @@ foreground-alt = #BDC2CB
 primary = #7DABB8
 secondary = #e60053
 alert = #A95D64
+modulebg = #282828
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+; format-padding = 2
+; format-background = ${colors.modulebg}
 
 [bar/left]
 monitor = ${env:MONITOR:HDMI1}
@@ -40,9 +51,9 @@ font-0 = SFNSDisplay:size=11;2
 font-1 = FontAwesome:size=10;3
 font-2 = MaterialIcons:size=10;3
 
-modules-left = i3
-modules-center = date 
-modules-right = 
+modules-left = i3 xwindow
+modules-center = 
+modules-right = date 
 
 tray-position = right
 tray-padding = 2
@@ -78,8 +89,8 @@ font-1 = FontAwesome:size=10;3
 font-2 = MaterialIcons:size=10;3
 
 modules-left = i3
-modules-center = date 
-modules-right = volume network memory cpu powermenu
+modules-center = 
+modules-right = volume network memory cpu date 
 
 tray-position = right
 tray-padding = 2
@@ -103,6 +114,11 @@ label-urgent-padding = 4
 label-empty = %icon%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 4
+
+[module/xwindow]
+type = internal/xwindow
+interval = 1
+label = %title:0:50:...%
 
 [module/network]
 type = internal/network
@@ -168,13 +184,13 @@ interval = 3
 ;   <bar-load>
 ;   <ramp-load>
 ;   <ramp-coreload>
-format = <label> <ramp-coreload>
+format = <label>
 
 ; Available tokens:
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = "  %percentage%% "
+label = "  %percentage%%"
 
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
@@ -240,10 +256,10 @@ date-alt = "%A, %b %d "
 time = "%H:%M"
 time-alt = %H:%M:%S
 
-format-prefix = "   "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 
-label = %date% %time%
+label = " %date%     %time%"
 
 [module/weather]
 type = custom/script
@@ -352,13 +368,6 @@ menu-2-0 = power off
 menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
