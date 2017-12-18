@@ -22,6 +22,10 @@ map <F9> <ESC> :call OenFile() <CR>
 " esconde hlsearch 
 nnoremap <silent> <Esc><Esc> :<C-u>nohlsearch<CR>
 
+" set capslock to escape key
+" au VimEnter * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+" au VimLeave * silent !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
 " troca de abas
 nnoremap <silent> tk :tabnext<CR>
 nnoremap <silent> tj :tabprev<CR>
