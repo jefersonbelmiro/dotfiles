@@ -3,7 +3,7 @@
 ; background = #333842
 ; background = #2f343f
 ; #ARGB
-background = #cc2f343f
+background = #cc000000
 background-alt = #4D5565
 ; border = #454D5B
 border = #2f343f
