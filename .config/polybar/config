@@ -3,7 +3,7 @@
 ; background = #333842
 ; background = #2f343f
 ; #ARGB
-background = #cc2f343f
+background = #cc000000
 background-alt = #4D5565
 ; border = #454D5B
 border = #2f343f
@@ -78,7 +78,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-bottom-size = 2
+border-bottom-size = 0
 border-color = ${colors.border}
 
 padding-left = 5
@@ -115,7 +115,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-bottom-size = 2
+border-bottom-size = 0
 border-color = ${colors.border}
 
 padding-left = 5
