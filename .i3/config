@@ -190,11 +190,11 @@ for_window [window_role="pop-up"] floating enable
 # for_window [class="[.]*"] floating enable
 
 # default workspaces
-assign [class="Spotify"] $workspace10
 
-# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+assign [class="Spotify"] $workspace10
 assign [class="Steam"] $workspace9
-assign [class="dota2"] $workspace8
+for_window [class="dota2"] fullscreen, move container to workspace 8
+assign [class="TeamSpeak 3"] $workspace9
 
 # workspace default monitors
 # workspace $workspace1 output DVI-I-2
@@ -234,12 +234,14 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # startup
 # exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper/1.jpg
-exec --no-startup-id ~/dotfiles/scripts/update_wallpaper.py ~/dotfiles/wallpaper/ --delay 300 --screens 2
+exec --no-startup-id ~/dotfiles/scripts/update_wallpaper.py ~/dotfiles/wallpaper/ --delay 300 --screens 1
 
 exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
-# exec_always --no-startup-id xrandr --output LVDS-1-1 --off --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
-# exec --no-startup-id spotify
+# notebook only
+exec_always --no-startup-id xrandr --output LVDS-1-1 --mode 1366x768 --pos 0x0 --rotate normal --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --off
+
+# exec_always --no-startup-id xrandr --output LVDS-1-1 --off --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
 # Keys
 # exec_always xmodmap -e "clear lock" #disable caps lock switch
@@ -251,5 +253,5 @@ exec_always --no-startup-id ~/dotfiles/scripts/run_polybar.sh
 
 gaps inner 5
 gaps outer 2
-smart_gaps on
+# smart_gaps on
 smart_borders on
