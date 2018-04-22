@@ -49,6 +49,10 @@ nnoremap <silent> <A-9> 9gt
 map <F4> :q<CR>
 imap <F4> <esc>:q<CR>
 
+" add quotes in selected text
+map ' c''<ESC>P 
+map " c""<ESC>P 
+
 " identation
 vmap <TAB> >gv
 vmap <S-TAB> <gv
