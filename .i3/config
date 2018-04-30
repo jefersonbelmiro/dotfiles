@@ -109,8 +109,8 @@ bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 
 # switch workspace between monitors
-bindsym $mod+ctrl+Shift+Left move workspace to output left
-bindsym $mod+ctrl+Shift+Right move workspace to output right
+bindsym $mod+ctrl+Shift+h move workspace to output left
+bindsym $mod+ctrl+Shift+l move workspace to output right
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -234,12 +234,14 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # startup
 # exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper/1.jpg
-exec --no-startup-id ~/dotfiles/scripts/update_wallpaper.py ~/dotfiles/wallpaper/ --delay 300 --screens 1
+exec --no-startup-id ~/dotfiles/scripts/update_wallpaper.py ~/dotfiles/wallpaper/ --delay 300 --screens 2
+# exec --no-startup mplayer -loop 0 -rootwin -ao null -noconsolecontrols -fs ~/wallpaper-loop.mp4
 
+# work only
 exec_always --no-startup-id xrandr --output VGA1 --auto --right-of HDMI1
 
 # notebook only
-exec_always --no-startup-id xrandr --output LVDS-1-1 --mode 1366x768 --pos 0x0 --rotate normal --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --off
+# exec_always --no-startup-id xrandr --output LVDS-1-1 --mode 1366x768 --pos 0x0 --rotate normal --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --off
 
 # exec_always --no-startup-id xrandr --output LVDS-1-1 --off --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
 
