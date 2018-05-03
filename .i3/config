@@ -232,6 +232,14 @@ bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# scratchpad terminal
+bindsym $mod+Shift+F12 move scratchpad
+bindsym $mod+Shift+Return scratchpad show; [instance="scratchterminal"] move position center
+# settings
+exec --no-startup-id urxvt -name scratchterminal
+for_window [instance="scratchterminal"] move scratchpad
+for_window [instance="scratchterminal"] resize set 625 400
+
 # startup
 # exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper/1.jpg
 exec --no-startup-id ~/dotfiles/scripts/update_wallpaper.py ~/dotfiles/wallpaper/ --delay 300 --screens 2
