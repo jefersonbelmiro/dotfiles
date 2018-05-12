@@ -55,7 +55,7 @@ vnoremap " c""<ESC>P
 vnoremap ( c()<ESC>P 
 vnoremap [ c[]<ESC>P 
 vnoremap { c{}<ESC>P 
-vnoremap < c<><ESC>P 
+" vnoremap < c<><ESC>P 
 
 " identation
 vmap <TAB> >gv
