@@ -18,6 +18,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " read .editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
+" PCRE regex
+Plug 'othree/eregex.vim'
+
 Plug 'easymotion/vim-easymotion'
 
 " Plug 'MarcWeber/vim-addon-mw-utils'
