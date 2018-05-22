@@ -34,7 +34,7 @@ syntax enable
 
 "set linebreak          
 "set textwidth=110 " Linebreak on 110 characters 
-set colorcolumn=120
+" set colorcolumn=120
 
 " 1 - mostra abas somente se tiver 2 arquivos 
 " 2 - sempre mostra abas 
