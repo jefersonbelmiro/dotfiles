@@ -4,11 +4,15 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim'
-    " real-time collaborative editing
-    " Plug 'floobits/floobits-neovim'
-endif
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"   " real-time collaborative editing
+"   " Plug 'floobits/floobits-neovim'
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
 
 " Plug 'mhinz/vim-startify'
 
@@ -122,6 +126,7 @@ Plug 'jtai/vim-womprat'
 Plug 'romainl/Apprentice'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rakr/vim-one'
+Plug 'larsbs/vimterial_dark'
 
 " Add plugins to &runtimepath
 call plug#end()

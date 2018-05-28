@@ -1,17 +1,17 @@
 "  plugin's config 
 
 " deoplete.nvim {
-if has('nvim')
-    let g:deoplete#enable_at_startup = 1
-    " disable autocomplete
+" if has('nvim')
+    " let g:deoplete#enable_at_startup = 1
 
-    let g:deoplete#disable_auto_complete = 1
-    if has("gui_running")
-        inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
-    else
-        inoremap <silent><expr><C-@> deoplete#mappings#manual_complete()
-    endif
-endif 
+    " disable autocomplete
+    " let g:deoplete#disable_auto_complete = 1
+    " if has("gui_running")
+    "     inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
+    " else
+    "     inoremap <silent><expr><C-@> deoplete#mappings#manual_complete()
+    " endif
+" endif 
 " }
 
 " eregex {
@@ -26,12 +26,12 @@ endif
 
     " UltiSnips config
     " inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-    let g:UltiSnipsExpandTrigger="<c-k>"
-    let g:UltiSnipsJumpForwardTrigger="<c-k>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-j>"
-
-    " If you want :UltiSnipsEdit to split your window.
-    let g:UltiSnipsEditSplit="vertical" 
+    " let g:UltiSnipsExpandTrigger="<c-k>"
+    " let g:UltiSnipsJumpForwardTrigger="<c-k>"
+    " let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+    "
+    " " If you want :UltiSnipsEdit to split your window.
+    " let g:UltiSnipsEditSplit="vertical" 
 
 " }
 
