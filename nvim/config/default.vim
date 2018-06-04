@@ -54,23 +54,30 @@ set statusline+=%0(%v%)\                                " column
 set statusline+=%l\ %L                                   "position
 
 set background=dark " for the dark version
-colorscheme womprat
-" let g:airline_theme = 'ubaryd'
+" colorscheme womprat
+if has("gui_running")
+    set guioptions=
+    colorscheme vimterial_dark
+else
+    colorscheme womprat
 
-hi StatusLine ctermbg=234 cterm=NONE guibg=#2c323c
-hi StatusLineNC ctermbg=234 cterm=NONE guibg=#2c323c
-hi ColorColumn ctermbg=234 guibg=NONE
-hi vertsplit ctermbg=NONE guibg=NONE
+    " let g:airline_theme = 'ubaryd'
 
-hi TabLine cterm=NONE ctermbg=NONE guibg=#222222 guifg=NONE gui=NONE
-hi TabLineFill cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE gui=NONE
-hi TabLineSel cterm=bold,underline ctermbg=NONE guibg=#333333 gui=NONE
+    hi StatusLine ctermbg=234 cterm=NONE guibg=#2c323c
+    hi StatusLineNC ctermbg=234 cterm=NONE guibg=#2c323c
+    hi ColorColumn ctermbg=234 guibg=NONE
+    hi vertsplit ctermbg=NONE guibg=NONE
 
-" (){}[]
-" hi MatchParen guibg=NONE guifg=#ffffff
+    hi TabLine cterm=NONE ctermbg=NONE guibg=#222222 guifg=NONE gui=NONE
+    hi TabLineFill cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE gui=NONE
+    hi TabLineSel cterm=bold,underline ctermbg=NONE guibg=#333333 gui=NONE
 
-hi Search ctermbg=237 ctermfg=NONE
-hi Visual ctermbg=239 ctermfg=NONE
+    " (){}[]
+    " hi MatchParen guibg=NONE guifg=#ffffff
+
+    hi Search ctermbg=237 ctermfg=NONE
+    hi Visual ctermbg=239 ctermfg=NONE
+endif
 
 set nonu
 
@@ -137,7 +144,7 @@ set listchars=eol:¬,tab:→→,extends:>,precedes:<,space:·
 
 " diff
 set diffopt+=iwhite
-set diffexpr=""
+" set diffexpr=""
 
 " Navegacao
 set wildmenu
