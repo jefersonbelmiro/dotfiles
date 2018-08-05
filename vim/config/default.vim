@@ -54,12 +54,16 @@ set statusline+=%0(%v%)\                                " column
 set statusline+=%l\ %L                                   "position
 
 set background=dark " for the dark version
-" colorscheme womprat
+" colorscheme 
 if has("gui_running")
     set guioptions=
     colorscheme vimterial_dark
 else
-    colorscheme womprat
+    try
+        colorscheme womprat
+    catch /^Vim\%((\a\+)\)\=:E185/
+        color default
+    endtry
 
     " let g:airline_theme = 'ubaryd'
 

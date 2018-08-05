@@ -2,7 +2,7 @@
 " Plugin management
 "
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.config/vim/plugged')
 
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -122,7 +122,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ywjno/vim-tomorrow-theme'
 Plug 'morhetz/gruvbox'
-Plug 'jtai/vim-womprat'
+Plug 'jefersonbelmiro/vim-womprat'
 Plug 'romainl/Apprentice'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rakr/vim-one'
