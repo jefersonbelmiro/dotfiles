@@ -56,7 +56,7 @@ set statusline+=%l\ %L                                   "position
 set background=dark " for the dark version
 " colorscheme 
 if has("gui_running")
-    set guioptions=
+    set guioptions=r
     colorscheme vimterial_dark
 else
     try
