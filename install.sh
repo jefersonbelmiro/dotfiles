@@ -91,9 +91,7 @@ if command_exists zsh; then
 else
 	echo "install zsh"
 	package_install zsh zsh-completions
-    chsh -s /bin/zsh
-	sudo curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-	sudo usermod -s /bin/zsh $USER
+    curl -L http://install.ohmyz.sh | sh
 fi
 
 echo "installation complete."
