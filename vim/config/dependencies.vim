@@ -89,6 +89,9 @@ Plug 'vim-scripts/matchit.zip'
 " html
 Plug 'othree/html5.vim', { 'for': 'html' }
 
+" git
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " jenkinsfile
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
@@ -102,8 +105,25 @@ Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' }
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 
 " typescript
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
+" if has('nvim')
+"
+    " REQUIRED: Add a syntax file. YATS is the best
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+    " For async completion
+    Plug 'Shougo/deoplete.nvim'
+    " For Denite features
+    Plug 'Shougo/denite.nvim'
+
+    " Enable deoplete at startup
+    let g:deoplete#enable_at_startup = 1
+" else
+"
+    Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+    Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
+" endif
+
+
 
 " vue.js
 Plug 'posva/vim-vue'
