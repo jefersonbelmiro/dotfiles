@@ -105,8 +105,7 @@ Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' }
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 
 " typescript
-" if has('nvim')
-"
+if has('nvim')
     " REQUIRED: Add a syntax file. YATS is the best
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
@@ -115,15 +114,15 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
     " For Denite features
     Plug 'Shougo/denite.nvim'
 
+
     " Enable deoplete at startup
     let g:deoplete#enable_at_startup = 1
-" else
-"
+else
     Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
     Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
-" endif
-
-
+endif
+Plug 'w0rp/ale'
+" Plug 'vim-syntastic/syntastic'
 
 " vue.js
 Plug 'posva/vim-vue'
