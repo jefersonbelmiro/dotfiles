@@ -28,6 +28,7 @@ set t_Co=256
 "     set termguicolors
 "   endif
 " endif
+"
 
 "Habilita coloração por syntax 
 syntax enable 
@@ -82,6 +83,9 @@ else
     hi Search ctermbg=237 ctermfg=NONE
     hi Visual ctermbg=239 ctermfg=NONE
 endif
+
+highlight SignColumn guibg=NONE ctermbg=NONE
+highlight SpellBad ctermbg=NONE cterm=bold,underline ctermfg=9
 
 set nonu
 

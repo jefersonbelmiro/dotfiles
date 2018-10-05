@@ -81,7 +81,7 @@ Plug 'Raimondi/delimitMate'
 " Plug 'jiangmiao/auto-pairs'
 
 " Interactive command execution in Vim.
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " allows you to configure % to match more than just single characters
 Plug 'vim-scripts/matchit.zip'
@@ -101,9 +101,41 @@ Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' } 
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 
-" typescript
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
+" typescript {
+"
+    if has('nvim')
+        Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+        " For async completion
+        Plug 'Shougo/deoplete.nvim', { 'for': 'typescript' } 
+        " For Denite features
+        Plug 'Shougo/denite.nvim', { 'for': 'typescript' } 
+
+        let g:deoplete#enable_at_startup = 1
+        autocmd FileType typescript map <buffer> <C-]> :TSTypeDef<CR> 
+        autocmd FileType typescript map <buffer> <F1> :TSDoc<CR> 
+        let g:nvim_typescript#diagnostics_enable = 0
+    else
+        Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+        Plug 'Quramy/tsuquyomi', { 'for' : 'typescript' }
+        let g:tsuquyomi_disable_quickfix = 1
+        let g:tsuquyomi_shortest_import_path = 1
+    endif
+
+    Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
+
+    Plug 'w0rp/ale', { 'for' : 'typescript' } 
+    let g:ale_lint_on_text_changed = 'never'
+    " if you don't want linters to run on opening a file
+    let g:ale_lint_on_enter = 0
+    let g:ale_sign_error = '•' " '>>'
+    let g:ale_sign_warning = '•' " '--'
+    let g:ale_set_loclist = 0
+    let g:ale_set_quickfix = 1
+    highlight clear ALEErrorSign
+    highlight clear ALEWarningSign
+
+" }
+
 
 " vue.js
 Plug 'posva/vim-vue'
