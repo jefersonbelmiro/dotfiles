@@ -92,6 +92,8 @@ Plug 'othree/html5.vim', { 'for': 'html' }
 
 " git
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive.git'
+Plug 'airblade/vim-gitgutter'
 
 " jenkinsfile
 Plug 'martinda/Jenkinsfile-vim-syntax'
