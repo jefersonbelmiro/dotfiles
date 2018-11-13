@@ -38,6 +38,9 @@ Plug 'easymotion/vim-easymotion'
 " Snippets are separated from the engine. Add this if you want them:
 " Plug 'jefersonbelmiro/vim-snippets' 
 
+" clean statusline
+Plug 'jefersonbelmiro/statusline.vim'
+
 " clear tabline
 Plug 'jefersonbelmiro/tabline.vim'
 

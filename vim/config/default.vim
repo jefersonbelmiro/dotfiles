@@ -44,16 +44,6 @@ set showtabline=1
 " Sempre mostra barra de Mensagens 
 set laststatus=2
 
-set statusline=
-set statusline+=%f%m\                                   "file name/modified flag
-set statusline+=%=                                      "indent right
-set statusline+=%r\                                     "file type
-set statusline+=%{strlen(&ft)?&ft:'none'}               "file type
-set statusline+=%0*\ %{''.(&fenc!=''?&fenc:&enc).''}    "Encoding
-set statusline+=%0*\ %{&ff}\                            "FileFormat (dos/unix..) 
-set statusline+=%0(%v%)\                                " column
-set statusline+=%l\ %L                                   "position
-
 set background=dark " for the dark version
 " colorscheme 
 if has("gui_running")
@@ -88,6 +78,8 @@ highlight SignColumn guibg=NONE ctermbg=NONE
 highlight SpellBad ctermbg=NONE cterm=bold,underline ctermfg=9
 
 set nonu
+
+set updatetime=100
 
 set title
 "set titlestring=%f
