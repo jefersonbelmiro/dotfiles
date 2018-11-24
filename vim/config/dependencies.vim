@@ -122,9 +122,11 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
         let g:deoplete#enable_at_startup = 1
         autocmd FileType typescript map <buffer> <C-]> :TSDef<CR> 
         autocmd FileType typescript map <buffer> <F1> :TSDoc<CR> 
+        autocmd FileType typescript map <buffer> <F3> :TSImport<CR> 
         " fix full path after :TSDef
         autocmd BufCreate * cd .
         let g:nvim_typescript#diagnostics_enable = 0
+        let g:nvim_typescript#follow_dir_change = 1
     else
         Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
         Plug 'Quramy/tsuquyomi', { 'for' : 'typescript' }
