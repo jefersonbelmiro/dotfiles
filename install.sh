@@ -29,12 +29,13 @@ echo "setting vim"
 mkdir ~/.config/vim/undodir -p
 
 # vim directories
-ln -s $(realpath vim/config) ~/.config/vim/config
-ln -s $(realpath vim/init.vim) ~/.config/vim/init.vim
-ln -s $(realpath vim/init.vim) ~/.vimrc
+ln -sf $(realpath vim/config) ~/.config/vim/config
+ln -sf $(realpath vim/init.vim) ~/.config/vim/init.vim
+ln -sf $(realpath vim/init.vim) ~/.vimrc
 
 # vim directories
-ln -s $(realpath ~/.config/vim) ~/.vim
+ln -sf $(realpath ~/.config/vim) ~/.vim
+ln -sf $(realpath ~/.config/vim) ~/.config/nvim
 
 # vim-plug for neovim
 curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs \
@@ -51,9 +52,5 @@ cd -
 echo "install zsh"
 package_install zsh zsh-completions
 curl -L http://install.ohmyz.sh | sh
-
-#fix monitor dell
-sudo xrandr --newmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
-sudo xrandr --addmode DP-1 "1920x1080_60.00"
 
 echo "installation complete."
