@@ -48,6 +48,12 @@ cd ~/.config/vim/plugged/tern_for_vim
 npm install
 cd -
 
+# install fugitive
+cd ~/.config/vim/plugged/
+git clone https://github.com/tpope/vim-fugitive.git
+vim -u NONE -c "helptags vim-fugitive/doc" -c q
+cd -
+
 # install zsh
 echo "install zsh"
 package_install zsh zsh-completions
