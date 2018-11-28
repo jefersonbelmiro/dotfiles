@@ -6,7 +6,8 @@ set nocompatible
 set autoread 
 
 " check one time after 4s of inactivity in normal mode
-au CursorHold * checktime       
+" au CursorHold * checktime       
+au CursorHold * if !bufexists("[Command Line]") | checktime | endif
 
 set encoding=utf8
 
