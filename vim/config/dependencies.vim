@@ -79,6 +79,7 @@ Plug 'majutsushi/tagbar'
 " Perform all your vim insert mode completions with Tab
 Plug 'ervandew/supertab'
 let g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'Raimondi/delimitMate'
