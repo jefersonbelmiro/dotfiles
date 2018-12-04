@@ -78,8 +78,8 @@ Plug 'majutsushi/tagbar'
 
 " Perform all your vim insert mode completions with Tab
 Plug 'ervandew/supertab'
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
-let g:SuperTabDefaultCompletionType = "<c-n>"
+    let g:SuperTabContextDefaultCompletionType = "<c-n>"
+    let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'Raimondi/delimitMate'
@@ -116,9 +116,9 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
     if has('nvim')
         Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
         " For async completion
-        Plug 'Shougo/deoplete.nvim', { 'for': 'typescript' } 
+        Plug 'Shougo/deoplete.nvim'
         " For Denite features
-        Plug 'Shougo/denite.nvim', { 'for': 'typescript' } 
+        Plug 'Shougo/denite.nvim'
 
         let g:deoplete#enable_at_startup = 1
         autocmd FileType typescript map <buffer> <C-]> :TSDef<CR> 
