@@ -8,7 +8,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 polybar note
 
-# NR_OF_MONITORS=$(xrandr -d :0 -q | grep ' connected' | wc -l)
+NR_OF_MONITORS=$(xrandr -d :0 -q | grep ' connected' | wc -l)
 # IS_NOTE=$(xrandr -d :0 -q | grep ' connected' | awk '{print $1}' | grep 'LVDS' | wc -l)
 # if [ $IS_NOTE = "1" ]; then
 #     polybar note 
@@ -17,3 +17,9 @@ polybar note
 # else
 #     polybar left & polybar right
 # fi
+
+if [ $NR_OF_MONITORS = "1" ]; then
+    polybar note 
+else
+    polybar left & polybar right
+fi

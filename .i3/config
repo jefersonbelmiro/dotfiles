@@ -246,8 +246,10 @@ exec --no-startup-id ~/dotfiles/scripts/update_wallpaper.py ~/dotfiles/wallpaper
 # exec --no-startup mplayer -loop 0 -rootwin -ao null -noconsolecontrols -fs ~/wallpaper-loop.mp4
 
 # notebook only
-# exec_always --no-startup-id xrandr --output LVDS-1-1 --mode 1366x768 --pos 0x0 --rotate normal --output DP-1-1 --off --output VGA-1-1 --off --output HDMI-1-1 --off
-exec_always --no-startup-id xrandr --output DP-1 --off --output HDMI-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-2 --off
+# exec_always --no-startup-id xrandr --output DP-1 --off --output HDMI-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output HDMI-2 --off
+
+# work dual monitor
+exec_always --no-startup-id xrandr --output DP-1 --primary --mode 1920x1080_60.00 --pos 0x0 --rotate normal --output HDMI-1 --off --output eDP-1 --mode 1366x768 --pos 1920x0 --rotate normal --output HDMI-2 --off 
 
 # Keys
 # exec_always xmodmap -e "clear lock" #disable caps lock switch
