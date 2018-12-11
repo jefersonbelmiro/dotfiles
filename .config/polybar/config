@@ -27,7 +27,7 @@ screenchange-reload = true
 
 [bar/note]
 
-monitor = ${env:MONITOR:LVDS-1-1}
+monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 28
 fixed-center = true
