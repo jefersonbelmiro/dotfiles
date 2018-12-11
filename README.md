@@ -7,6 +7,9 @@
  - [i3blocks](https://github.com/vivien/i3blocks) a flexible scheduler for your i3bar blocks
  - [unixporn lock screen](https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/)
 
+### status bar
+ - [polybar](https://github.com/jaagr/polybar) A fast and easy-to-use status bar
+
 ### terminal
  - [rxvt-unicode](https://wiki.archlinux.org/index.php/rxvt-unicode#Clickable_URLs) 
  - [termite](https://github.com/thestinger/termite) 
@@ -22,6 +25,7 @@
  - [xrandr](https://wiki.archlinux.org/index.php/xrandr) configuring multiple monitors
  - [arandr](https://christian.amsuess.com/tools/arandr/) xrandr gui
  - [i3 display management with xrandr](http://christopherdecoster.com/posts/i3-wm/)
+ - [autorandr](https://github.com/phillipberndt/autorandr) autorandr - Auto-detect the connect display hardware and load the appropriate X11 setup using xrandr
 
 ### application launcher
  - [rofi](https://github.com/DaveDavenport/rofi/)
