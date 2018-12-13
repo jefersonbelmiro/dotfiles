@@ -1,4 +1,7 @@
 
+" <leader>
+let mapleader = ","
+
 " Plugin management
 source ~/.config/vim/config/dependencies.vim
 

@@ -1,9 +1,6 @@
 
 " MAPKEYS
 
-" <leader>
-let mapleader = ","
-
 if has('nvim')
     " alt+backspace delete word backward
     imap <A-BS> <C-W>
