@@ -67,6 +67,10 @@ Plug 'rking/ag.vim'
 " Perform search in files easily
 Plug 'eugen0329/vim-esearch'
 
+let g:esearch = {
+            \ 'default_mappings': 1,
+            \}
+
 " Command-t 
 " Plug 'wincent/command-t'
 
