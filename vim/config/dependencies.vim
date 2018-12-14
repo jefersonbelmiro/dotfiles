@@ -110,6 +110,9 @@ Plug 'Raimondi/delimitMate'
 " allows you to configure % to match more than just single characters
 Plug 'vim-scripts/matchit.zip'
 
+" undo tree
+Plug 'sjl/gundo.vim'
+
 " html
 Plug 'othree/html5.vim', { 'for': 'html' }
 
