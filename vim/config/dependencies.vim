@@ -16,8 +16,16 @@ call plug#begin('~/.config/vim/plugged')
 
 " Plug 'mhinz/vim-startify'
 
-" On-demand loading
+" NERDTree {
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    let g:NERDTreeWinSize = 25
+    let g:NERDTreeDirArrows = 0
+    let g:NERDTreeDirArrowExpandable = '+'
+    let g:NERDTreeDirArrowCollapsible = '-'
+    let NERDTreeIgnore = ['\.o$', 'node_modules', '^CVS$']
+    map <leader>e :NERDTreeToggle<cr>
+" }
+
 
 " read .editorconfig
 Plug 'editorconfig/editorconfig-vim'

@@ -43,15 +43,6 @@
     let g:used_javascript_libs = 'jquery,angularjs'
 " }
 
-" NERDTree {
-    let g:NERDTreeWinSize = 25
-    let g:NERDTreeDirArrows = 0
-    let g:NERDTreeDirArrowExpandable = '+'
-    let g:NERDTreeDirArrowCollapsible = '-'
-    let NERDTreeIgnore = ['\.o$', 'node_modules', '^CVS$']
-    map <leader>e :NERDTreeToggle<cr>
-" }
-
 " TComment { 
 " " - https://github.com/tomtom/tcomment_vim
 
