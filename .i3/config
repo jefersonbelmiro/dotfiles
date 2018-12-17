@@ -254,6 +254,8 @@ exec --no-startup-id ~/dotfiles/scripts/update_wallpaper.py ~/dotfiles/wallpaper
 # auto detect
 exec_always --no-startup-id autorandr --change
 
+exec_always --no-startup-id nm-applet
+
 # Keys
 # exec_always xmodmap -e "clear lock" #disable caps lock switch
 # exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
