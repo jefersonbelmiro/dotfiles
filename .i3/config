@@ -236,7 +236,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+F12 move scratchpad
 bindsym $mod+Shift+Return scratchpad show; [instance="scratchterminal"] move position center
 # settings
-exec --no-startup-id urxvt -name scratchterminal
+exec --no-startup-id termite --name=scratchterminal
 for_window [instance="scratchterminal"] move scratchpad
 for_window [instance="scratchterminal"] resize set 625 400
 
