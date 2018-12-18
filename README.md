@@ -52,6 +52,12 @@
     ```sh
     xev
     ```
-
 ### screenshot
  - [scrot](https://github.com/dreamer/scrot) - scrot (SCReen shOT) is a simple commandline screen capture utility
+
+### network manager
+ - nm-applet
+
+### bluetooth
+ - blueman/blueman-applet
+ - [tuto](https://www.maketecheasier.com/setup-bluetooth-in-linux/)
