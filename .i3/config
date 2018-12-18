@@ -240,6 +240,9 @@ exec --no-startup-id termite --name=scratchterminal
 for_window [instance="scratchterminal"] move scratchpad
 for_window [instance="scratchterminal"] resize set 625 400
 
+# list open windows to switch to
+bindsym Mod1+Tab exec rofi -show window
+
 # startup
 # exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper/1.jpg
 exec --no-startup-id ~/dotfiles/scripts/update_wallpaper.py ~/dotfiles/wallpaper/ --delay 300 --screens 2
