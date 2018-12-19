@@ -30,8 +30,15 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " read .editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
-" PCRE regex
-Plug 'othree/eregex.vim'
+" eregex - PCRE regex {
+"
+    Plug 'othree/eregex.vim'
+    let g:eregex_default_enable = 0
+    let g:eregex_force_case = 1
+    " nnoremap <leader>/ :call eregex#toggle()<CR> 
+
+" }
+
 
 Plug 'easymotion/vim-easymotion'
 
@@ -189,7 +196,7 @@ Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
 
 " yaml
-Plug 'stephpy/vim-yaml'
+Plug 'stephpy/vim-yaml', { 'for': 'yml' }
 
 " colors
 Plug 'mhartington/oceanic-next'
