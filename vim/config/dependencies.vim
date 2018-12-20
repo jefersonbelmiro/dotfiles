@@ -18,6 +18,7 @@ call plug#begin('~/.config/vim/plugged')
 
 " NERDTree {
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+    let g:NERDTreeMinimalUI = 1
     let g:NERDTreeWinSize = 25
     let g:NERDTreeDirArrows = 0
     let g:NERDTreeDirArrowExpandable = '+'
