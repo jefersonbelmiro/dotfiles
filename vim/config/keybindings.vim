@@ -58,10 +58,6 @@ vnoremap { c{}<ESC>P
 vmap <TAB> >gv
 vmap <S-TAB> <gv
 
-" toggle mouse no vim
-map <silent><F5> <ESC> :call ToggleMouse() <CR> hh
-imap <silent><F5> <ESC> :call ToggleMouse() <CR> hi
-
 " K abre 'man' do que esta sob o cursor 
 map K k
 
