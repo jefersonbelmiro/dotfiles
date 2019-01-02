@@ -5,11 +5,11 @@ let mapleader = ","
 " Plugin management
 source ~/.config/vim/config/dependencies.vim
 
-" Mapkeys
-source ~/.config/vim/config/keybindings.vim
-
 " Plugin configuration
 source ~/.config/vim/config/plugins.vim
+
+" Mapkeys
+source ~/.config/vim/config/keybindings.vim
 
 " config
 source ~/.config/vim/config/default.vim

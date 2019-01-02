@@ -1,7 +1,6 @@
 "
 " Plugin management
 "
-
 call plug#begin('~/.config/vim/plugged')
 
 " if has('nvim')
@@ -16,30 +15,14 @@ call plug#begin('~/.config/vim/plugged')
 
 " Plug 'mhinz/vim-startify'
 
-" NERDTree {
+" NERDTree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-    let g:NERDTreeMinimalUI = 1
-    let g:NERDTreeWinSize = 25
-    let g:NERDTreeDirArrows = 0
-    let g:NERDTreeDirArrowExpandable = '+'
-    let g:NERDTreeDirArrowCollapsible = '-'
-    let NERDTreeIgnore = ['\.o$', 'node_modules', '^CVS$']
-    map <leader>e :NERDTreeToggle<cr>
-" }
-
 
 " read .editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
-" eregex - PCRE regex {
-"
-    Plug 'othree/eregex.vim'
-    let g:eregex_default_enable = 0
-    let g:eregex_force_case = 1
-    " nnoremap <leader>/ :call eregex#toggle()<CR> 
-
-" }
-
+" eregex - PCRE regex 
+Plug 'othree/eregex.vim'
 
 Plug 'easymotion/vim-easymotion'
 
@@ -83,38 +66,15 @@ Plug 'rking/ag.vim'
 " Perform search in files easily
 Plug 'eugen0329/vim-esearch'
 
-let g:esearch = {
-            \ 'default_mappings': 1,
-            \}
-
 " Command-t 
 " Plug 'wincent/command-t'
 
-" ctrlp {
+" ctrlp 
 " Full path fuzzy file, buffer, mru, tag, ... finder 
 Plug 'ctrlpvim/ctrlp.vim'
 
-map <leader>m :CtrlPMRUFiles<CR>
-map <leader>b :CtrlPBuffer<CR>
-
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_max_files = 0
-let g:ctrlp_cmd = 'CtrlPCurWD' 
-" let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(CVS|git|hg|svn)$',
-            \ 'file': '\v\.(jpg|png|gif)$'
-            \ }
-
-" }
-
-" Vim plugin that displays tags in a window, ordered by scope
-Plug 'majutsushi/tagbar'
-
 " Perform all your vim insert mode completions with Tab
 Plug 'ervandew/supertab'
-    let g:SuperTabContextDefaultCompletionType = "<c-n>"
-    let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'Raimondi/delimitMate'
@@ -144,10 +104,12 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 " Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'jsx' }
-Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' } 
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
+
+" javascript/typescript
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'typescript'] }
 
 " typescript {
 "
@@ -157,35 +119,19 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
         Plug 'Shougo/deoplete.nvim'
         " For Denite features
         Plug 'Shougo/denite.nvim'
-
-        let g:deoplete#enable_at_startup = 1
-        autocmd FileType typescript map <buffer> <C-]> :TSDef<CR> 
-        autocmd FileType typescript map <buffer> <F1> :TSDoc<CR> 
-        autocmd FileType typescript map <buffer> <F3> :TSImport<CR> 
-        " fix full path after :TSDef
-        autocmd BufCreate * cd .
-        let g:nvim_typescript#diagnostics_enable = 0
-        let g:nvim_typescript#follow_dir_change = 1
     else
         Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
         Plug 'Quramy/tsuquyomi', { 'for' : 'typescript' }
-        let g:tsuquyomi_disable_quickfix = 1
-        let g:tsuquyomi_shortest_import_path = 1
     endif
 
     Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
 
     Plug 'w0rp/ale', { 'for' : 'typescript' } 
-    let g:ale_lint_on_text_changed = 'never'
-    " if you don't want linters to run on opening a file
-    let g:ale_lint_on_enter = 0
-    let g:ale_sign_error = '•' " '>>'
-    let g:ale_sign_warning = '•' " '--'
-    let g:ale_set_loclist = 0
-    let g:ale_set_quickfix = 1
-    highlight clear ALEErrorSign
-    highlight clear ALEWarningSign
+
 " }
+
+" tagbar 
+Plug 'majutsushi/tagbar'
 
 " vue.js
 Plug 'posva/vim-vue'
@@ -198,6 +144,9 @@ Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
 
 " yaml
 Plug 'stephpy/vim-yaml', { 'for': 'yml' }
+
+" Blade
+Plug 'jwalton512/vim-blade'
 
 " colors
 Plug 'mhartington/oceanic-next'
