@@ -111,6 +111,9 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 " javascript/typescript
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'typescript'] }
 
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+
+
 " typescript {
 "
     if has('nvim')
