@@ -27,6 +27,10 @@
 
 " }
 
+" editorconfig {
+    let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" }
+
 " vim-javascript {
     let g:javascript_opfirst = 1
 " }

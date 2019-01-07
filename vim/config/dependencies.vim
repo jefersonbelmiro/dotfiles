@@ -161,6 +161,7 @@ Plug 'romainl/Apprentice'
 Plug 'altercation/vim-colors-solarized'
 Plug 'rakr/vim-one'
 Plug 'larsbs/vimterial_dark'
+Plug 'cocopon/iceberg.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
