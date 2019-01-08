@@ -96,7 +96,11 @@
 " esearch {
 let g:esearch = {
             \ 'default_mappings': 1,
+            \ 'escape_special': 1,
+            \ 'regex': 1,
+            \ 'recover_regex': 1,
             \}
+"  let g:esearch#adapter#grep#options = '-P'
 " }
 
 " NERDTree {
