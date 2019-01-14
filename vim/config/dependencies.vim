@@ -26,6 +26,9 @@ Plug 'othree/eregex.vim'
 
 Plug 'easymotion/vim-easymotion'
 
+" focussing on a selected region<Paste>
+Plug 'chrisbra/NrrwRgn'
+
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'tomtom/tlib_vim'
 " Plug 'garbas/vim-snipmate'
@@ -94,7 +97,7 @@ Plug 'othree/html5.vim', { 'for': 'html' }
 
 " git
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fugitive.git'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " jenkinsfile
