@@ -3,18 +3,6 @@
 "
 call plug#begin('~/.config/vim/plugged')
 
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"   " real-time collaborative editing
-"   " Plug 'floobits/floobits-neovim'
-" else
-"   Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-
-" Plug 'mhinz/vim-startify'
-
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
@@ -114,25 +102,26 @@ Plug 'isRuslan/vim-es6', { 'for': 'javascript' }
 " javascript/typescript
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'typescript'] }
 
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+if has('nvim')
+    " For async completion
+    Plug 'Shougo/deoplete.nvim'
+    " For Denite features
+    Plug 'Shougo/denite.nvim'
+    Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+endif
 
+Plug 'w0rp/ale'
 
 " typescript {
 "
     if has('nvim')
         Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-        " For async completion
-        Plug 'Shougo/deoplete.nvim'
-        " For Denite features
-        Plug 'Shougo/denite.nvim'
     else
         Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
         Plug 'Quramy/tsuquyomi', { 'for' : 'typescript' }
     endif
 
     Plug 'HerringtonDarkholme/yats.vim', { 'for' : 'typescript' }
-
-    Plug 'w0rp/ale', { 'for' : 'typescript' } 
 
 " }
 
