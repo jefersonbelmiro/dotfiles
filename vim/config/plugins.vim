@@ -1,32 +1,5 @@
 "  plugin's config 
 
-" deoplete.nvim {
-" if has('nvim')
-    " let g:deoplete#enable_at_startup = 1
-
-    " disable autocomplete
-    " let g:deoplete#disable_auto_complete = 1
-    " if has("gui_running")
-    "     inoremap <silent><expr><C-Space> deoplete#mappings#manual_complete()
-    " else
-    "     inoremap <silent><expr><C-@> deoplete#mappings#manual_complete()
-    " endif
-" endif 
-" }
-
-" ultisnips {
-
-    " UltiSnips config
-    " inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-    " let g:UltiSnipsExpandTrigger="<c-k>"
-    " let g:UltiSnipsJumpForwardTrigger="<c-k>"
-    " let g:UltiSnipsJumpBackwardTrigger="<c-j>"
-    "
-    " " If you want :UltiSnipsEdit to split your window.
-    " let g:UltiSnipsEditSplit="vertical" 
-
-" }
-
 " editorconfig {
     let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " }
@@ -50,20 +23,6 @@
 " AsyncFinder {
   map <F7> :AsyncFinderBottom<CR>
 " }
-
-" Command-t {
-
-  " let g:CommandTMaxFiles = 99999
-  " let g:CommandTMaxDepth = 99999
-  " let g:CommandTMaxHeight = 10
-  " " let g:CommandTFileScanner = 'find'
-  " map <leader>b :CommandTMRU<CR>
-  " if &term =~ "xterm" || &term =~ "screen"
-  "   let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-  " endif
-
-" }
-
 
 " typescript {
 "
@@ -93,16 +52,6 @@
 
 " }
 
-" esearch {
-let g:esearch = {
-            \ 'default_mappings': 1,
-            \ 'escape_special': 1,
-            \ 'regex': 1,
-            \ 'recover_regex': 1,
-            \}
-"  let g:esearch#adapter#grep#options = '-P'
-" }
-
 " NERDTree {
     let g:NERDTreeMinimalUI = 1
     " let g:NERDTreeWinSize = 25
@@ -119,7 +68,6 @@ let g:eregex_force_case = 1
 " nnoremap <leader>/ :call eregex#toggle()<CR> 
 " }
 
-
 " ctrlp {
 " Full path fuzzy file, buffer, mru, tag, ... finder 
 
@@ -129,6 +77,20 @@ map <leader>b :CtrlPBuffer<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_max_files = 0
 let g:ctrlp_cmd = 'CtrlPCurWD' 
+let g:ctrlp_by_filename = 1
+
+if executable('rg') " RIPGREP
+    let g:search_adapter='rg'
+    set grepprg=rg\ --color=never
+    let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+    let g:ctrlp_use_caching = 0
+elseif executable('ag') " SILVER SEARCHER
+    let g:search_adapter='ag'
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+endif
+
 " let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(CVS|git|hg|svn)$',
@@ -137,10 +99,13 @@ let g:ctrlp_custom_ignore = {
 
 " }
 
+" esearch {
+    let g:esearch = { 'default_mappings': 1, 'adapter': g:search_adapter, 'regex': 1, 'recover_regex': 1 }
+" }
 
 " supertab  {
-let g:SuperTabContextDefaultCompletionType = "<c-n>"
-let g:SuperTabDefaultCompletionType = "<c-n>"
+    let g:SuperTabContextDefaultCompletionType = "<c-n>"
+    let g:SuperTabDefaultCompletionType = "<c-n>"
 " }
 
 " easymotion {
@@ -160,7 +125,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " cvsdiff {
   map <F8> :CvsDiffToggle<cr>
 " }
-"
+
 " incsearch {
   " map <leader>n <Plug>(incsearch-fuzzy-/)
   map <leader>n <Plug>(incsearch-fuzzy-stay)
