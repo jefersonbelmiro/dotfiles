@@ -5,10 +5,9 @@ function! Save()
 
     let fileName = expand('%')
     silent execute ':w'
-    "silent execute ':set scr=4'
     " silent execute ':set ft=' . &filetype
-
-    syntax sync fromstart
+    silent execute ':set scr=4'
+    silent syntax sync fromstart
     echo 'save ' . l:fileName
 
   catch
