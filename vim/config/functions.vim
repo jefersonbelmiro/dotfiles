@@ -8,6 +8,7 @@ function! Save()
     "silent execute ':set scr=4'
     " silent execute ':set ft=' . &filetype
 
+    syntax sync fromstart
     echo 'save ' . l:fileName
 
   catch
