@@ -4,6 +4,10 @@
     let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " }
 
+" fugitive {
+    nnoremap <silent> <Leader>gs :Gstatus<CR>:20wincmd_<CR>
+" }
+
 " vim-javascript {
     let g:javascript_opfirst = 1
 " }
