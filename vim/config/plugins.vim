@@ -5,7 +5,7 @@
 " }
 
 " fugitive {
-    nnoremap <silent> <Leader>gs :Gstatus<CR>:8wincmd_<CR>
+    nnoremap <silent> <Leader>gs :Gstatus<CR>:8wincmd_ \| set cursorline<CR>
 " }
 
 " vim-javascript {
