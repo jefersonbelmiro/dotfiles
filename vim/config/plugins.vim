@@ -54,6 +54,8 @@
     highlight clear ALEErrorSign
     highlight clear ALEWarningSign
 
+    autocmd FileType typescript map <buffer> <leader>k <Plug>(ale_previous)
+    autocmd FileType typescript map <buffer> <leader>j <Plug>(ale_next)
 " }
 
 " NERDTree {

@@ -17,16 +17,8 @@ Plug 'easymotion/vim-easymotion'
 " focussing on a selected region<Paste>
 Plug 'chrisbra/NrrwRgn'
 
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
-" Plug 'garbas/vim-snipmate'
-" Plug 'honza/vim-snippets'
-
-" Track the engine.
-" Plug 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-" Plug 'jefersonbelmiro/vim-snippets' 
+" Personal Wiki 
+Plug 'vimwiki/vimwiki'
 
 " clean statusline
 Plug 'jefersonbelmiro/statusline.vim'
