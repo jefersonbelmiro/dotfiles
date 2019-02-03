@@ -65,11 +65,6 @@ set nonu
 
 set updatetime=100
 
-" Open new split panes to right and bottom, 
-" which feels more natural than Vim’s default:
-set splitbelow
-set splitright 
-
 set title
 "set titlestring=%f
 set nocompatible                  " desabilita compatiblidade com vi
