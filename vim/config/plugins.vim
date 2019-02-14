@@ -106,7 +106,13 @@ let g:ctrlp_custom_ignore = {
 " }
 
 " esearch {
-    let g:esearch = { 'default_mappings': 1, 'adapter': g:search_adapter, 'regex': 1, 'recover_regex': 1 }
+    let g:esearch = { 
+                \ 'default_mappings': 1, 
+                \ 'adapter': g:search_adapter,
+                \ 'regex': 1,
+                \ 'recover_regex': 1 
+                \ }
+    let g:esearch#out#win#open = 'enew'
 " }
 
 " supertab  {
