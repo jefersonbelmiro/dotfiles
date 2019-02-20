@@ -84,6 +84,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_max_files = 0
 let g:ctrlp_cmd = 'CtrlPCurWD' 
 let g:ctrlp_by_filename = 1
+let g:ctrlp_open_multiple_files = '1jr' 
 
 if executable('rg') " RIPGREP
     let g:search_adapter='rg'
