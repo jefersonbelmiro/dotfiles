@@ -6,6 +6,9 @@ call plug#begin('~/.config/vim/plugged')
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
+" Language agnostic folding and motion based on indentation.
+Plug 'pseewald/anyfold'
+
 " read .editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
