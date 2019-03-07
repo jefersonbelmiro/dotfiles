@@ -89,7 +89,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 " javascript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 " Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': 'jsx' }
+" Plug 'mxw/vim-jsx', { 'for': 'jsx' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'Shutnik/jshint2.vim', { 'for': 'javascript' } 
 Plug 'isRuslan/vim-es6', { 'for': 'javascript' }

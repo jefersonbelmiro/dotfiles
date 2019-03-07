@@ -5,6 +5,9 @@ set nocompatible
 " detect when a file is changed
 set autoread 
 
+set synmaxcol=256
+syntax sync minlines=512
+
 " check one time after 4s of inactivity in normal mode
 " au CursorHold * checktime       
 au CursorHold * if !bufexists("[Command Line]") | checktime | endif
