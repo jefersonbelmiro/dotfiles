@@ -31,7 +31,8 @@ bindsym $mod+l focus right
 focus_follows_mouse no
 
 # lock
-bindsym $mod+Shift+x exec i3lock --color 475263
+# bindsym $mod+Shift+x exec i3lock --color 475263
+bindsym $mod+Shift+x exec i3lockr --invert 
 
 # move focused window
 bindsym $mod+Shift+h move left
