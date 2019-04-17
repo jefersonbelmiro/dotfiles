@@ -93,13 +93,14 @@ set sidescrolloff=2 " igual scrolloff so que horizontal, quando cursor ficar 2 c
 set nostartofline   " disabel move cursor first non-blank of the line
 set scroll=4        " linhas do ctrl+u e ctrl+d
 
-autocmd VimEnter * set scroll=4
-autocmd BufEnter * set scroll=4
+autocmd VimEnter * set scroll=4 mouse=a
+autocmd BufEnter * set scroll=4 mouse=a
 " autocmd VimResized * set scroll=4
 
 " on enter terminal buf, go insert mode
 if has('nvim')
-    autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+    autocmd BufEnter * if &buftype == 'terminal' | call TerminalConfigure() | endif
+    autocmd TermOpen * call TerminalConfigure() 
 endif
 
 set expandtab " Use spaces instead of tabs

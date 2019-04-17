@@ -16,6 +16,10 @@ function! Save()
 
 endfunction
 
+function! TerminalConfigure()
+    silent execute ':set mouse= | startinsert'
+endfunction
+
 "
 " Executa um comando e retorna resposta do comando ou erro
 "
