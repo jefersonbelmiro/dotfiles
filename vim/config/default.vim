@@ -38,31 +38,73 @@ if has("gui_running")
     colorscheme vimterial_dark
 else
     try
-        colorscheme womprat
+        " colorscheme womprat
+        colorscheme one
     catch /^Vim\%((\a\+)\)\=:E185/
         color default
     endtry
 
-    " let g:airline_theme = 'ubaryd'
+    " Vim airline theme
+    let g:airline_theme='space'
 
-    hi StatusLine ctermbg=234 cterm=NONE guibg=#2c323c
-    hi StatusLineNC ctermbg=234 cterm=NONE guibg=#2c323c
+    hi StatusLine ctermbg=234 cterm=NONE guibg=NONE
+    hi StatusLineNC ctermbg=234 cterm=NONE guibg=NONE gui=NONE
     hi ColorColumn ctermbg=234 guibg=NONE
     hi vertsplit ctermbg=NONE guibg=NONE
 
-    hi TabLine cterm=NONE ctermbg=NONE guibg=#222222 guifg=NONE gui=NONE
-    hi TabLineFill cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE gui=NONE
-    hi TabLineSel cterm=bold,underline ctermbg=NONE guibg=#333333 gui=NONE
+    hi Normal guibg=NONE
+
+    " hi TabLine cterm=NONE ctermbg=NONE guibg=#222222 guifg=NONE gui=NONE
+    " hi TabLineFill cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE gui=NONE
+    " hi TabLineSel cterm=bold,underline ctermbg=NONE guibg=#333333 gui=NONE
 
     " (){}[]
     " hi MatchParen guibg=NONE guifg=#ffffff
 
-    hi Search ctermbg=237 ctermfg=NONE
+    hi Search ctermbg=237 ctermfg=NONE guibg=#444444 guifg=#dddddd
     hi Visual ctermbg=239 ctermfg=NONE
+
+    hi GitGutterChange guifg=orange guibg=NONE gui=NONE
+    hi GitGutterAdd guifg=green guibg=NONE gui=NONE
+    hi GitGutterDelete guifg=red guibg=NONE gui=NONE
+
+    hi custom_deniteMatchedRange gui=NONE guibg=NONE 
+
+    " coc.nvim color changes
+    hi! link CocErrorSign WarningMsg
+    hi! link CocWarningSign Number
+    hi! link CocInfoSign Type
+
+    " Make background transparent for many things
+    hi! Normal ctermbg=NONE guibg=NONE
+    hi! NonText ctermbg=NONE guibg=NONE
+    hi! LineNr ctermfg=NONE guibg=NONE
+    hi! SignColumn ctermfg=NONE guibg=NONE
+
+    " Try to hide vertical spit and end of buffer symbol
+    " hi! VertSplit gui=NONE guifg=#17252c guibg=#17252c
+    " hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
+
+    " Customize NERDTree directory
+    hi! NERDTreeCWD guifg=#99c794
+
+    " Make background color transparent for git changes
+    " hi! SignifySignAdd guibg=NONE
+    " hi! SignifySignDelete guibg=NONE
+    " hi! SignifySignChange guibg=NONE
+
+    " Highlight git change signs
+    " hi! SignifySignAdd guifg=#99c794
+    " hi! SignifySignDelete guifg=#ec5f67
+    " hi! SignifySignChange guifg=#c594c5
+
+    " hi ActiveWindow guibg=#17252c
+    " hi InactiveWindow guibg=#0D1B22
+
 endif
 
-highlight SignColumn guibg=NONE ctermbg=NONE
-highlight SpellBad ctermbg=NONE cterm=bold,underline ctermfg=9
+" highlight SignColumn guibg=NONE ctermbg=NONE
+" highlight SpellBad ctermbg=NONE cterm=bold,underline ctermfg=9
 
 set nonu
 
@@ -93,9 +135,9 @@ set sidescrolloff=2 " igual scrolloff so que horizontal, quando cursor ficar 2 c
 set nostartofline   " disabel move cursor first non-blank of the line
 set scroll=4        " linhas do ctrl+u e ctrl+d
 
-autocmd VimEnter * set scroll=4 mouse=a
-autocmd BufEnter * set scroll=4 mouse=a
-" autocmd VimResized * set scroll=4
+autocmd VimEnter * if !&previewwindow | silent set scroll=4 mouse=a | endif
+autocmd BufEnter * if !&previewwindow | silent set scroll=4 mouse=a | endif 
+autocmd VimResized * set scroll=4
 
 " on enter terminal buf, go insert mode
 if has('nvim')
@@ -114,14 +156,14 @@ set autoindent  "Auto indent
 set smartindent "Smart indent
 set nowrap      "No Wrap lines
 
-set nobackup   
-set nowritebackup 
-set noswapfile  
+" set nobackup   
+" set nowritebackup 
+" set noswapfile  
   
 set mousem=popup_setpos
 set mouse=a
-set showcmd
-set showmode
+set noshowcmd
+set noshowmode
 set ttyfast
 
 "set list
@@ -138,9 +180,9 @@ set diffopt+=iwhite
 set wildmenu
 set wildmode=list:longest                     " Command <tab> completion, list matches, then longest common, then all.
 set wildignore=*.o,*~,*.pyc,CVS,*~,.git       " Ignora certos tipos de arquivo
-set wildignore+=*/node_modules/*
-set wildignore+=*/bower_components/*
-set wildignore+=*/vendor/*
+" set wildignore+=*/node_modules/*
+" set wildignore+=*/bower_components/*
+" set wildignore+=*/vendor/*
 
 set termencoding=utf-8                       " Codificação do terminal
 set fileformats=unix,dos,mac                 " Use unix as the standard file type
@@ -152,13 +194,51 @@ cmap w!! w !sudo tee % >/dev/null
 " Folding
 set foldmethod=manual
 
-set shortmess+=filmnrxoOtT                      " abbrev. of messages (avoids 'hit enter')
+" set shortmess+=filmnrxoOtT                      " abbrev. of messages (avoids 'hit enter')
+
+" Don't give completion messages like 'match 1 of 2'
+" or 'The only match'
+set shortmess+=c
+
 set viewoptions=folds,options,cursor,unix,slash " better unix / windows compatibility
 set virtualedit=all                             " permite o cursor mover onde nao tem caracter 
 
 "undo 
 set undofile
 set undodir=~/.config/nvim/undodir
+
+
+" Yank and paste with the system clipboard
+set clipboard=unnamed
+
+" Enable true color support
+set termguicolors
+
+
+" Set backups
+if has('persistent_undo')
+  set undofile
+  set undolevels=3000
+  set undoreload=10000
+endif
+set backupdir=~/.config/nvim/backup " Don't put backups in current dir
+set backup
+set noswapfile
+
+" ============================================================================ "
+" ===                                UI                                    === "
+" ============================================================================ "
+
+" Enable true color support
+set termguicolors
+
+" " Editor theme
+" set background=dark
+" try
+"   colorscheme OceanicNext
+" catch
+"   colorscheme slate
+" endtry
 
 " au filetype php set keywordprg=pman
 autocmd filetype php setlocal iskeyword+=$

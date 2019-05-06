@@ -134,7 +134,7 @@ inoremap JK <ESC>l
 imap <C-c> <CR><Esc>O
 
 " navegacao em insert mode
-inoremap <C-k> <c-o>k
-inoremap <C-j> <c-o>j
+" inoremap <C-k> <c-o>k
+" inoremap <C-j> <c-o>j
 inoremap <C-h> <c-o>h
 inoremap <C-l> <c-o>l
