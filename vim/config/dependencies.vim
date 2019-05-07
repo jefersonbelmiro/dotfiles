@@ -22,6 +22,9 @@ call plug#begin('~/.config/vim/plugged')
 " NERDTree
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
+" The fancy start screen for Vim.
+Plug 'mhinz/vim-startify'
+
 " Language agnostic folding and motion based on indentation.
 Plug 'pseewald/anyfold'
 

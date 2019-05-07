@@ -135,9 +135,9 @@ set sidescrolloff=2 " igual scrolloff so que horizontal, quando cursor ficar 2 c
 set nostartofline   " disabel move cursor first non-blank of the line
 set scroll=4        " linhas do ctrl+u e ctrl+d
 
-autocmd VimEnter * if !&previewwindow | silent set scroll=4 mouse=a | endif
-autocmd BufEnter * if !&previewwindow | silent set scroll=4 mouse=a | endif 
-autocmd VimResized * set scroll=4
+" autocmd VimEnter * if !&previewwindow | silent set scroll=4 mouse=a | endif
+" autocmd BufEnter * if !&previewwindow | silent set scroll=4 mouse=a | endif 
+" autocmd VimResized * set scroll=4
 
 " on enter terminal buf, go insert mode
 if has('nvim')
