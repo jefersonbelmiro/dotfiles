@@ -138,6 +138,7 @@ set scroll=4        " linhas do ctrl+u e ctrl+d
 " autocmd VimEnter * if !&previewwindow | silent set scroll=4 mouse=a | endif
 " autocmd BufEnter * if !&previewwindow | silent set scroll=4 mouse=a | endif 
 " autocmd VimResized * set scroll=4
+autocmd BufCreate * silent cd .
 
 " on enter terminal buf, go insert mode
 if has('nvim')

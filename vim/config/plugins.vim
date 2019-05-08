@@ -233,6 +233,9 @@ call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#source(
             \ 'file/rec', 'sorters', ['sorter/sublime'])
 
+" call denite#custom#source('file/old', 'matchers',
+"       \ ['converter/abbr_word', 'matcher/fuzzy'])
+
 " Remove date from buffer list
 call denite#custom#var('buffer', 'date_format', '')
 
@@ -290,14 +293,14 @@ call denite#custom#map(
 
 " denite-git {
 " <C-V> preview
-  map <F8> :Denite -split=floating -auto-resize -winrow=0 gitlog<CR>
+  map <F8> :call DeniteExecute('gitlog')<CR>
 " }
 "
 " git status 
-map <Leader>gs :Denite -split=floating -auto-resize -winrow=0 gitstatus <CR>
+map <Leader>gs :call DeniteExecute('gitstatus')<CR>
 
 " files 
-map <c-p> :Denite -split=floating -auto-resize -winrow=0 file/rec <CR>
+map <c-p> :call DeniteExecute('file/rec')<CR>
 
 call s:profile(s:denite_options)
 catch
@@ -341,8 +344,17 @@ nmap <silent> <leader>dj <Plug>(coc-implementation)
 
 nmap <silent> <F3> :call FixAllProblems()<CR>
 
-nmap <leader>b :Denite -split=floating -auto-resize -winrow=0 buffer<CR>
-nmap <leader>m :Denite -split=floating -auto-resize -winrow=0 file/old<CR>
+nmap <leader>b :call DeniteExecute('buffer')<CR>
+nmap <leader>m :call DeniteExecute('file/old')<CR>
+
+function! DeniteExecute(cmd, ...)
+    let option = get(a:, 1, '')
+    silent execute ':Denite 
+        \ -split=floating 
+        \ -auto-resize 
+        \ -winheight=13 -winrow=0
+        \ ' . option . ' ' . a:cmd
+endfunction
 
 function! FixAllProblems()
     CocCommand tsserver.executeAutofix
@@ -535,6 +547,9 @@ inoremap <silent><expr> <TAB>
 " inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+" startify
+let g:startify_change_to_dir = 0
 
 set updatetime=300
 
