@@ -341,15 +341,17 @@ let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 nmap <silent> <leader>dd <Plug>(coc-definition)
 nmap <silent> <leader>dr <Plug>(coc-references)
 nmap <silent> <leader>dj <Plug>(coc-implementation)
+nmap <leader>dc :call DeniteExecute('change')<CR>
 
 nmap <silent> <F3> :call FixAllProblems()<CR>
+nmap <silent> <F5> :call FixCompatibilite()<CR>
 
 nmap <leader>b :call DeniteExecute('buffer')<CR>
 nmap <leader>m :call DeniteExecute('file/old')<CR>
 
 function! DeniteExecute(cmd, ...)
     let option = get(a:, 1, '')
-    silent execute ':Denite 
+    execute ':Denite 
         \ -split=floating 
         \ -auto-resize 
         \ -winheight=13 -winrow=0
@@ -359,11 +361,14 @@ endfunction
 function! FixAllProblems()
     CocCommand tsserver.executeAutofix
     CocCommand tslint.fixAllProblems
-    silent execute ':set scr=4'
-    silent syntax sync fromstart
+    call FixCompatibilite()
     echo "fixed"
 endfunction
 
+function! FixCompatibilite() 
+    silent execute ':set scr=4'
+    silent syntax sync fromstart
+endfunction
 
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
