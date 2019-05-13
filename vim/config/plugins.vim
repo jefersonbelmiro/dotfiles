@@ -361,13 +361,14 @@ endfunction
 function! FixAllProblems()
     CocCommand tsserver.executeAutofix
     CocCommand tslint.fixAllProblems
-    call FixCompatibilite()
+    silent call FixCompatibilite()
     echo "fixed"
 endfunction
 
 function! FixCompatibilite() 
     silent execute ':set scr=4'
     silent syntax sync fromstart
+    echo 'fixed'
 endfunction
 
 " Use <C-l> for trigger snippet expand.
