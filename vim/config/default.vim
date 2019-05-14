@@ -136,13 +136,13 @@ set nostartofline   " disabel move cursor first non-blank of the line
 set scroll=4        " linhas do ctrl+u e ctrl+d
 
 autocmd BufCreate * silent cd .
-autocmd VimEnter * if !&previewwindow && empty(&buftype) | silent set scroll=4 mouse=a | endif
-autocmd BufEnter * if !&previewwindow && empty(&buftype) | silent set scroll=4 mouse=a | endif 
-autocmd VimResized * if !&previewwindow && empty(&buftype) | silent set scroll=4 mouse=a | endif  
+" autocmd VimEnter * if !&previewwindow && empty(&buftype) | silent set scroll=4 mouse=a | endif
+" autocmd BufEnter * if !&previewwindow && empty(&buftype) | silent set scroll=4 mouse=a | endif 
+" autocmd VimResized * if !&previewwindow && empty(&buftype) | silent set scroll=4 mouse=a | endif  
 
 " on enter terminal buf, go insert mode
 if has('nvim')
-    autocmd BufEnter * if &buftype == 'terminal' | call TerminalConfigure() | endif
+    " autocmd BufEnter * if &buftype == 'terminal' | call TerminalConfigure() | endif
     autocmd TermOpen * call TerminalConfigure() 
 endif
 
