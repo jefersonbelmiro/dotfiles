@@ -353,7 +353,6 @@ function! DeniteExecute(cmd, ...)
     let option = get(a:, 1, '')
     execute ':Denite 
         \ -split=floating 
-        \ -auto-resize 
         \ -winheight=13 -winrow=0
         \ ' . option . ' ' . a:cmd
 endfunction

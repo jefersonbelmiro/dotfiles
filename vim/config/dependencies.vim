@@ -188,8 +188,8 @@ Plug 'mhartington/oceanic-next'
 " Plug 'vim-airline/vim-airline-themes'
 
 " Icons
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'ryanoasis/vim-devicons'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 
 
