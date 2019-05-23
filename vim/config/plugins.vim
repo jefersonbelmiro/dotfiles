@@ -249,7 +249,6 @@ call denite#custom#var('buffer', 'date_format', '')
 "   highlight_matched_char  - Matched characters highlight
 "   highlight_matched_range - matched range highlight
 let s:denite_options = {'default' : {
-\ 'auto_resize': 1,
 \ 'highlight_matched_range': 'custom_deniteMatchedRange',
 \ 'prompt': '>',
 \ }}
