@@ -144,7 +144,8 @@ endif
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " Denite - Fuzzy finding, buffer management
-Plug 'Shougo/denite.nvim'
+" Plug 'Shougo/denite.nvim'
+Plug 'rafaelnery/denite.nvim'
 
 " Manger list of git objects with interface of denite.nvim
 Plug 'chemzqm/denite-git'
