@@ -4,13 +4,6 @@
     let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " }
 
-" anyfold {
-    autocmd Filetype * AnyFoldActivate
-    let g:anyfold_fold_comments=1
-    set foldlevel=9999
-    " hi Folded term=NONE cterm=NONE
-" }
-
 " fugitive {
     " nnoremap <silent> <Leader>gs :Gstatus<CR>:8wincmd_ \| set cursorline<CR>
 " }
