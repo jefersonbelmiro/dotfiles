@@ -547,7 +547,15 @@ inoremap <silent><expr> <TAB>
 " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
 " startify
+
+" When opening a file or bookmark, change to its directory.
 let g:startify_change_to_dir = 0
+" When opening a file or bookmark, seek and change to the root directory of the VCS (if there is one). 
+let g:startify_change_to_vcs_root = 1
+" Automatically update sessions
+let g:startify_session_persistence = 1
+let g:startify_fortune_use_unicode = 1
+let g:startify_session_autoload = 1
 
 set updatetime=300
 
