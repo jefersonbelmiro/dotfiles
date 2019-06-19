@@ -5,5 +5,7 @@
     "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
     "diagnostic.errorSign": "•",
     "diagnostic.warningSign": "•",
-    "diagnostic.infoSign": "•"
+    "diagnostic.infoSign": "•",
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true
 }
