@@ -366,7 +366,7 @@ function! FixAllProblems()
 endfunction
 
 function! FixCompatibilite() 
-    silent execute ':set scr=4'
+    silent execute ':set scr=4 | set mouse=a'
     silent syntax sync fromstart
     echo 'fixed layout'
 endfunction
