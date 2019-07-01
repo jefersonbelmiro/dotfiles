@@ -5,7 +5,7 @@
 " }
 
 " fugitive {
-    " nnoremap <silent> <Leader>gs :Gstatus<CR>:8wincmd_ \| set cursorline<CR>
+    nnoremap <silent> <Leader>gs :Gstatus<CR>:8wincmd_ \| set cursorline<CR>
 " }
 
 " vim-javascript {
@@ -297,7 +297,7 @@ call denite#custom#map(
 " }
 "
 " git status 
-map <Leader>gs :call DeniteExecute('gitstatus')<CR>
+" map <Leader>gs :call DeniteExecute('gitstatus')<CR>
 
 " files 
 map <c-p> :call DeniteExecute('file/rec')<CR>
