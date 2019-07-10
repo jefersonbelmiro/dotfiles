@@ -82,3 +82,11 @@ function! VisualSelection(direction) range
   let @" = l:saved_reg
 endfunction
 
+" /home/dbserver/dotfiles/vim/config/functions.vim
+function! CopyCurrentFileToClipboard()
+    execute 'let @+=expand("%")'
+endfunction
+
+function! CopyCurrentAbsolutePathToClipboard()
+    execute 'let @+=expand("%:p")'
+endfunction
