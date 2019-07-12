@@ -97,6 +97,9 @@ Plug 'airblade/vim-gitgutter'
 " jenkinsfile
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
+" quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'
+
 " javascript
 " Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 " Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }

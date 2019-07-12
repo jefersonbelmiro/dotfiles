@@ -47,12 +47,12 @@ map <F4> :q<CR>
 imap <F4> <esc>:q<CR>
 
 " add '"([{< in selected text
-vnoremap ' c''<ESC>P 
-vnoremap " c""<ESC>P 
-vnoremap ( c()<ESC>P 
-vnoremap [ c[]<ESC>P 
-vnoremap { c{}<ESC>P 
-" vnoremap < c<><ESC>P 
+" vnoremap ' c''<ESC>P 
+" vnoremap " c""<ESC>P 
+" vnoremap ( c()<ESC>P 
+" vnoremap [ c[]<ESC>P 
+" vnoremap { c{}<ESC>P 
+" " vnoremap < c<><ESC>P 
 
 " identation
 vmap <TAB> >gv
@@ -138,3 +138,5 @@ imap <C-c> <CR><Esc>O
 " inoremap <C-j> <c-o>j
 inoremap <C-h> <c-o>h
 inoremap <C-l> <c-o>l
+
+noremap gf gF
