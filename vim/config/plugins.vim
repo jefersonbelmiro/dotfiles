@@ -341,7 +341,12 @@ let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 nmap <silent> <leader>dd <Plug>(coc-definition)
 nmap <silent> <leader>dr <Plug>(coc-references)
 nmap <silent> <leader>dj <Plug>(coc-implementation)
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>[c <Plug>(coc-diagnostic-prev)
+nmap <leader>]c <Plug>(coc-diagnostic-next)
+
 nmap <leader>dc :call DeniteExecute('change')<CR>
+
 
 nmap <silent> <F3> :call FixAllProblems()<CR>
 nmap <silent> <F5> :call FixCompatibilite()<CR>
