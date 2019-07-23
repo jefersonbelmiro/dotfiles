@@ -53,6 +53,7 @@ else
     hi vertsplit ctermbg=NONE guibg=NONE
 
     hi Normal guibg=NONE
+    hi NormalFloat guibg=#111111
 
     " hi TabLine cterm=NONE ctermbg=NONE guibg=#222222 guifg=NONE gui=NONE
     " hi TabLineFill cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE gui=NONE

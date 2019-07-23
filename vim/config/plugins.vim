@@ -357,9 +357,10 @@ nmap <leader>m :call DeniteExecute('file/old')<CR>
 function! DeniteExecute(cmd, ...)
     let option = get(a:, 1, '')
     " \ -start-filter
+    " \  -winrow=0
     execute ':Denite 
         \ -split=floating 
-        \ -winheight=13 -winrow=0
+        \ -auto-resize -winheight=13
         \ ' . option . ' ' . a:cmd
 endfunction
 
