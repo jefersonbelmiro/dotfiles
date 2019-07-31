@@ -144,6 +144,7 @@ if has('nvim')
     autocmd VimEnter * if !&previewwindow && empty(&buftype) && &buftype != 'terminal' | silent set scroll=4 mouse=a | endif
     autocmd BufEnter * if !&previewwindow && empty(&buftype) && &buftype != 'terminal' | silent set scroll=4 mouse=a | endif 
     autocmd BufEnter * if &buftype == 'terminal' | silent set mouse= | startinsert | endif 
+    autocmd TermOpen * silent set mouse= | startinsert
 endif
 
 set expandtab " Use spaces instead of tabs
