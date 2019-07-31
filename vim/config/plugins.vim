@@ -249,10 +249,27 @@ call denite#custom#var('buffer', 'date_format', '')
 "   prompt_highlight        - Specify color of prompt
 "   highlight_matched_char  - Matched characters highlight
 "   highlight_matched_range - matched range highlight
+" \ 'reversed': 1,
+" \ 'auto_resume': 1,
+" \ 'winminheight': 10, 
+" \ 'auto_resize': 1,
 let s:denite_options = {'default' : {
 \ 'highlight_matched_range': 'custom_deniteMatchedRange',
-\ 'prompt': '>',
+\ 'prompt': '❯',
+\ 'winheight': 10,
+\ 'start_filter': 1,
 \ }}
+
+augroup ps_denite_setup
+    au!
+    au FileType denite-filter call s:denite_filter_mappings()
+augroup END
+function! s:denite_filter_mappings() abort
+    inoremap <silent><buffer><expr> <ESC> denite#do_map('quit')
+    inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+    inoremap <silent><buffer> <C-j> <Esc><C-w>p:call cursor(line('.')+1,0)<CR><C-w>pA
+    inoremap <silent><buffer> <C-k> <Esc><C-w>p:call cursor(line('.')-1,0)<CR><C-w>pA
+endfunction
 
 " Loop through denite options and enable them
 function! s:profile(opts) abort
@@ -360,7 +377,6 @@ function! DeniteExecute(cmd, ...)
     " \  -winrow=0
     execute ':Denite 
         \ -split=floating 
-        \ -auto-resize -winheight=13
         \ ' . option . ' ' . a:cmd
 endfunction
 
