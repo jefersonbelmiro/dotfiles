@@ -275,8 +275,9 @@ function! s:denite_mappings() abort
     nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
     noremap <silent><buffer><expr> <CR> denite#do_map('do_action')
     nnoremap <silent><buffer><expr> <tab> denite#do_map('choose_action')
-    nnoremap <silent><buffer><expr> V denite#do_map('toggle_select')
     nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> V denite#do_map('toggle_select')
+    nnoremap <silent><buffer><expr> <c-space> denite#do_map('toggle_select')
 endfunction
 
 " denite-git {
