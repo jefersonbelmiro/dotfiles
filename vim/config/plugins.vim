@@ -189,16 +189,6 @@ let g:tagbar_type_typescript = {
 
 " }
 
-
-
-
-
-
-
-
-
-
-
 " ============================================================================ "
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
@@ -253,60 +243,41 @@ call denite#custom#var('buffer', 'date_format', '')
 " \ 'auto_resume': 1,
 " \ 'winminheight': 10, 
 " \ 'auto_resize': 1,
-let s:denite_options = {'default' : {
-\ 'highlight_matched_range': 'custom_deniteMatchedRange',
-\ 'prompt': '❯',
-\ 'winheight': 10,
-\ 'start_filter': 1,
-\ }}
+let s:denite_options = {
+            \ 'prompt': '❯',
+            \ 'split': 'floating',
+            \ 'winheight': 10,
+            \ 'start_filter': 1,
+            \ 'source_names': 'short',
+            \ 'highlight_matched_range': 'custom_deniteMatchedRange',
+            \ }
+call denite#custom#option('default', s:denite_options)
 
 augroup ps_denite_setup
     au!
+    autocmd FileType denite call s:denite_mappings()
     au FileType denite-filter call s:denite_filter_mappings()
 augroup END
+
+" DENITE FILTER WINDOW
 function! s:denite_filter_mappings() abort
+    imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
     inoremap <silent><buffer><expr> <ESC> denite#do_map('quit')
     inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
     inoremap <silent><buffer> <C-j> <Esc><C-w>p:call cursor(line('.')+1,0)<CR><C-w>pA
     inoremap <silent><buffer> <C-k> <Esc><C-w>p:call cursor(line('.')-1,0)<CR><C-w>pA
+    inoremap <silent><buffer><expr> <tab> denite#do_map('choose_action')
 endfunction
 
-" Loop through denite options and enable them
-function! s:profile(opts) abort
-  for l:fname in keys(a:opts)
-    for l:dopt in keys(a:opts[l:fname])
-      call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
-    endfor
-  endfor
+" DENITE WINDOW
+function! s:denite_mappings() abort
+    noremap <silent><buffer><expr> <ESC> denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+    noremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> <tab> denite#do_map('choose_action')
+    nnoremap <silent><buffer><expr> V denite#do_map('toggle_select')
+    nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
 endfunction
-
-" Change mappings.
-call denite#custom#map(
-            \ 'insert',
-            \ '<C-j>',
-            \ '<denite:move_to_next_line>',
-            \ 'noremap'
-            \)
-call denite#custom#map(
-            \ 'insert',
-            \ '<C-k>',
-            \ '<denite:move_to_previous_line>',
-            \ 'noremap'
-            \)
-
-call denite#custom#map(
-      \ 'insert',
-      \ '<C-d>',
-      \ '<denite:do_action:delete>',
-      \ 'noremap'
-      \)
-
-call denite#custom#map(
-      \ 'insert',
-      \ '<C-r>',
-      \ '<denite:do_action:reset>',
-      \ 'noremap'
-      \)
 
 " denite-git {
 " <C-V> preview
@@ -319,7 +290,6 @@ call denite#custom#map(
 " files 
 map <c-p> :call DeniteExecute('file/rec')<CR>
 
-call s:profile(s:denite_options)
 catch
   echo 'Denite not installed. It should work after running :PlugInstall'
 endtry
@@ -373,11 +343,7 @@ nmap <leader>m :call DeniteExecute('file/old')<CR>
 
 function! DeniteExecute(cmd, ...)
     let option = get(a:, 1, '')
-    " \ -start-filter
-    " \  -winrow=0
-    execute ':Denite 
-        \ -split=floating 
-        \ ' . option . ' ' . a:cmd
+    execute ':Denite ' . option . ' ' . a:cmd
 endfunction
 
 function! FixAllProblems()
