@@ -141,8 +141,8 @@ autocmd BufCreate * silent cd .
 
 " on enter terminal buf, go insert mode
 if has('nvim')
-    autocmd VimEnter * if !&previewwindow && empty(&buftype) && &buftype != 'terminal' | silent set scroll=4 mouse=a | endif
-    autocmd BufEnter * if !&previewwindow && empty(&buftype) && &buftype != 'terminal' | silent set scroll=4 mouse=a | endif 
+    autocmd VimEnter * if !&previewwindow && empty(&buftype) && &buftype != 'terminal' | silent set mouse=a | endif
+    autocmd BufEnter * if !&previewwindow && empty(&buftype) && &buftype != 'terminal' | silent set mouse=a | endif 
     autocmd BufEnter * if &buftype == 'terminal' | silent set mouse= | startinsert | endif 
     autocmd TermOpen * silent set mouse= | startinsert
 endif

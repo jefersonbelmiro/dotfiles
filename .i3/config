@@ -241,6 +241,10 @@ exec --no-startup-id termite --name=scratchterminal
 for_window [instance="scratchterminal"] move scratchpad
 for_window [instance="scratchterminal"] resize set 625 400
 
+# cal window - using in polybar date section
+for_window [instance="calterminal"] move scratchpad
+for_window [instance="calterminal"] resize set 625 400
+
 # list open windows to switch to
 bindsym Mod1+Tab exec rofi -show window
 

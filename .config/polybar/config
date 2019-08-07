@@ -332,6 +332,8 @@ format-prefix-foreground = ${colors.foreground}
 
 label = " %date%     %time%"
 
+click-right = termite --name=calterminal --exec="cal"
+
 [module/weather]
 type = custom/script
 interval = 10
