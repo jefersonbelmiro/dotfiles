@@ -338,7 +338,7 @@ nmap <leader>dc :call DeniteExecute('change')<CR>
 
 nmap <silent> <F3> :call FixAllProblems()<CR>
 nmap <silent> <F5> :call FixCompatibilite()<CR>
-nmap <silent> <F5> :call OrganizeImports()<CR>
+nmap <silent> <F6> :call OrganizeImports()<CR>
 
 nmap <leader>b :call DeniteExecute('buffer')<CR>
 nmap <leader>m :call DeniteExecute('file/old')<CR>
