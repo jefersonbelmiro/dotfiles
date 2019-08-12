@@ -338,6 +338,7 @@ nmap <leader>dc :call DeniteExecute('change')<CR>
 
 nmap <silent> <F3> :call FixAllProblems()<CR>
 nmap <silent> <F5> :call FixCompatibilite()<CR>
+nmap <silent> <F5> :call OrganizeImports()<CR>
 
 nmap <leader>b :call DeniteExecute('buffer')<CR>
 nmap <leader>m :call DeniteExecute('file/old')<CR>
@@ -359,6 +360,12 @@ function! FixCompatibilite()
     silent syntax sync fromstart
     echo 'fixed layout'
 endfunction
+
+function! OrganizeImports() 
+    CocCommand tsserver.organizeImports
+    echo "fix organize imports"
+endfunction
+
 
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
