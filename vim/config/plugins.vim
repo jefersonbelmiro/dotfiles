@@ -247,6 +247,8 @@ let s:denite_options = {
             \ 'prompt': '❯',
             \ 'split': 'floating',
             \ 'winheight': 10,
+            \ 'winwidth': 99999,
+            \ 'winrow': 0,
             \ 'start_filter': 1,
             \ 'source_names': 'short',
             \ 'highlight_matched_range': 'custom_deniteMatchedRange',
@@ -508,6 +510,7 @@ let g:startify_change_to_vcs_root = 1
 let g:startify_session_persistence = 1
 let g:startify_fortune_use_unicode = 1
 let g:startify_session_autoload = 1
+let g:startify_custom_header = startify#fortune#boxed()
 
 set updatetime=300
 
