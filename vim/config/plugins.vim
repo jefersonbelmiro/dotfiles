@@ -224,6 +224,9 @@ call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#source(
             \ 'file/rec', 'sorters', ['sorter/sublime'])
 
+call denite#custom#source('file/rec',
+            \ 'matchers', ['converter/tail_path', 'matcher/fuzzy'])
+
 " call denite#custom#source('file/old', 'matchers',
 "       \ ['converter/abbr_word', 'matcher/fuzzy'])
 
