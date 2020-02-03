@@ -1,0 +1,14 @@
+#!/bin/sh
+
+git diff --cached --name-status | while read st file; do
+
+  # skip deleted files
+  if [ "$st" = 'D' ]; then
+    continue;
+  fi
+
+  if grep --quiet @GITBLOCK $file; then
+    echo "\n   @GITBLOCK found in $file $rc\n";
+    exit 1
+  fi
+done
