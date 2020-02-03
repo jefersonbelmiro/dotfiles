@@ -245,8 +245,8 @@ for_window [instance="scratchterminal"] resize set 625 400
 for_window [instance="calterminal"] move scratchpad
 for_window [instance="calterminal"] resize set 625 400
 
-# list open windows to switch to
-bindsym Mod1+Tab exec rofi -show window
+# alt-tab: list open windows to switch to
+# bindsym Mod1+Tab exec rofi -show window
 
 # startup
 # exec_always --no-startup-id feh --bg-scale ~/dotfiles/wallpaper/1.jpg
