@@ -132,14 +132,6 @@ let g:ctrlp_custom_ignore = {
   let g:EasyMotion_smartcase = 1 " search case-insensitive
   let g:EasyMotion_use_upper = 1
   let g:EasyMotion_use_smartsign_us = 1
-  let g:startify_lists = [
-              \ { 'type': 'sessions',  'header': ['   Sessions']       },
-              \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-              \ { 'type': 'files',     'header': ['   MRU']            },
-              \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-              \ { 'type': 'commands',  'header': ['   Commands']       },
-              \ ]
-
 
 " }
 
@@ -223,6 +215,10 @@ call denite#custom#var('grep', 'final_opts', [])
 " Change sorters.
 call denite#custom#source(
             \ 'file/rec', 'sorters', ['sorter/sublime'])
+
+" find only in filename
+call denite#custom#source('file/rec',
+            \ 'matchers', ['converter/tail_path', 'matcher/fuzzy'])
 
 " call denite#custom#source('file/old', 'matchers',
 "       \ ['converter/abbr_word', 'matcher/fuzzy'])
@@ -368,27 +364,26 @@ function! OrganizeImports()
     echo "fix organize imports"
 endfunction
 
-
 " Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
+" imap <C-j> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
+" vmap <C-j> <Plug>(coc-snippets-select)
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+" let g:coc_snippet_next = '<c-n>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
+" let g:coc_snippet_prev = '<c-p>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
+" imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Load custom snippets from snippets folder
-let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
+" let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 
 " Hide conceal markers
-let g:neosnippet#enable_conceal_markers = 0
+" let g:neosnippet#enable_conceal_markers = 0
 
 " === NERDTree === "
 " Show hidden files/directories
@@ -501,6 +496,14 @@ inoremap <silent><expr> <TAB>
 " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
 " startify
+"
+let g:startify_lists = [
+            \ { 'type': 'sessions',  'header': ['   Sessions']       },
+            \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+            \ { 'type': 'files',     'header': ['   MRU']            },
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+            \ { 'type': 'commands',  'header': ['   Commands']       },
+            \ ]
 
 " When opening a file or bookmark, change to its directory.
 let g:startify_change_to_dir = 0
