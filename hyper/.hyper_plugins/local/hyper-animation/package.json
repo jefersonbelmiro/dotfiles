@@ -1,0 +1,18 @@
+{
+  "name": "hyper-animation",
+  "version": "1.0.0",
+  "keywords": [
+    "hyper",
+    "hyper.app",
+    "hyper-plugin",
+    "hyper-animation"
+  ],
+  "description": "Extension for animations in Hyper",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefersonbelmiro/hyper-animation.git"
+  },
+  "dependencies": {
+    "particles.js": "^2.0.0"
+  }
+}

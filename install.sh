@@ -61,4 +61,8 @@ cmake --build Release
 sudo cp Release/ccls /usr/local/bin/
 cd -
 
+echo "install hyper"
+ln -sf ~/dotfiles/hyper/.hyper.js ~/.hyper.js 
+ln -sf ~/dotfiles/hyper/.hyper_plugins  ~/.hyper_plugins 
+
 echo "installation complete."
