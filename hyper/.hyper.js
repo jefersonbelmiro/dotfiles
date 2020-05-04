@@ -13,6 +13,14 @@ module.exports = {
     fontSize: 14,
 
     hyperAnimation: {
+        //parth: './.config/hyper-animation/',
+        //background: [
+        //    'glob:*.img',
+        //    '#000',
+        //],
+        //particles: [
+        //    'glob:*.json'
+        //],
     },
 
     // font family with optional fallbacks
