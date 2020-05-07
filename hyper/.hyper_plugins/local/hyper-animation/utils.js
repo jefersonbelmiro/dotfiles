@@ -43,7 +43,7 @@ exports.createOverlay = () => {
     return overlay;
 };
 
-const uninstallParticles = () => {
+exports.uninstallParticles = () => {
     const pJSDom = window["pJSDom"];
     if (pJSDom instanceof Array && pJSDom.length > 0) {
         const length = pJSDom.length;
@@ -66,11 +66,17 @@ exports.installParticles = (overlay, config) => {
 
     require('particles.js');
 
+    exports.uninstallParticles();
+
     const file = getRandomArrayData(config.particles);
+
+    if (!file) {
+        return;
+    }
+
     const path = resolve(__dirname, config.path, file);
     const json = require(path);
 
-    uninstallParticles();
     window.particlesJS(overlay.id, json);
 };
 

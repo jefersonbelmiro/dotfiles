@@ -18,9 +18,9 @@ module.exports = {
         //    'glob:*.img',
         //    '#000',
         //],
-        //particles: [
-        //    'glob:*.json'
-        //],
+        particles: [
+           'edge.json'
+        ],
     },
 
     // font family with optional fallbacks

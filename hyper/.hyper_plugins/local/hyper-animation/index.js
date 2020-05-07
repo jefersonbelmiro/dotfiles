@@ -33,7 +33,7 @@ exports.decorateTerm = (Term, { React }) => {
         }
 
         componentWillUnmount () {
-            uninstallParticles();
+            utils.uninstallParticles();
         }
     }
 };
