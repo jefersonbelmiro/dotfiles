@@ -12,15 +12,15 @@ module.exports = {
     // default font size in pixels for all tabs
     fontSize: 14,
 
-    hyperAnimation: {
-        //parth: './.config/hyper-animation/',
-        //background: [
-        //    'glob:*.img',
-        //    '#000',
-        //],
-        particles: [
-           'edge.json'
-        ],
+    bgPlus: {
+        // path: '~/.config/hyper-animation/',
+        // background: [
+        // //    'glob:*.img',
+        //    '#111',
+        // ],
+        // particles: [
+           // 'edge.json'
+        // ],
     },
 
     // font family with optional fallbacks
@@ -175,7 +175,7 @@ module.exports = {
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
     localPlugins: [
-        "hyper-animation",
+        "hyper-bg-plus",
     ],
 
   keymaps: {

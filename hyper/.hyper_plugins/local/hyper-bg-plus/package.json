@@ -1,18 +1,20 @@
 {
-  "name": "hyper-animation",
+  "name": "hyper-bg-plus",
   "version": "1.0.0",
   "keywords": [
     "hyper",
     "hyper.app",
     "hyper-plugin",
-    "hyper-animation"
+    "hyper-bg-plus"
   ],
-  "description": "Extension for animations in Hyper",
+  "description": "Extension to add delightful background in Hyper terminal",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jefersonbelmiro/hyper-animation.git"
   },
   "dependencies": {
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "thunky": "^1.1.0",
+    "yt-player": "^1.1.0"
   }
 }

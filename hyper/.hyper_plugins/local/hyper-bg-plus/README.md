@@ -11,3 +11,10 @@ to `plugins` in `~/.hyper.js`.
 ## License
 
 MIT
+
+## TODO
+ [ ] - youtube suport
+ [ ] - video suport
+ [ ] - toogle random
+ [ ] - timer
+ [ ] - particle.js, add suport to interactive(mouse)
