@@ -35,7 +35,7 @@ const mergeDeep = (target, source) => {
 };
 
 const errorHandler = (...messages) => {
-    console.error('hyper-bg+:', ...messages);
+    console.error('hyper-bg-plus:', ...messages);
 };
 
 const getConfigItem = (config, style) => {
@@ -99,27 +99,37 @@ const createYoutube2 = (container, id) => {
     container.appendChild(iframe);
 }
 
-const createYoutube = (container, id) => {
+const createYoutube = (container, path) => {
 
-    const iframe = document.createElement('div');
-    iframe.id = 'youtube-player';
+    let id = path.replace('youtube:', '');
+    let playlist = null;
 
-    container.style.visibility = 'hidden';
-    container.appendChild(iframe);
+    if (id.startsWith('youtube-playlist:')) {
+        id = null;
+        playlist = path.replace('youtube-playlist:', '');
+    }
+
+    const iframeContainer = document.createElement('div');
+
+    iframeContainer.style = `
+        // position: absolute;
+        // top: -60px;
+        // left: 0;
+        // min-height: calc(100% + 90px);
+        // min-width: 100%;
+    `;
+    iframeContainer.id = 'youtube-player';
+
+    // container.style.visibility = 'hidden';
+    container.appendChild(iframeContainer);
     
-    const meta = document.head.querySelector('meta[http-equiv]');
-    // if (meta) {
-    //     meta.content = "script-src 'self' https://www.youtube.com; child-src https://www.youtube.com;"
-    // }
-
-
-    // const iframe = fetch('https://www.youtube.com/iframe_api')
-    //     .then(response => response.text())
+    const iframe = fetch('https://www.youtube.com/iframe_api')
+        .then(response => response.text())
 
     const widgetapi = fetch('https://s.ytimg.com/yts/jsbin/www-widgetapi-vflcv97xo/www-widgetapi.js')
         .then(response => response.text())
 
-    Promise.all([widgetapi]).then(responses => {
+    Promise.all([iframe, widgetapi]).then(responses => {
         responses.forEach(response => {
             const script = document.createElement('script');
             script.type = 'text/javascrit';
@@ -130,26 +140,33 @@ const createYoutube = (container, id) => {
             document.body.appendChild(script);
         })
     });
+    
 
     var player;
     window.onYouTubeIframeAPIReady = () => {
-        console.log('onYouTubeIframeAPIReady');
+        console.log('onYouTubeIframeAPIReady', id, playlist);
 
-        player = new YT.Player(iframe, {
-            videoId: id, // YouTube Video ID
+        player = new YT.Player(iframeContainer, {
+            ...id && { videoId: id },
             width: '100%',               // Player width (in px)
             height: '100%',              // Player height (in px)
             playerVars: {
-                playlist: id,
+
+                ...id && { playlist: id },
+            
+                ...playlist && {
+                    listType: 'playlist',
+                    list: playlist, 
+                },
+
                 autoplay: 1,        // Auto-play the video on load
-                autohide: 1,
+                // autohide: 1,
                 disablekb: 1, 
                 controls: 0,        // Hide pause/play buttons in player
                 showinfo: 0,        // Hide the video title
                 modestbranding: 1,  // Hide the Youtube Logo
                 loop: 1,            // Run the video in a loop
                 fs: 0,              // Hide the full screen button
-                autohide: 0,         // Hide video controls when playing
                 rel: 0,
                 enablejsapi: 1
             },
@@ -157,51 +174,25 @@ const createYoutube = (container, id) => {
             events: {
                 'onReady': (event) => {
                     console.log('onReady');
-                    // event.target.mute();
+                    event.target.mute();
+                    // event.target.playVideo();
                     // event.target.setPlaybackQuality('hd1080');
                 },
                 'onStateChange': (event) => {
                     console.log('onStateChange', event, (event && event.data));
                     if(event && event.data === 1){
-                        container.style.visibility = 'visible';
+                        // wait title disapear
+                        // setTimeout(() => {
+                        //     container.style.visibility = 'visible';
+                        // }, 3000);
                     } else if(event && event.data === 0){
-                        event.target.playVideo()
+                        // event.target.playVideo()
                     }
                 }
             }
         });
         
     }
-
-    // setTimeout(() => {
-    //
-    // // 2. This code loads the IFrame Player API code asynchronously.
-    //     var tag = document.createElement('script');
-    //
-    //     tag.src = "https://www.youtube.com/iframe_api";
-    //     var firstScriptTag = document.getElementsByTagName('script')[0];
-    //     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    //
-    //     document.body.appendChild(tag);
-    // }, 2000) 
-
-    // const YTPlayer = require('yt-player')
-    // const player = new YTPlayer('#youtube-player');
-    //
-    // player.load('GKSRyLdjsPA')
-    // player.setVolume(100)
-    // player.on('playing', () => {
-    //     console.log('playing', player.getDuration()) // => 351.521
-    // })
-
-    // container.textContent = `youtube player: ${id}`;
-    // container.style = `
-    //     display: flex;
-    //     text-align: center;
-    //     justify-content: center;
-    //     align-items: center;
-    //     height: 100%;
-    // `;
 }
 
 exports.getRandomArrayData = (data) => {
@@ -330,8 +321,8 @@ exports.installVideo = (overlay, config, basePath) => {
     applyStyle(container, style);
     overlay.appendChild(container);
     
-    if (String(path).startsWith('youtube:')) {
-        createYoutube(container, path.replace('youtube:', ''));
+    if (String(path).startsWith('youtube')) {
+        createYoutube(container, path);
     } else {
         const file = resolve(__dirname, basePath, path);
         if (!file || !fs.existsSync(file)) {
@@ -353,8 +344,8 @@ exports.getConfig = () => {
         background: [
             { 
                 color: [
-                    'rgba(0, 33, 0, 1)',
-                    'rgba(0, 0, 33, 1)',
+                    '#222',
+                    '#000',
                 ], 
 
                 image: {
@@ -390,7 +381,16 @@ exports.getConfig = () => {
                 color: ['#222'], 
                 video: [
                     {
-                        src: ['youtube:i_sc6w65pOs'],
+                        src: [
+                            'youtube:i_sc6w65pOs',
+                            { src: 'youtube:yemuYd6DDXQ', style:  { opacity: .8 } } ,
+                            // 'youtube:z1_X86D34Q0',
+                            // 'youtube:yr9U5k1n6jU',
+                            // 'youtube:zJ7hUvU-d2Q',
+                            // 'youtube:sRE5iQCdRvE',
+                            // 'youtube:n9v-2xF54HM',
+                            // 'youtube-playlist:PLGmxyVGSCDKvmLInHxJ9VdiwEb82Lxd2E'
+                        ],
                         style: {
                             opacity: 0.3
                         }
