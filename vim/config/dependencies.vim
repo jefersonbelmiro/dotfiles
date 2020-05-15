@@ -88,7 +88,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-surround'
 
 " Intellisense Engine
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Denite - Fuzzy finding, buffer management
 Plug 'Shougo/denite.nvim'

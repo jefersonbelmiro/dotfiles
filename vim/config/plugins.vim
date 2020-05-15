@@ -338,6 +338,11 @@ nmap <silent> <F3> :call FixAllProblems()<CR>
 nmap <silent> <F5> :call FixCompatibilite()<CR>
 nmap <silent> <F6> :call OrganizeImports()<CR>
 
+" prettier
+nmap <silent> <F7> :call FormatFile()<CR>
+vmap <leader>p  <Plug>(coc-format-selected)
+nmap <leader>p  <Plug>(coc-format-selected)
+
 nmap <leader>b :call DeniteExecute('buffer')<CR>
 nmap <leader>m :call DeniteExecute('file/old')<CR>
 
@@ -362,6 +367,11 @@ endfunction
 function! OrganizeImports() 
     CocCommand tsserver.organizeImports
     echo "fix organize imports"
+endfunction
+
+function! FormatFile() 
+    CocCommand prettier.formatFile
+    echo "format file"
 endfunction
 
 " Use <C-l> for trigger snippet expand.
