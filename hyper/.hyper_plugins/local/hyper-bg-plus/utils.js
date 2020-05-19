@@ -93,8 +93,22 @@ const createYoutube = (container, path) => {
     `;
   iframeContainer.id = "youtube-player";
 
-  // container.style.visibility = 'hidden';
+  iframeContainer.style.visibility = 'hidden';
   container.appendChild(iframeContainer);
+
+  const loader = document.createElement('div');
+  loader.style = `
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
+  loader.textContent = 'Loading video...';
+  container.appendChild(loader);
 
   const iframe = fetch("https://www.youtube.com/iframe_api").then((response) =>
     response.text()
@@ -155,9 +169,10 @@ const createYoutube = (container, path) => {
           console.log("onStateChange", event, event && event.data);
           if (event && event.data === 1) {
             // wait title disapear
-            // setTimeout(() => {
-            //     container.style.visibility = 'visible';
-            // }, 3000);
+            setTimeout(() => {
+                loader.style.display = 'none';
+                document.getElementById(iframeContainer.id).style.visibility = 'visible';
+            }, 3000);
           } else if (event && event.data === 0) {
             // event.target.playVideo()
           }
@@ -319,41 +334,39 @@ exports.getConfig = () => {
   const defaultConfig = {
     path: resolve(__dirname, "./config/"),
     background: [
-      //{
-      //  color: ["#222", "#000"],
-
-      //  image: {
-      //    src: ["1.jpg", "2.jpg", "3.png", "4.jpg", "5.png"],
-      //    style: {
-      //      opacity: 0.2,
-      //    },
-      //  },
-
-      //  particlesJS: [
-      //    {
-      //      src: ["edge.json", "circles.json"],
-      //      style: {
-      //        opacity: 0.2,
-      //      },
-      //    },
-      //  ],
-
-      //  style: {
-      //    opacity: 1,
-      //  },
-
-      //  random: false,
-      //  timer: 2000,
-      //},
       {
-        color: ["#222"],
+       color: ["#222", "#000"],
+
+       image: {
+         src: ["1.jpg", "2.jpg", "3.png", "4.jpg", "5.png"],
+         style: {
+           opacity: 0.2,
+         },
+       },
+
+       particlesJS: [
+         {
+           src: ["edge.json", "circles.json"],
+           style: {
+             opacity: 0.2,
+           },
+         },
+       ],
+
+       style: {
+         opacity: 1,
+       },
+
+       random: false,
+       timer: 2000,
+      },
+      {
+        color: ["#000"],
         video: [
           {
             src: [
               {
                 src: "youtube:jrTMMG0zJyI",
-                style: { opacity: 0.3 },
-                anotherInnerConfig: true,
               },
               // 'youtube:i_sc6w65pOs',
               //{
@@ -369,7 +382,6 @@ exports.getConfig = () => {
             style: {
               opacity: 0.3,
             },
-            someParentConfig: true,
           },
         ],
         random: false,
