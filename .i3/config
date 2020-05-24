@@ -1,7 +1,7 @@
 # mod
 set $mod Mod4
 
-set $term termite
+set $term alacritty
 
 # font
 font pango: Hack 10, FontAwesome 10
@@ -241,7 +241,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+Shift+F12 move scratchpad
 bindsym $mod+Shift+Return scratchpad show; [instance="scratchterminal"] move position center
 # settings
-exec --no-startup-id termite --name=scratchterminal
+exec --no-startup-id $term --class=scratchterminal
 for_window [instance="scratchterminal"] move scratchpad
 for_window [instance="scratchterminal"] resize set 625 400
 

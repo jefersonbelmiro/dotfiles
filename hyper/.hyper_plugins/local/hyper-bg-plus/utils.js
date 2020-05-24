@@ -335,7 +335,7 @@ exports.getConfig = () => {
     path: resolve(__dirname, "./config/"),
     background: [
       {
-       color: ["#222", "#000"],
+       color: ["#000"],
 
        image: {
          src: ["1.jpg", "2.jpg", "3.png", "4.jpg", "5.png"],
@@ -360,33 +360,28 @@ exports.getConfig = () => {
        random: false,
        timer: 2000,
       },
-      {
-        color: ["#000"],
-        video: [
-          {
-            src: [
-              {
-                src: "youtube:jrTMMG0zJyI",
-              },
-              // 'youtube:i_sc6w65pOs',
-              //{
-              //  { src: 'youtube:yemuYd6DDXQ', style:  { opacity: .8 } } ,
-              //},
-              // 'youtube:z1_X86D34Q0',
-              // 'youtube:yr9U5k1n6jU',
-              // 'youtube:zJ7hUvU-d2Q',
-              // 'youtube:sRE5iQCdRvE',
-              // 'youtube:n9v-2xF54HM',
-              // 'youtube-playlist:PLGmxyVGSCDKvmLInHxJ9VdiwEb82Lxd2E'
-            ],
-            style: {
-              opacity: 0.3,
-            },
-          },
-        ],
-        random: false,
-        timer: 2000,
-      },
+      //{
+      //  color: ["#000"],
+      //  video: [
+      //    {
+      //      src: [
+      //        // 'youtube:i_sc6w65pOs',
+      //        { src: 'youtube:yemuYd6DDXQ', style:  { opacity: .8 } } ,
+      //        // 'youtube:z1_X86D34Q0',
+      //        // 'youtube:yr9U5k1n6jU',
+      //        // 'youtube:zJ7hUvU-d2Q',
+      //        // 'youtube:sRE5iQCdRvE',
+      //        // 'youtube:n9v-2xF54HM',
+      //        // 'youtube-playlist:PLGmxyVGSCDKvmLInHxJ9VdiwEb82Lxd2E'
+      //      ],
+      //      style: {
+      //        opacity: 0.3,
+      //      },
+      //    },
+      //  ],
+      //  random: false,
+      //  timer: 2000,
+      //},
     ],
   };
   const hyperConfig = window.config.getConfig();

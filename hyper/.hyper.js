@@ -55,10 +55,10 @@ module.exports = {
 
     // terminal background color
     // opacity is only supported on macOS
-    backgroundColor: '#222',
+    backgroundColor: '#000',
 
     // terminal selection color
-    selectionColor: 'rgba(0, 0, 0, 0.3)',
+    selectionColor: 'rgba(0,0,0,0.3)',
 
     // border color (window, tabs)
     borderColor: '#333',
@@ -68,12 +68,6 @@ module.exports = {
 
     // custom CSS to embed in the terminal window
     termCSS: '',
-    // termCSS: `
-    //   x-screen {
-    //     -webkit-font-smoothing: subpixel-antialiased !important;
-    //   }
-    // `,
-
 
     // if you're using a Linux setup which show native menus, set to false
     // default: `true` on Linux, `true` on Windows, ignored on macOS
