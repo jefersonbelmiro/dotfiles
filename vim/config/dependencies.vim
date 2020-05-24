@@ -34,7 +34,7 @@ Plug 'othree/eregex.vim'
 Plug 'easymotion/vim-easymotion'
 
 " focussing on a selected region<Paste>
-Plug 'chrisbra/NrrwRgn'
+" Plug 'chrisbra/NrrwRgn'
 
 " Personal Wiki 
 Plug 'vimwiki/vimwiki'
@@ -45,8 +45,8 @@ Plug 'jefersonbelmiro/statusline.vim'
 " clear tabline
 Plug 'jefersonbelmiro/tabline.vim'
 
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
+" Plug 'haya14busa/incsearch.vim'
+" Plug 'haya14busa/incsearch-fuzzy.vim'
 
 " enables repeating other supported plugins with the . command
 Plug 'tpope/vim-repeat' 
@@ -88,7 +88,8 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-surround'
 
 " Intellisense Engine
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Denite - Fuzzy finding, buffer management
 Plug 'Shougo/denite.nvim'
