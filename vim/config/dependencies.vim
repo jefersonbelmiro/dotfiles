@@ -81,6 +81,12 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" #
+Plug 'OmniSharp/omnisharp-vim'
+
+" code coverage
+" Plug 'ruanyl/coverage.vim'
+
 " jenkinsfile
 Plug 'martinda/Jenkinsfile-vim-syntax'
 

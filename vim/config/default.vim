@@ -185,6 +185,7 @@ set wildignore=*.o,*~,*.pyc,CVS,*~,.git       " Ignora certos tipos de arquivo
 " set wildignore+=*/node_modules/*
 " set wildignore+=*/bower_components/*
 " set wildignore+=*/vendor/*
+set wildignore+=*.cs.meta
 
 set termencoding=utf-8                       " Codificação do terminal
 set fileformats=unix,dos,mac                 " Use unix as the standard file type

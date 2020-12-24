@@ -61,6 +61,7 @@
     let g:NERDTreeDirArrowExpandable = '+'
     let g:NERDTreeDirArrowCollapsible = '-'
     let NERDTreeIgnore = ['\.o$', 'node_modules', '^CVS$']
+    let NERDTreeRespectWildIgnore=1
 
     " Hide the Nerdtree status line to avoid clutter
     let g:NERDTreeStatusline = ''
@@ -333,6 +334,12 @@ nmap <leader>]c <Plug>(coc-diagnostic-next)
 
 nmap <leader>dc :call DeniteExecute('change')<CR>
 
+" Run jest for current project
+command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
+" Run jest for current file
+command! -nargs=0 JestCurrentFile :call  CocAction('runCommand', 'jest.fileTest', ['%'])
+" Run jest for current test
+command! -nargs=0 JestCurrentTest :call  CocAction('runCommand', 'jest.singleTest')
 
 nmap <silent> <F3> :call FixAllProblems()<CR>
 nmap <silent> <F5> :call FixCompatibilite()<CR>
@@ -353,7 +360,8 @@ endfunction
 
 function! FixAllProblems()
     CocCommand tsserver.executeAutofix
-    CocCommand tslint.fixAllProblems
+    " CocCommand tslint.fixAllProblems
+    CocCommand eslint.executeAutofix
     silent call FixCompatibilite()
     echo "autofix"
 endfunction
