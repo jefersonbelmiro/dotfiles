@@ -41,7 +41,8 @@
 ### effects
  - [compton](https://wiki.archlinux.org/index.php/Compton) composite manager
 
-### sound
+## sound
+ - pavucontrol - a volume control for the PulseAudio sound server
  - [pactl](https://wiki.archlinux.org/index.php/PulseAudio/Examples) control a running pulseaudio sound
  - [playerctl](https://github.com/acrisci/playerctl) is a command-line utility for controlling media players over DBus that works with most players.
     If the XF86* keysyms do not work , you can see the available keysyms for your computer by executing this command:
