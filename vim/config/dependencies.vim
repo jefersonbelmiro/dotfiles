@@ -88,7 +88,7 @@ Plug 'OmniSharp/omnisharp-vim'
 " Plug 'ruanyl/coverage.vim'
 
 " jenkinsfile
-Plug 'martinda/Jenkinsfile-vim-syntax'
+" Plug 'martinda/Jenkinsfile-vim-syntax'
 
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
@@ -108,23 +108,25 @@ Plug 'chemzqm/denite-git'
 Plug 'Shougo/echodoc.vim'
 
 " Typescript syntax highlighting
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 
 " ReactJS JSX syntax highlighting
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
 
 " Generate JSDoc commands based on function signature
 Plug 'heavenshell/vim-jsdoc'
 
 " === Syntax Highlighting === "
+Plug 'sheerun/vim-polyglot'
+
 " Syntax highlighting for nginx
-Plug 'chr4/nginx.vim'
+" Plug 'chr4/nginx.vim'
 
 " Syntax highlighting for javascript libraries
-Plug 'othree/javascript-libraries-syntax.vim'
+" Plug 'othree/javascript-libraries-syntax.vim'
 
 " Improved syntax highlighting and indentation
-Plug 'othree/yajs.vim'
+" Plug 'othree/yajs.vim'
 
 " Colorscheme
 Plug 'mhartington/oceanic-next'
@@ -139,7 +141,7 @@ Plug 'posva/vim-vue'
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
 
 " c
-Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
+" Plug 'justinmk/vim-syntax-extra', { 'for': 'c' }
 
 " yaml
 Plug 'stephpy/vim-yaml', { 'for': 'yml' }

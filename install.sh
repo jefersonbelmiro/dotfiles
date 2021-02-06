@@ -10,6 +10,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 echo "install zsh"
 sudo apt install zsh zsh-completions
 curl -L http://install.ohmyz.sh | sh
+echo "source \$HOME/dotfiles/scripts/env.sh" >> ~/.zshrc
 
 echo "install ripgrep"
 sudo apt install ripgrep
