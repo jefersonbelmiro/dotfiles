@@ -217,7 +217,7 @@ bindsym $mod+Shift+q kill
 bindsym --release Print exec scrot  -e 'mv $f ~/Pictures/'
 bindsym --release Shift+Print exec scrot --select -e 'mv $f ~/Pictures/'
 # bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 450 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
-bindsym $mod+d exec rofi -show run -fuzzy -opacity "85" -bg "$bg-color" -fg "$text-color" 
+bindsym $mod+d exec rofi -show run -fuzzy -theme ~/.config/rofi/monokai.rasi 
 
 # Pulse Audio controls
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume

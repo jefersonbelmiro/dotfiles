@@ -18,6 +18,8 @@ echo "install vim"
 ./scripts/vim_install.sh
 
 echo "install rofi"
+mkdir -p ~/.config/rofi/
+ln -sf ~/dotfiles/.config/rofi ~/.config/rofi 
 sudo add-apt-repository ppa:jasonpleau/rofi
 sudo apt update
 sudo apt install rofi

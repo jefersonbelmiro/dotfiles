@@ -66,8 +66,13 @@
     " Hide the Nerdtree status line to avoid clutter
     let g:NERDTreeStatusline = ''
 
-    map <leader>e :NERDTreeToggle<cr>
+    " map <leader>e :NERDTreeToggle<cr>
 " }
+
+" coc-explorer {
+nmap <leader>e :CocCommand explorer<CR>
+" }
+
 
 " eregex - PCRE regex {
 let g:eregex_default_enable = 0
