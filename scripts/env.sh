@@ -14,3 +14,6 @@ if [ -n "${NVIM_LISTEN_ADDRESS+x}" ]; then
 fi
 
 [ -s ~/.local.env ] && \. ~/.local.env
+
+export FrameworkPathOverride=/usr/lib/mono/4.7.1-api
+

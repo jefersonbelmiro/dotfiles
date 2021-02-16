@@ -22,7 +22,7 @@ curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs \
      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 vim +PlugInstall +qall
-vim -c 'CocInstall -sync coc-json coc-html coc-eslint coc-tsserver coc-css coc-angular coc-prettier coc-jest coc-explorer|q'
+vim -c 'CocInstall -sync coc-json coc-html coc-eslint coc-tsserver coc-css coc-angular coc-prettier coc-jest coc-omnisharp coc-explorer|q'
 # mkdir -p .config/coc/extensions
 # cd .config/coc/extensions
 # npm install coc-json coc-...
