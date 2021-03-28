@@ -21,8 +21,15 @@ ln -sf $(realpath vim/coc-settings.json) ~/.config/vim/coc-settings.json
 curl -fLo ~/.config/vim/autoload/plug.vim --create-dirs \
      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+sudo apt install neovim
+sudo apt-get install python-neovim
+sudo apt-get install python3-neovim
+sudo -sf /usr/bin/nvim /usr/bin/vim
+sudo -sf /usr/bin/nvim /usr/bin/vi
+
 vim +PlugInstall +qall
 vim -c 'CocInstall -sync coc-json coc-html coc-eslint coc-tsserver coc-css coc-angular coc-prettier coc-jest coc-omnisharp|q'
 # mkdir -p .config/coc/extensions
 # cd .config/coc/extensions
 # npm install coc-json coc-...
+

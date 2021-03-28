@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "install git"
+sudo apt install git
+
 echo "install curl"
 sudo apt install curl
 
@@ -8,15 +11,16 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
 # install zsh
 echo "install zsh"
-sudo apt install zsh zsh-completions
-curl -L http://install.ohmyz.sh | sh
+# sudo apt install zsh zsh-completions
+# curl -L http://install.ohmyz.sh | sh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "source \$HOME/dotfiles/scripts/env.sh" >> ~/.zshrc
 
 echo "install ripgrep"
 sudo apt install ripgrep
 
 echo "install vim"
-./scripts/vim_install.sh
+./scripts/install_vim.sh
 
 echo "install rofi"
 sudo add-apt-repository ppa:jasonpleau/rofi
@@ -25,6 +29,7 @@ sudo apt install rofi
 
 echo "install polybar"
 ln -sf ~/dotfiles/.config/polybar ~/.config/polybar
+./scripts/install_polybar.sh
 
 echo "install ranger"
 mkdir -p ~/.config/ranger/
@@ -49,7 +54,7 @@ echo "install alacritty"
 ln -sf ~/dotfiles/.config/alacritty ~/.config/alacritty
 
 echo "install termite"
-./scripts/termite_install.sh
+./scripts/install_termite.sh
 ln -sf ~/dotfiles/.config/termite ~/.config/termite
 
 echo "installation complete."
