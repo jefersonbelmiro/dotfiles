@@ -1,7 +1,4 @@
 #!/bin/bash
-git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}'
-# confirm && git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -d
-
 display_branchs() {
     git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}'
 }
@@ -19,4 +16,4 @@ confirm() {
     esac
 }
 
-confirm && display_branchs | xargs git branch -D
+display_branchs && confirm | xargs git branch -D

@@ -17,5 +17,7 @@
   "typescript.preferences.importModuleSpecifier": "relative",
   "coc.preferences.extensionUpdateCheck": "never",
 
-  "explorer.icon.enableNerdfont": true
+  "explorer.icon.enableNerdfont": true,
+
+  "angular.experimental-ivy": true
 }
