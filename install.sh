@@ -40,6 +40,7 @@ ln -sf ~/dotfiles/.config/ranger/rc.conf ~/.config/ranger/rc.conf
 echo "install fontes"
 ln -sf ~/dotfiles/.fonts ~/.font
 ln -sf ~/dotfiles/.fonts ~/.local/share/fonts
+fc-cache -f -v
 
 echo "install i3"
 ln -sf $(realpath .i3) ~/.config/i3
