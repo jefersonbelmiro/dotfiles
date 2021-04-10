@@ -19,5 +19,5 @@
 
   "explorer.icon.enableNerdfont": true,
 
-  "angular.experimental-ivy": true
+  "angular.enable-experimental-ivy-prompt": false
 }
