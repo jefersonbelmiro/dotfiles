@@ -226,6 +226,8 @@ if has('persistent_undo')
 endif
 set backupdir=~/.config/nvim/backup " Don't put backups in current dir
 set backup
+" parceljs  watch issue
+" set backupcopy=yes
 set noswapfile
 
 " ============================================================================ "
