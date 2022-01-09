@@ -227,6 +227,7 @@ endif
 set backupdir=~/.config/nvim/backup " Don't put backups in current dir
 set backup
 set noswapfile
+
 " parceljs  watch issue
 set backupcopy=yes
 
