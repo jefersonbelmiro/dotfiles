@@ -585,3 +585,5 @@ set updatetime=300
 if exists('g:loaded_webdevicons')
   call webdevicons#refresh()
 endif
+
+lua require("lsp-config")

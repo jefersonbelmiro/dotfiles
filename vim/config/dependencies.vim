@@ -64,21 +64,20 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" #
-Plug 'OmniSharp/omnisharp-vim'
-
-" code coverage
-" Plug 'ruanyl/coverage.vim'
-
-" jenkinsfile
-" Plug 'martinda/Jenkinsfile-vim-syntax'
-
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 
 " Intellisense Engine
 " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
+" lsp for typescript
+Plug 'neovim/nvim-lspconfig'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'nvim-lua/plenary.nvim'
+
 
 " Denite - Fuzzy finding, buffer management
 Plug 'Shougo/denite.nvim'
@@ -88,7 +87,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'chemzqm/denite-git'
 
 " Print function signatures in echo area
-Plug 'Shougo/echodoc.vim'
+" Plug 'Shougo/echodoc.vim'
 
 " Typescript syntax highlighting
 " Plug 'HerringtonDarkholme/yats.vim'
@@ -97,7 +96,7 @@ Plug 'Shougo/echodoc.vim'
 " Plug 'mxw/vim-jsx'
 
 " Generate JSDoc commands based on function signature
-Plug 'heavenshell/vim-jsdoc'
+" Plug 'heavenshell/vim-jsdoc'
 
 " === Syntax Highlighting === "
 Plug 'sheerun/vim-polyglot'
@@ -115,10 +114,10 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mhartington/oceanic-next'
 
 " tagbar 
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " vue.js
-Plug 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 
 " c++
 Plug 'octol/vim-cpp-enhanced-highlight', { 'for': 'cpp' }
