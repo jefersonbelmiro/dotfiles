@@ -587,3 +587,6 @@ if exists('g:loaded_webdevicons')
 endif
 
 lua require("lsp-config")
+
+" autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+" autocmd CursorHoldI * silent! lua vim.lsp.buf.signature_help()

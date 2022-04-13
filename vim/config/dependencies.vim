@@ -68,8 +68,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 
 " Intellisense Engine
-" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 " lsp for typescript
@@ -77,6 +76,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 Plug 'nvim-lua/plenary.nvim'
+
+" A light-weight lsp plugin based on neovim built-in lsp with highly a performant UI.
+" Plug 'glepnir/lspsaga.nvim'
 
 
 " Denite - Fuzzy finding, buffer management

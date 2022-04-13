@@ -50,12 +50,15 @@ lspconfig.tsserver.setup({
 -- icon
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
+	signs = true,
     underline = true,
+    update_in_insert = false,
     -- This sets the spacing and the prefix, obviously.
-    virtual_text = {
-      spacing = 4,
-      prefix = ''
-    }
+    -- virtual_text = {
+    --   spacing = 4,
+    --   prefix = ''
+    -- }
+	virtual_text = false,
   }
 )
 
@@ -67,3 +70,14 @@ null_ls.setup({
     },
     on_attach = on_attach,
 })
+
+-- local saga = require 'lspsaga'
+
+-- saga.init_lsp_saga {
+--     error_sign = '', -- 
+--     warn_sign = '',
+--     hint_sign = '',
+--     infor_sign = '',
+-- }
+-- saga.init_lsp_saga()
+
