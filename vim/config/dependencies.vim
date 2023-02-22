@@ -132,6 +132,9 @@ Plug 'stephpy/vim-yaml', { 'for': 'yml' }
 " Blade
 Plug 'jwalton512/vim-blade'
 
+" godot
+Plug 'habamax/vim-godot'
+
 " colors
 Plug 'mhartington/oceanic-next'
 Plug 'nanotech/jellybeans.vim'

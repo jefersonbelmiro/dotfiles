@@ -17,6 +17,12 @@ set encoding=utf8
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
+" fix alacritty no color issue:
+" https://github.com/alacritty/alacritty/issues/3402
+if &term == "alacritty"        
+  let &term = "xterm-256color"
+endif
+
 "Habilita coloração por syntax 
 syntax enable 
 
@@ -226,9 +232,10 @@ if has('persistent_undo')
 endif
 set backupdir=~/.config/nvim/backup " Don't put backups in current dir
 set backup
+set noswapfile
+
 " parceljs  watch issue
 set backupcopy=yes
-set noswapfile
 
 " ============================================================================ "
 " ===                                UI                                    === "
