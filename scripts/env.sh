@@ -17,3 +17,21 @@ fi
 
 export FrameworkPathOverride=/usr/lib/mono/4.7.1-api
 
+
+alias jest-coverage="jest --coverage --coverage-reporters=text --verbose"
+
+ssh-login() {
+   eval `ssh-agent -s`
+   ssh-add ~/.ssh/id_rsa
+}
+
+# set 3min screen turn off
+# xset dpms 180
+
+# set keyboard language
+# setxkbmap us
+
+# set wacom table screen lock
+# xsetwacom set "Wacom Intuos S Pen eraser" MapToOutput HDMI-1
+# xsetwacom set "Wacom Intuos S Pen stylus" MapToOutput HDMI-1
+
