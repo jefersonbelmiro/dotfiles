@@ -15,5 +15,13 @@ fi
 
 [ -s ~/.local.env ] && \. ~/.local.env
 
-export FrameworkPathOverride=/usr/lib/mono/4.7.1-api
+# export FrameworkPathOverride=/usr/lib/mono/4.7.1-api
+# export FrameworkPathOverride=~/.config/coc/extensions/coc-omnisharp-data/server/omnisharp
 
+export FrameworkPathOverride=/lib/mono/4.7-api
+# export FrameworkPathOverride=/etc/mono/4.5
+# export PATH="$PATH:/home/ships/.dotnet/tools"
+
+alias GUT='godot --path $PWD --no-window -s addons/gut/gut_cmdln.gd'
+
+setxkbmap us

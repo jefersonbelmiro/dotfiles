@@ -10,7 +10,6 @@
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.suggestionActions.enabled": false,
 
-
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
   "typescript.preferences.importModuleSpecifier": "relative",
@@ -26,5 +25,10 @@
       "filetypes": ["gdscript"],
       "port": 6008
     }
+    // "csharp-ls": {
+    //     "command": "csharp-ls",
+    //     "filetypes": ["cs"],
+    //     "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+    // }
   }
 }
