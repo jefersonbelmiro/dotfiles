@@ -186,6 +186,8 @@ bindsym $mod+Shift+s sticky toggle
 for_window [class="Pavucontrol"] floating enable
 for_window [title="Microsoft Teams Notification"] floating enable
 for_window [title="UnityEditor"] floating enable
+for_window[instance="Godot_Editor"] floating disable
+for_window[instance="Godot_Engine"] floating enable
 
 # browser pop-ups
 for_window [window_role="pop-up"] floating enable

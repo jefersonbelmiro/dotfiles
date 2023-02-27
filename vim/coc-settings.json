@@ -17,8 +17,6 @@
 
   "explorer.icon.enableNerdfont": true,
 
-  "angular.experimental-ivy": true,
-
   "languageserver": {
     "godot": {
       "host": "127.0.0.1",
