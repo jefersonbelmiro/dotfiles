@@ -115,7 +115,9 @@ endif
 
 set nonu
 
-set updatetime=100
+" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+" delays and poor user experience
+set updatetime=300
 
 set title
 "set titlestring=%f
@@ -192,6 +194,8 @@ set wildignore=*.o,*~,*.pyc,CVS,*~,.git       " Ignora certos tipos de arquivo
 " set wildignore+=*/bower_components/*
 " set wildignore+=*/vendor/*
 set wildignore+=*.cs.meta
+" godot uid files
+set wildignore+=*.gd.uid,*.gdshader.uid
 
 set termencoding=utf-8                       " Codificação do terminal
 set fileformats=unix,dos,mac                 " Use unix as the standard file type
@@ -225,17 +229,21 @@ set termguicolors
 
 
 " Set backups
-if has('persistent_undo')
-  set undofile
-  set undolevels=3000
-  set undoreload=10000
-endif
-set backupdir=~/.config/nvim/backup " Don't put backups in current dir
-set backup
-set noswapfile
+"if has('persistent_undo')
+"  set undofile
+"  set undolevels=3000
+"  set undoreload=10000
+"endif
+"set backupdir=~/.config/nvim/backup " Don't put backups in current dir
+"set backup
+"set noswapfile
+
+set nobackup   
+set nowritebackup 
+set noswapfile  
 
 " parceljs  watch issue
-set backupcopy=yes
+"set backupcopy=yes
 
 " ============================================================================ "
 " ===                                UI                                    === "

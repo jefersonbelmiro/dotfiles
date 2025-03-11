@@ -1,6 +1,6 @@
 {
-  "suggest.echodocSupport": true,
-  "suggest.maxCompleteItemCount": 20,
+  //"suggest.echodocSupport": true,
+  // "suggest.maxCompleteItemCount": 20,
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
@@ -12,17 +12,26 @@
 
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "shortest",
   "coc.preferences.extensionUpdateCheck": "never",
 
   "explorer.icon.enableNerdfont": true,
+  "explorer.openAction.relativePath": true,
+  "explorer.file.hiddenRules": {
+    "patternMatches": ["\\.gd\\.uid$"]
+  },
 
   "languageserver": {
     "godot": {
       "host": "127.0.0.1",
       "filetypes": ["gdscript"],
-      "port": 6008
+      "port": 6005
     }
+    //"godotv4": {
+    //  "host": "127.0.0.1",
+    //  "filetypes": ["gdscript"],
+    //  "port": 6007
+    //}
     // "csharp-ls": {
     //     "command": "csharp-ls",
     //     "filetypes": ["cs"],
