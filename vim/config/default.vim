@@ -197,7 +197,7 @@ set wildignore+=*.cs.meta
 " godot uid files
 set wildignore+=*.gd.uid,*.gdshader.uid
 
-set termencoding=utf-8                       " Codificação do terminal
+" set termencoding=utf-8                       " Codificação do terminal
 set fileformats=unix,dos,mac                 " Use unix as the standard file type
 set switchbuf=useopen,usetab,newtab          " Specify the behavior when switching between buffers 
 
