@@ -96,7 +96,7 @@ config.use_fancy_tab_bar = false
 
 config.window_background_image = "/home/jefersonrodrigoprudenciobelmiro/dotfiles/wallpaper/2.jpg"
 config.window_background_image_hsb = {
-	brightness = 0.05,
+	brightness = 0.04,
 
 	hue = 1.0,
 
