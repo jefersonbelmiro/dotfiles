@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 
 -- config.line_height = 1.2
 
-config.font_size = 12
+config.font_size = 14
 config.font = wezterm.font("Hack Nerd Font")
 
 config.tab_max_width = 40
@@ -45,7 +45,7 @@ config.colors = {
 
 		-- Inactive tabs are the tabs that do not have focus
 		inactive_tab = {
-			bg_color = "#333",
+			bg_color = "#222",
 			fg_color = "#808080",
 
 			-- The same options that were listed under the `active_tab` section above
@@ -65,7 +65,7 @@ config.colors = {
 
 		-- The new tab button that let you create new tabs
 		new_tab = {
-			bg_color = "#333",
+			bg_color = "#222",
 			fg_color = "#808080",
 
 			-- The same options that were listed under the `active_tab` section above
@@ -104,16 +104,19 @@ config.window_background_image_hsb = {
 	saturation = 0.0,
 }
 
---config.background = {
---	{
---		source = {
---			-- File = { path = "/home/jefersonrodrigoprudenciobelmiro/Pictures/backgrounds/stars.gif", speed = 100.02 },
---			File = "/home/jefersonrodrigoprudenciobelmiro/Pictures/backgrounds/4.jpeg",
---			--File = "/home/jefersonrodrigoprudenciobelmiro/Pictures/backgrounds/stars.gif",
---			--File = "/home/jefersonrodrigoprudenciobelmiro/dotfiles/wallpaper/1.jpg",
---		},
---	},
---}
+-- config.background = {
+-- 	{
+-- 		source = {
+-- 			File = {
+-- 				path = "/home/jefersonrodrigoprudenciobelmiro/Pictures/backgrounds/stars.gif",
+-- 				speed = 0.02,
+-- 			},
+-- 			--File = "/home/jefersonrodrigoprudenciobelmiro/Pictures/backgrounds/4.jpeg",
+-- 			--File = "/home/jefersonrodrigoprudenciobelmiro/Pictures/backgrounds/stars.gif",
+-- 			--File = "/home/jefersonrodrigoprudenciobelmiro/dotfiles/wallpaper/1.jpg",
+-- 		},
+-- 	},
+-- }
 
 config.keys = {
 	{
@@ -175,10 +178,10 @@ config.window_frame = {
 	border_right_width = "2px",
 	border_bottom_height = "2px",
 	border_top_height = "2px",
-	border_left_color = "#222",
-	border_right_color = "#222",
-	border_bottom_color = "#222",
-	border_top_color = "#222",
+	border_left_color = "#333",
+	border_right_color = "#333",
+	border_bottom_color = "#333",
+	border_top_color = "#333",
 }
 
 config.window_padding = {
