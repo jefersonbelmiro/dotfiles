@@ -13,13 +13,21 @@ vim.opt_local.spelllang = {}
 
 vim.o.cursorline = false
 
+vim.opt.startofline = false
+vim.opt.virtualedit = "all"
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.swapfile = false
+
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+--vim.keymap.set("n", "<C-c>", '"+yy', { noremap = true, silent = true })
+vim.keymap.set("v", "<C-c>", '"+yy', { noremap = true, silent = true })
 
 vim.opt.list = false
 
 -- OS clipboard and vim yank are diff
 -- with unnamedplus unify clipboard
--- vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamed"
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",

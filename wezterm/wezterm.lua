@@ -94,7 +94,7 @@ config.hide_tab_bar_if_only_one_tab = false
 config.use_fancy_tab_bar = false
 --config.show_tab_index_in_tab_bar = false
 
-config.window_background_image = "/home/jefersonrodrigoprudenciobelmiro/dotfiles/wallpaper/2.jpg"
+config.window_background_image = wezterm.home_dir .. "/dotfiles/wallpaper/1.jpg"
 config.window_background_image_hsb = {
 	brightness = 0.04,
 
