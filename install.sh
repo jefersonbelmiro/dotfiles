@@ -1,7 +1,7 @@
 # config install
 
 echo "install vim"
-ln -sf ~/dotfiles/.config/vim/ ~/.config/nvim
+ln -sf ~/dotfiles/vim ~/.config/nvim
 
 echo "install wezterm"
-ln -sf ~/dotfiles/.config/wezterm/ ~/.config/wezterm
+ln -sf ~/dotfiles/wezterm ~/.config/wezterm

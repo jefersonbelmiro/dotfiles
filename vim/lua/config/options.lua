@@ -15,6 +15,8 @@ vim.o.cursorline = false
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
+vim.opt.list = false
+
 -- OS clipboard and vim yank are diff
 -- with unnamedplus unify clipboard
 -- vim.opt.clipboard = "unnamed"
