@@ -131,8 +131,8 @@ config.keys = {
 			end
 		end),
 	},
-	{ key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
-	{ key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
+	--{ key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
+	--{ key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
 	{
 		key = "l",
 		mods = "ALT",
