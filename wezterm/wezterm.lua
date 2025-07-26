@@ -7,6 +7,8 @@ config.font_size = 14
 config.font = wezterm.font("Hack Nerd Font")
 
 config.tab_max_width = 40
+-- config.enable_wayland = true
+-- config.prefer_egl = true
 
 config.colors = {
 	cursor_bg = "white",
@@ -87,7 +89,10 @@ config.colors = {
 
 -- config.enable_tab_bar = false
 --config.window_decorations = "TITLE | RESIZE"
+--config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+
 -- config.integrated_title_buttons = { "Hide", "Maximize", "Close" }
 --config.window_background_opacity = 0.9
 config.hide_tab_bar_if_only_one_tab = false
@@ -190,5 +195,14 @@ config.window_padding = {
 	top = 2,
 	bottom = 2,
 }
+
+if os.getenv("KDE_FULL_SESSION") == "true" then
+	config.window_decorations = "RESIZE"
+
+	config.window_frame.border_left_width = 0
+	config.window_frame.border_right_width = 0
+	config.window_frame.border_bottom_height = 0
+	config.window_frame.border_top_height = 0
+end
 
 return config
