@@ -171,7 +171,8 @@ return {
         },
         git_status = {
           symbols = {
-            unstaged = "󰄱",
+            --unstaged = "󰄱",
+            unstaged = "",
             staged = "󰱒",
           },
         },
