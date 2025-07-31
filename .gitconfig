@@ -1,0 +1,19 @@
+[user]
+	email = jeferson.belmiro@gmail.com
+	name = Jeferson belmiro
+[core]
+	pager = less -FRSX
+[mergetool]
+	keepBackup = false
+	prompt = false
+[merge]
+	tool = vimdiff
+[pull]
+	rebase = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[init]
+	defaultBranch = main
