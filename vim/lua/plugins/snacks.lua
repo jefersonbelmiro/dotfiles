@@ -4,12 +4,13 @@ return {
     opts = {
       picker = {
         hidden = true, -- for hidden files
-        ignored = true, -- for .gitignore files
+        ignored = false, -- for .gitignore files
 
         exclude = {
           "*.gd.uid",
           "*.gdshader.uid",
           "*.gdextension.uid",
+          "*.import",
         },
       },
     },
