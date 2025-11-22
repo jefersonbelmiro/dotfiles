@@ -125,6 +125,14 @@ return {
         bind_to_cwd = false,
         follow_current_file = { enabled = true },
         use_libuv_file_watcher = true,
+        filtered_items = {
+          visible = false, -- hide filtered items on open
+          -- or hide_by_pattern = {
+          never_show_by_pattern = {
+            "*.gd.uid",
+          },
+          never_show = { ".git" },
+        },
       },
       window = {
         mappings = {
