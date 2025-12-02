@@ -29,6 +29,9 @@ vim.opt.list = false
 -- with unnamedplus unify clipboard
 vim.opt.clipboard = "unnamed"
 
+-- Disable LazyVim auto format
+vim.g.autoformat = false
+
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
