@@ -196,13 +196,13 @@ config.window_padding = {
 	bottom = 2,
 }
 
-if os.getenv("KDE_FULL_SESSION") == "true" then
-	config.window_decorations = "RESIZE"
-
-	config.window_frame.border_left_width = 0
-	config.window_frame.border_right_width = 0
-	config.window_frame.border_bottom_height = 0
-	config.window_frame.border_top_height = 0
-end
+-- if os.getenv("KDE_FULL_SESSION") == "true" then
+--   config.window_decorations = "RESIZE"
+--
+-- 	config.window_frame.border_left_width = 0
+-- 	config.window_frame.border_right_width = 0
+-- 	config.window_frame.border_bottom_height = 0
+-- 	config.window_frame.border_top_height = 0
+-- end
 
 return config
