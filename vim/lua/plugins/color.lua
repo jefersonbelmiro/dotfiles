@@ -6,7 +6,7 @@ return {
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       require("koda").setup({
-        transparent = false, -- enable for transparent backgrounds
+        transparent = true, -- enable for transparent backgrounds
 
         -- Automatically enable highlights only for plugins installed by your plugin manager
         -- Currently only supports `lazy.nvim` and `vim.pack`
