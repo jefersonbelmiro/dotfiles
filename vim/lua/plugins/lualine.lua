@@ -111,160 +111,160 @@ local function get_mode_abbreviation()
   return mode_map[vim.fn.mode()] or "[UNKNOWN]"
 end
 
-ins_left({
-  function()
-    -- return "▊"
-    return " "
-  end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
-  padding = { left = 0, right = 0 }, -- We don't need space before this
-})
-
-ins_left({
-  -- mode component
-  function()
-    -- return ""
-    return get_mode_abbreviation()
-  end,
-  -- color = function()
-  --   -- auto change color according to neovims mode
-  --   -- local mode_color = {
-  --   --   n = colors.magenta,
-  --   --   i = colors.green,
-  --   --   v = colors.blue,
-  --   --   [""] = colors.blue,
-  --   --   V = colors.blue,
-  --   --   c = colors.magenta,
-  --   --
-  --   --   no = colors.red,
-  --   --   s = colors.orange,
-  --   --   S = colors.orange,
-  --   --
-  --   --   [""] = colors.orange,
-  --   --
-  --   --   ic = colors.yellow,
-  --   --   R = colors.violet,
-  --   --
-  --   --   Rv = colors.violet,
-  --   --   cv = colors.red,
-  --   --   ce = colors.red,
-  --   --   r = colors.cyan,
-  --   --   rm = colors.cyan,
-  --   --   ["r?"] = colors.cyan,
-  --   --   ["!"] = colors.red,
-  --   --   t = colors.red,
-  --   -- }
-  --   --return { fg = "white", bg = mode_color[vim.fn.mode()] }
-  --   return { fg = "white" }
-  -- end,
-  padding = { left = 0, right = 0 },
-})
-
-ins_left({
-  "filename",
-  cond = conditions.buffer_not_empty,
-
-  color = { fg = colors.magenta },
-})
-
--- ins_left({
---   -- filesize component
---   "filesize",
---   cond = conditions.buffer_not_empty,
--- })
-
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left({
-  function()
-    return "%="
-  end,
-})
-
-ins_right({ "selectioncount" })
-ins_right({ "location" })
-ins_right({ "progress", color = { fg = colors.fg } })
-
-ins_right({
-  "diagnostics",
-  sources = { "nvim_diagnostic" },
-  symbols = { error = " ", warn = " ", info = " " },
-  diagnostics_color = {
-    error = { fg = colors.red },
-    warn = { fg = colors.yellow },
-    info = { fg = colors.cyan },
-  },
-})
-
--- ins_right({
---   -- Lsp server name .
---   function()
---     -- local msg = "No Active Lsp"
---     local msg = ""
---     local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
---     local clients = vim.lsp.get_clients()
---
---     if next(clients) == nil then
---       return msg
---     end
---     for _, client in ipairs(clients) do
---       local filetypes = client.config.filetypes
---       if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
---         return client.name
---       end
---     end
---     return msg
---   end,
---   icon = " ",
---   color = { fg = "#ffffff" },
--- })
-
--- Add components to right sections
-ins_right({
-  "o:encoding", -- option component same as &encoding in viml
-  fmt = string.lower, -- I'm not sure why it's upper case either ;)
-  cond = conditions.hide_in_width,
-  -- color = { fg = colors.green },
-})
-
-ins_right({
-  "fileformat",
-  fmt = string.lower,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  -- color = { fg = colors.green },
-})
-
-ins_right({
-  "branch",
-  icon = "",
-  color = { fg = colors.violet },
-})
-
-ins_right({
-  "diff",
-  -- symbols = { added = "+", modified = "~", removed = "-" },
-  symbols = { added = " ", modified = " ", removed = " " },
-
-  diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
-  },
-
-  cond = conditions.hide_in_width,
-})
-
--- ins_right({
---   function()
---     return "▊"
---   end,
---   color = { fg = colors.blue },
---   padding = { left = 1 },
--- })
-
 return {
   "nvim-lualine/lualine.nvim",
   config = function()
+    ins_left({
+      function()
+        -- return "▊"
+        return " "
+      end,
+      color = { fg = colors.blue }, -- Sets highlighting of component
+      padding = { left = 0, right = 0 }, -- We don't need space before this
+    })
+
+    ins_left({
+      -- mode component
+      function()
+        -- return ""
+        return get_mode_abbreviation()
+      end,
+      -- color = function()
+      --   -- auto change color according to neovims mode
+      --   -- local mode_color = {
+      --   --   n = colors.magenta,
+      --   --   i = colors.green,
+      --   --   v = colors.blue,
+      --   --   [""] = colors.blue,
+      --   --   V = colors.blue,
+      --   --   c = colors.magenta,
+      --   --
+      --   --   no = colors.red,
+      --   --   s = colors.orange,
+      --   --   S = colors.orange,
+      --   --
+      --   --   [""] = colors.orange,
+      --   --
+      --   --   ic = colors.yellow,
+      --   --   R = colors.violet,
+      --   --
+      --   --   Rv = colors.violet,
+      --   --   cv = colors.red,
+      --   --   ce = colors.red,
+      --   --   r = colors.cyan,
+      --   --   rm = colors.cyan,
+      --   --   ["r?"] = colors.cyan,
+      --   --   ["!"] = colors.red,
+      --   --   t = colors.red,
+      --   -- }
+      --   --return { fg = "white", bg = mode_color[vim.fn.mode()] }
+      --   return { fg = "white" }
+      -- end,
+      padding = { left = 0, right = 0 },
+    })
+
+    ins_left({
+      "filename",
+      cond = conditions.buffer_not_empty,
+
+      color = { fg = colors.magenta },
+    })
+
+    -- ins_left({
+    --   -- filesize component
+    --   "filesize",
+    --   cond = conditions.buffer_not_empty,
+    -- })
+
+    -- Insert mid section. You can make any number of sections in neovim :)
+    -- for lualine it's any number greater then 2
+    ins_left({
+      function()
+        return "%="
+      end,
+    })
+
+    ins_right({ "selectioncount" })
+    ins_right({ "location" })
+    ins_right({ "progress", color = { fg = colors.fg } })
+
+    ins_right({
+      "diagnostics",
+      sources = { "nvim_diagnostic" },
+      symbols = { error = " ", warn = " ", info = " " },
+      diagnostics_color = {
+        error = { fg = colors.red },
+        warn = { fg = colors.yellow },
+        info = { fg = colors.cyan },
+      },
+    })
+
+    -- ins_right({
+    --   -- Lsp server name .
+    --   function()
+    --     -- local msg = "No Active Lsp"
+    --     local msg = ""
+    --     local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
+    --     local clients = vim.lsp.get_clients()
+    --
+    --     if next(clients) == nil then
+    --       return msg
+    --     end
+    --     for _, client in ipairs(clients) do
+    --       local filetypes = client.config.filetypes
+    --       if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+    --         return client.name
+    --       end
+    --     end
+    --     return msg
+    --   end,
+    --   icon = " ",
+    --   color = { fg = "#ffffff" },
+    -- })
+
+    -- Add components to right sections
+    ins_right({
+      "o:encoding", -- option component same as &encoding in viml
+      fmt = string.lower, -- I'm not sure why it's upper case either ;)
+      cond = conditions.hide_in_width,
+      -- color = { fg = colors.green },
+    })
+
+    ins_right({
+      "fileformat",
+      fmt = string.lower,
+      icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+      -- color = { fg = colors.green },
+    })
+
+    ins_right({
+      "branch",
+      icon = "",
+      color = { fg = colors.violet },
+    })
+
+    ins_right({
+      "diff",
+      -- symbols = { added = "+", modified = "~", removed = "-" },
+      symbols = { added = " ", modified = " ", removed = " " },
+
+      diff_color = {
+        added = { fg = colors.green },
+        modified = { fg = colors.orange },
+        removed = { fg = colors.red },
+      },
+
+      cond = conditions.hide_in_width,
+    })
+
+    -- ins_right({
+    --   function()
+    --     return "▊"
+    --   end,
+    --   color = { fg = colors.blue },
+    --   padding = { left = 1 },
+    -- })
+
     lualine.setup(config)
   end,
 }
