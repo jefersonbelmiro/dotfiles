@@ -9,7 +9,7 @@ return {
 
     shell = nil,       -- Shell command (nil = default $SHELL)
     start_insert = true, -- Enter insert mode when focusing a terminal
-    winbar = true,     -- Show winbar with running process or cwd
+    winbar = false,     -- Show winbar with running process or cwd
 
     keymaps = {
       toggle = "<C-\\>",    -- Toggle all terminals (terminal mode)
@@ -18,8 +18,8 @@ return {
       prev = "<C-p>",       -- Focus previous terminal in stack
       focus_editor = "<C-e>", -- Return focus to editor window
       normal_mode = "<C-[>", -- Exit terminal insert mode
-      maximize = "<C-z>",   -- Maximize/restore focused terminal
-      close = "q",          -- Close current terminal (normal mode)
+        maximize = "<C-w>",   -- Maximize/restore focused terminal
+        close = "q",          -- Close current terminal (normal mode)
     },
 
     wo = { -- Window options applied to terminal windows
