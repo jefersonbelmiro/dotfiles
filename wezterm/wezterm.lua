@@ -10,6 +10,20 @@ config.tab_max_width = 40
 -- config.enable_wayland = true
 -- config.prefer_egl = true
 
+-- wezterm.on('update-status', function(window, pane)
+--   local process_name = pane:get_foreground_process_name()
+--   -- hide tabs when process is tmux
+--   if process_name and process_name:find('tmux') then
+--     window:set_config_overrides({
+--       enable_tab_bar = false,
+--     })
+--   else
+--     -- restore config
+--     window:set_config_overrides({})
+--   end
+-- end)
+
+
 config.colors = {
 	cursor_bg = "white",
 	cursor_border = "white",
@@ -165,6 +179,20 @@ config.keys = {
 	{ key = "}", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(1) },
 	{ key = "{", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(-1) },
 	{ key = "}", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(1) },
+
+  {
+    key = 'B',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action_callback(function(window, pane)
+      local overrides = window:get_config_overrides() or {}
+      if overrides.enable_tab_bar == false then
+        overrides.enable_tab_bar = true
+      else
+        overrides.enable_tab_bar = false
+      end
+      window:set_config_overrides(overrides)
+    end),
+  },
 }
 
 config.window_frame = {
