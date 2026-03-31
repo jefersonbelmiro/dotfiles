@@ -181,9 +181,9 @@ config.keys = {
 	{ key = "}", mods = "SHIFT|ALT", action = wezterm.action.MoveTabRelative(1) },
 
   {
-    key = 'B',
+    key = 'E',
     mods = 'CTRL|SHIFT',
-    action = wezterm.action_callback(function(window, pane)
+    action = wezterm.action_callback(function(window, _pane)
       local overrides = window:get_config_overrides() or {}
       if overrides.enable_tab_bar == false then
         overrides.enable_tab_bar = true
