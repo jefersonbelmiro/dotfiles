@@ -1,0 +1,7 @@
+[terminal]
+# windows only
+shell.program = "wsl ~"
+
+[font]
+normal = { family = "Hack Nerd Font", style = "Regular" }
+size = 16

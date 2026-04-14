@@ -1,6 +1,14 @@
 # tmux tips
 
 
+# vim mov
+
+## normal mode
+C-b + [
+
+## select mode
+C-b + [ + v
+
 # switch window
 
 C-b {window_index} :  C-0, C-5, C-9...
