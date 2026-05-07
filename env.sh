@@ -1,6 +1,7 @@
 alias vim='nvim'
 #alias lvim='NVIM_APPNAME=lazyvim nvim'
 alias vim_raw='vim -u NONE -U NONE -N -i NONE'
+alias koda="nvim +'color koda'"
 
 export EDITOR="nvim"
 export LESS="-RFX"
