@@ -29,6 +29,41 @@ vim.opt.list = false
 -- with unnamedplus unify clipboard
 vim.opt.clipboard = "unnamed"
 
+local function is_wsl()
+    -- Check for WSL-specific environment variables
+    if vim.fn.exists('$WSL_DISTRO_NAME') == 1 or vim.fn.exists('$WSL_INTEROP') == 1 then
+        return true
+    end
+
+    -- Fallback: Check proc version for "microsoft/WSL"
+    local handle = io.open("/proc/version", "r")
+    if handle then
+        local content = handle:read("*all")
+        handle:close()
+        if content:match("microsoft") or content:match("WSL") then
+            return true
+        end
+    end
+
+    return false
+end
+
+if is_wsl then
+  vim.g.clipboard = {
+    name = "Win32Yank",
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+    cache_enabled = 0,
+  }
+end
+
 -- Disable LazyVim auto format
 vim.g.autoformat = false
 
