@@ -27,7 +27,8 @@ vim.opt.list = false
 
 -- OS clipboard and vim yank are diff
 -- with unnamedplus unify clipboard
-vim.opt.clipboard = "unnamed"
+-- vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = ""
 
 local function is_wsl()
     -- Check for WSL-specific environment variables
