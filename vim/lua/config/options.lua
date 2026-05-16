@@ -36,7 +36,7 @@ local function is_wsl()
         return true
     end
 
-    -- Fallback: Check proc version for "microsoft/WSL"
+    -- -- Fallback: Check proc version for "microsoft/WSL"
     local handle = io.open("/proc/version", "r")
     if handle then
         local content = handle:read("*all")
@@ -49,7 +49,7 @@ local function is_wsl()
     return false
 end
 
-if is_wsl then
+if is_wsl() then
   vim.g.clipboard = {
     name = "Win32Yank",
     copy = {
@@ -63,6 +63,8 @@ if is_wsl then
     },
     cache_enabled = 0,
   }
+else
+  vim.opt.clipboard = "unnamedplus"
 end
 
 -- Disable LazyVim auto format
