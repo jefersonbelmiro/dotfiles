@@ -7,6 +7,7 @@ return {
         ignored = false, -- for .gitignore files
 
         exclude = {
+          "libs/raylib/*", -- project specific
           "*.gd.uid",
           "*.gdshader.uid",
           "*.gdextension.uid",

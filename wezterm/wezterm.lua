@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 
 -- config.line_height = 1.2
 
-config.font_size = 14
+config.font_size = 16
 config.font = wezterm.font("Hack Nerd Font")
 
 config.tab_max_width = 40
