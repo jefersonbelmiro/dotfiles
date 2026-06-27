@@ -1,4 +1,12 @@
 return {
+  {
+    "ruscito/gruber-ocean",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- vim.cmd([[colorscheme gruber-ocean]])
+    end,
+  },
 
   {
     "oskarnurm/koda.nvim",
@@ -62,14 +70,14 @@ return {
     end,
   },
 
-  --{
-  --  "AlexvZyl/nordic.nvim",
-  --  lazy = false,
-  --  priority = 1000,
-  --  config = function()
-  --    require("nordic").load()
-  --  end,
-  --},
+  {
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
+    priority = 1000,
+    -- config = function()
+    --   require("nordic").load()
+    -- end,
+  },
 
   {
     "olimorris/onedarkpro.nvim",
