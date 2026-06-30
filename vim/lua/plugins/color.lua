@@ -1,12 +1,13 @@
 return {
-  {
-    "ruscito/gruber-ocean",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- vim.cmd([[colorscheme gruber-ocean]])
-    end,
-  },
+  -- {
+  --   "ruscito/gruber-ocean",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- vim.cmd([[colorscheme gruber-ocean]])
+  --     vim.cmd([[highlight WinSeparator guifg=#252738 guibg=0]])
+  --   end,
+  -- },
 
   {
     "oskarnurm/koda.nvim",
